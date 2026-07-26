@@ -26,14 +26,14 @@ Get the [latest](https://github.com/symbuzzer/fork-Shizuku/releases/latest) vers
 All versions and changelogs are distributed via [GitHub Releases](https://github.com/symbuzzer/fork-Shizuku/releases).  
 
 ## How to install
-1- **Remove all Shizuku variant before installing and reboot the device.** Because, all of them uses same package names.  
+1- **Remove all Shizuku variants before installing and reboot the device.** Because, all of them uses same package names.  
 2- **Disable Play Protect before installation.** Because, offical Shizuku is already uploaded to Play Store and it has same package name but different signature. So Play Protect detects all variants of Shizuku as malicious.  
 3- **Download and install the [latest apk](https://github.com/symbuzzer/fork-Shizuku/releases/latest/download/Shizuku-fork.apk)**  
 4- **Follow on-screen instructions.**  
 
 *Note: During the first setup and each reboot, the device should only be connected to a Wi-Fi network once.*
 
-## Added Features by symbuzzer
+## Added features by symbuzzer
 
 This variant of thedjchi's Shizuku includes some extra features over the unoffical thedjchi's forked version, such as:
 * **Fewer options, much easier to use:** Many options/features have been hidden and will only be shown when needed. Additionally, those I considered redundant have been removed entirely.
@@ -45,7 +45,7 @@ This variant of thedjchi's Shizuku includes some extra features over the unoffic
 
 *Note: The update feature has been removed "temporarily".*
 
-## Added Features by thedjchi
+## Added features by thedjchi
 
 This version of Shizuku includes some extra features over the original version, such as:
 * **More robust "start on boot":** waits for a Wi-Fi connection before starting the Shizuku service
