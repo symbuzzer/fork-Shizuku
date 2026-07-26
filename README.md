@@ -5,6 +5,13 @@ The new and easy-to-use Shizuku variant.
 ## What is Shizuku?
 An Android app that allows other apps to use system-level APIs that require ADB/root privileges.
 
+## Screenshots
+<img width="108" height="287" alt="main-stopped" src="https://github.com/user-attachments/assets/18789cd3-ef0b-48b3-b5a6-e56171670dda" />
+<img width="108" height="313" alt="main-running" src="https://github.com/user-attachments/assets/95df6a1c-0b47-4ca4-9b32-8d92a1dc6035" />
+<img width="108" height="313" alt="settings" src="https://github.com/user-attachments/assets/d1c5bff1-e8a5-4650-a85b-07ed275798bd" />
+
+
+
 ## Disclaimer
 
 This is a **FORK** of [unofficial Shizuku fork by thedjchi](https://github.com/thedjchi/Shizuku).
