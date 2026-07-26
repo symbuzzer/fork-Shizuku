@@ -3,7 +3,7 @@
 The new and easy-to-use Shizuku variant.
 
 ## What is Shizuku?
-An Android app that allows other apps to use system-level APIs that require ADB/root privileges.
+An Android app that allows other apps to use system-level APIs that require adb/root privileges.
 
 ## Screenshots
 <img width="108" height="287" alt="main-stopped" src="https://github.com/user-attachments/assets/18789cd3-ef0b-48b3-b5a6-e56171670dda" />
@@ -22,9 +22,14 @@ This is a **FORK** of [unofficial Shizuku fork by thedjchi](https://github.com/t
 
 ## Download
 
-Get the [latest](https://github.com/symbuzzer/fork-Shizuku/releases/latest) version.
+Get the [latest](https://github.com/symbuzzer/fork-Shizuku/releases/latest) version.  
+All versions and changelogs are distributed via [GitHub Releases](https://github.com/symbuzzer/fork-Shizuku/releases).  
 
-All versions are distributed via [GitHub Releases](https://github.com/symbuzzer/fork-Shizuku/releases).
+## How to install
+1- **Remove all Shizuku variant before installing and reboot the device.** Because, all of them uses same package names.  
+2- **Disable Play Protect before installation.** Because, offical Shizuku is already uploaded to Play Store and it has same package name but different signature. So Play Protect detects all variants of Shizuku as malicious.  
+3- **Download and install the [latest apk](https://github.com/symbuzzer/fork-Shizuku/releases/latest/download/Shizuku-fork.apk)**  
+4- **Follow on-screen instructions.**
 
 ## Added Features by symbuzzer
 
@@ -34,6 +39,7 @@ This variant of thedjchi's Shizuku includes some extra features over the unoffic
 * **All external links that I deemed unnecessary have been removed:** The instructions in the application interface are quite adequate.
 * **User experience has been improved:** The "Stop" button and "About" section have been moved to more native locations.
 * **The language selection feature has been integrated into Android's native feature:** Instead of changing the language from the app's own settings, you can change it in a more integrated way through Android's settings.
+* **Turkish translations fixed.**
 
 *Note: The update feature has been removed "temporarily".*
 
@@ -85,7 +91,8 @@ Shizuku takes user privacy very seriously.
 
 ## Translations
 
-You can always add the language you want by sending a PR.
+You can always add the language you want by sending a PR.  
+Many of the translations were chicken-translated, so all except English and Turkish have been removed.  
 
 ## License
 
