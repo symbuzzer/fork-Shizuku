@@ -46,7 +46,7 @@ android {
     externalNativeBuild {
         cmake {
             path = file("src/main/jni/CMakeLists.txt")
-            version = "3.31.0+"
+            version = "3.22.1"
         }
     }
     kotlinOptions {
@@ -68,12 +68,14 @@ android {
     }
 }
 
+/*
 autoResConfig {
     generatedClassFullName = "rikka.shizuku.manager.ShizukuLocales"
     generateRes = false
     generatedArrayFirstItem = "SYSTEM"
     generateLocaleConfig = true
 }
+*/
 
 materialThemeBuilder {
     themes {

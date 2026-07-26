@@ -156,30 +156,6 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <com.google.android.material.card.MaterialCardView
-                style="@style/DialogCard">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="-8dp"
-                    android:layout_marginTop="4dp"
-                    android:importantForAccessibility="no"
-                    android:src="@drawable/ic_help_outline_24dp"
-                    android:tint="?colorOnSecondaryContainer"
-                    android:tintMode="src_in" />
-
-                <TextView
-                    style="@style/TerminalTutorialText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="36dp"
-                    android:text="@string/stealth_info_update"
-                    android:textAppearance="?textAppearanceBodyMedium"
-                    android:textColor="?colorOnSecondaryContainer" />
-
-            </com.google.android.material.card.MaterialCardView>
-
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>

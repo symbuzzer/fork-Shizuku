@@ -41,7 +41,7 @@ class ManageAppsViewHolder(private val binding: HomeManageAppsItemBinding, root:
             title.setText(R.string.home_app_management_title)
             summary.text = context.getString(
                 R.string.home_status_service_not_running,
-                context.getString(R.string.app_name)
+                context.getString(R.string.shizuku)
             )
         } else {
             itemView.isEnabled = true

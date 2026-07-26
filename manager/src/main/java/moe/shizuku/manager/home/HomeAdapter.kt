@@ -1,10 +1,16 @@
 package moe.shizuku.manager.home
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Build
+import android.view.View
 import kotlinx.coroutines.CoroutineScope
+import moe.shizuku.manager.R
 import moe.shizuku.manager.management.AppsViewModel
 import moe.shizuku.manager.utils.EnvironmentUtils
 import moe.shizuku.manager.utils.UserHandleCompat
+import rikka.recyclerview.BaseViewHolder
+import rikka.recyclerview.BaseViewHolder.Creator
 import rikka.recyclerview.IdBasedRecyclerViewAdapter
 import rikka.recyclerview.IndexCreatorPool
 import rikka.shizuku.Shizuku
@@ -25,10 +31,10 @@ class HomeAdapter(private val homeModel: HomeViewModel, private val appsModel: A
         private const val ID_START_ROOT = 3L
         private const val ID_START_WADB = 4L
         private const val ID_START_ADB = 5L
-        private const val ID_LEARN_MORE = 6L
         private const val ID_ADB_PERMISSION_LIMITED = 7L
         private const val ID_AUTOMATION = 8L
         private const val ID_STEALTH = 9L
+        private const val ID_FOOTER = 10L
     }
 
     override fun onCreateCreatorPool(): IndexCreatorPool {
@@ -59,18 +65,36 @@ class HomeAdapter(private val homeModel: HomeViewModel, private val appsModel: A
 
             if (EnvironmentUtils.isRooted()) addItem(StartRootViewHolder.CREATOR, rootRestart, ID_START_ROOT)
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R ||
+            if (!running && (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R ||
                 EnvironmentUtils.isTelevision() ||
-                EnvironmentUtils.getAdbTcpPort() > 0
+                EnvironmentUtils.getAdbTcpPort() > 0)
             ) addItem(StartWirelessAdbViewHolder.creator(scope), null, ID_START_WADB)
 
-            addItem(StartAdbViewHolder.CREATOR, null, ID_START_ADB)
+            if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.Q) {
+                addItem(StartAdbViewHolder.CREATOR, null, ID_START_ADB)
+            }
         }
         addItem(AutomationViewHolder.CREATOR, null, ID_AUTOMATION)
 
         addItem(StealthViewHolder.CREATOR, null, ID_STEALTH)
 
-        addItem(LearnMoreViewHolder.CREATOR, null, ID_LEARN_MORE)
+        addItem(FooterViewHolder.CREATOR, null, ID_FOOTER)
+
         notifyDataSetChanged()
+    }
+}
+
+class FooterViewHolder(root: View) : BaseViewHolder<Any?>(root) {
+    companion object {
+        val CREATOR = Creator<Any> { inflater, parent ->
+            FooterViewHolder(inflater.inflate(R.layout.home_footer, parent, false))
+        }
+    }
+
+    init {
+        root.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/symbuzzer/fork-Shizuku"))
+            it.context.startActivity(intent)
+        }
     }
 }

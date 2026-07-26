@@ -1,18 +1,18 @@
 <resources>
-    <string name="app_name" translatable="false">Shizuku</string>
+    <string name="app_name" translatable="false">Shizuku-fork</string>
+    <string name="app_name_launcher" translatable="false">Shizuku-fork</string>
+    <string name="shizuku" translatable="false">Shizuku</string>
 
     <!-- To translators: you can leave your here -->
-    <string name="translation_contributors" />
 
     <!-- Home - Status -->
     <string name="home_status_service_is_running">%1$s is running</string>
     <string name="home_status_service_not_running">%1$s is not running</string>
-    <string name="home_status_service_version">Version %2$s, %1$s</string>
-    <string name="home_status_service_version_update"><![CDATA[Version %2$s, %1$s<br>Start again to update to version %3$s]]></string>
+    <string name="home_status_service_version">v%2$s, %1$s</string>
 
     <!-- Home - Adb -->
     <string name="home_adb_title"><![CDATA[Start by connecting to a computer]]></string>
-    <string name="home_adb_description"><![CDATA[For devices without root, you need to use adb to start Shizuku (requires computer connection). This process needs to be repeated every time the device is restarted. Please <b><a href=\"%1$s\">read the help</a></b>.]]></string>
+    <string name="home_adb_description"><![CDATA[For devices without root, you need to use adb to start Shizuku (requires computer connection). This process needs to be repeated every time the device is restarted.]]></string>
     <string name="home_adb_button_view_help">Read help</string>
     <string name="home_adb_button_view_command">View command</string>
     <string name="home_adb_dialog_view_command_message"><![CDATA[<font face="monospace">%1$s</font><br><br>* There are some other considerations, please confirm that you have read the help first.]]></string>
@@ -21,9 +21,8 @@
 
     <!-- Home - Wireless Adb -->
     <string name="home_wireless_adb_title"><![CDATA[Start via Wireless debugging]]></string>
-    <string name="home_wireless_adb_description"><![CDATA[On Android 11 or above, you can enable Wireless debugging and start Shizuku directly from your device, without connecting to a computer.<p>Please view the step-by-step guide first.]]></string>
+    <string name="home_wireless_adb_description"><![CDATA[On Android 11 or above, you can enable Wireless debugging and start Shizuku directly from your device, without connecting to a computer.]]></string>
     <string name="home_wireless_adb_description_pre_11"><![CDATA[Before Android 11, connecting to a computer is required to enable Wireless debugging.]]></string>
-    <string name="home_wireless_adb_view_guide_button">Step-by-step guide</string>
 
     <!-- Adb -->
     <string name="dialog_adb_discovery">Searching for wireless debugging service</string>
@@ -59,7 +58,6 @@
     <string name="adb_pairing_tutorial_content_notification_blocked">The pairing process needs you to interact with a notification from Shizuku. Please allow Shizuku to post notifications.</string>
     <string name="adb_pairing_tutorial_content_miui">MIUI users may need to switch notification style to \"Android\" from \"Notification\" - \"Notification shade\" in system settings.</string>
     <string name="adb_pairing_tutorial_content_miui_2">Otherwise, you may not able to enter the pairing code from the notification.</string>
-    <string name="adb_pairing_tutorial_content_finish">Go back to Shizuku and start Shizuku.</string>
     <string name="adb_pairing_tutorial_content_network">Shizuku needs to access the local network. It is controlled by the network permission.</string>
     <string name="adb_pairing_tutorial_content_network_limation_not_foreground">Some systems (such as MIUI) disallow apps to access the network when they are not visible, even if the app uses a foreground service. Please disable battery optimization features for Shizuku on such systems.</string>
 
@@ -94,10 +92,6 @@
     <!-- Home - Stealth mode -->
     <string name="home_stealth_title">Hide Shizuku from other apps</string>
     <string name="home_stealth_description">Note: Enabling this feature may cause apps that rely on Shizuku to stop functioning correctly.</string>
-
-    <!-- Home - Learn more -->
-    <string name="home_learn_more_title">Developer guide</string>
-    <string name="home_learn_more_description">Learn how to develop with Shizuku</string>
 
     <!-- Home - Adb permissions limited -->
     <string name="home_adb_is_limited_title">You need to take an extra step</string>
@@ -137,7 +131,6 @@
     <string name="stealth_info_reconfigure">You will need to re-pair and re-configure Shizuku after installing the hidden version.</string>
     <string name="stealth_info_rish">Rish users: re-export the files after installing the hidden version.</string>
     <string name="stealth_info_intents">Intent users: update your intents with the new package name.</string>
-    <string name="stealth_info_update">You must update Shizuku through the app when using the hidden version because it has a different signature.</string>
     <string name="stealth_package_name">Package name (optional)</string>
     <string name="stealth_package_name_helper_text">If left empty, a random suffix will be added to the package name.</string>
     <string name="stealth_error_ends_with_period">Package name cannot end with a period.</string>
@@ -172,53 +165,20 @@
     <string name="settings_tcp_port_hint">Leave blank to use default (5555)</string>
     <string name="settings_auto_disable_usb_debugging">Auto-disable USB debugging</string>
     <string name="settings_auto_disable_usb_debugging_summary">Disable USB debugging when stopping Shizuku</string>
-    <string name="settings_language">Language</string>
-    <string name="settings_translation_contributors">Translation contributors</string>
-    <string name="settings_translation">Participate in translation</string>
-    <string name="settings_translation_summary">Help us translate %s into your language</string>
     <string name="settings_user_interface">Appearance</string>
     <string name="settings_black_night_theme">Black night theme</string>
     <string name="settings_black_night_theme_summary">Use the pure black theme if night mode is enabled</string>
-    <string name="settings_support">Support</string>
-    <string name="settings_update_stable">Stable</string>
-    <string name="settings_update_beta">Beta</string>
-    <string name="settings_help">Help</string>
-    <string name="settings_report_bug">Report a bug</string>
     <string name="settings_advanced">Advanced</string>
     <string name="settings_legacy_pairing">Legacy pairing</string>
     <string name="settings_legacy_pairing_summary">Enter the pairing code in a dialog instead of a notification</string>
-
-    <!-- Bug Report Dialog -->
-    <string name="bug_report_dialog_before_reporting">First, please do the following:</string>
-    <string name="bug_report_dialog_update">Check that you are using the ^1.</string>
-    <string name="bug_report_dialog_link_update">latest version</string>
-    <string name="bug_report_dialog_wiki">Read the ^1 and follow all relevant troubleshooting steps.</string>
-    <string name="bug_report_dialog_link_wiki">wiki</string>
-    <string name="bug_report_dialog_issues">Search through all ^1 to see if your bug has already been reported.</string>
-    <string name="bug_report_dialog_link_issues">existing issues</string>
-    <string name="bug_report_dialog_method">Please submit an issue on ^1 if you have an account.</string>
-    <string name="bug_report_dialog_method_2">Otherwise, you can send an email.</string>
-    <string name="bug_report_dialog_button_email">Email</string>
 
     <!-- Snackbar -->
     <string name="snackbar_invalid_port">Port must be between 1 and 65535</string>
     <string name="snackbar_battery_optimization_home">Battery optimization must be disabled for start on boot/watchdog to work properly.</string>
     <string name="snackbar_battery_optimization_settings">Please disable battery optimization to use this feature.</string>
     <string name="snackbar_action_fix">Fix</string>
-    <string name="snackbar_update_available">A new update is available</string>
-    <string name="snackbar_action_update">Update</string>
-
-    <!-- Updates -->
-    <string name="check_for_updates">Check for updates</string>
-    <string name="update_latest_installed">The latest version is already installed</string>
-    <string name="update_check_failed">Unable to check for updates</string>
-    <string name="update_downloading">Downloading update...</string>
-    <string name="update_download_failed">Failed to download update</string>
-    <string name="update_success">Update successful</string>
-    <string name="update_failed">Update failed</string>
 
     <!-- Toast -->
-    <string name="toast_no_email_app">No email app found</string>
     <string name="toast_shizuku_already_starting">Shizuku is already starting in the background</string>
     <string name="toast_accessibility_tv_only">This service is only supported on TV devices</string>
     <string name="toast_pairing_timeout">Shizuku pairing service timed out</string>
@@ -229,17 +189,11 @@
     <string name="dark_theme_on">Always dark</string>
     <string name="follow_system">Follow system</string>
 
-    <!-- About -->
-    <string name="action_about">About</string>
-    <string name="about_dialog_button_close">Close</string>
-    <string name="about_view_source_code"><![CDATA[View source code at %s]]></string>
-    <string name="buy_me_a_coffee">Buy me a coffee</string>
-
     <!-- Start/Stop -->
      <string name="start">Start</string>
      <string name="stop">Stop</string>
     <string name="action_stop">Stop Shizuku</string>
-    <string name="dialog_stop_message">Shizuku service will be stopped.</string>
+    <string name="dialog_stop_message">Shizuku service will be stopped</string>
 
     <!-- Notification -->
     <string name="notification_channel_service_status">Service start status</string>
@@ -253,9 +207,9 @@
     <string name="notification_adb_pairing_service_found_title">Pairing service found</string>
     <string name="notification_adb_pairing_stop_searching">Stop searching</string>
     <string name="notification_adb_pairing_working_title">Pairing in progress</string>
-    <string name="notification_adb_pairing_succeed_title">Pairing successful</string>
-    <string name="notification_adb_pairing_succeed_text">You can start Shizuku service now.</string>
     <string name="notification_adb_pairing_failed_title">Pairing failed</string>
+    <string name="notification_adb_pairing_succeed_title">Pairing successful</string>
+    <string name="notification_adb_pairing_succeed_text">Shizuku pairing has finished successfully.</string>
     <string name="notification_adb_pairing_retry">Retry</string>
     <string name="notification_auth_missing_title">Auth token required</string>
     <string name="notification_auth_missing_message">Add the “auth” extra to your intent. You can find your token by tapping “View intents” in the app.</string>
@@ -297,10 +251,23 @@
     <string name="success">Success</string>
     <string name="error">Error</string>
     <string name="off">Off</string>
+    <string name="developed_by">Developed by Ali BEYAZ</string>
     <string name="choose_folder">Choose folder</string>
     <string name="dialog_cannot_open_browser_title">Can\'t start browser</string>
     <string name="toast_copied_to_clipboard">Copied to clipboard</string>
     <string name="accessibility_service_description">Provides pairing support for devices (e.g., TVs running Android 14+) where notifications or split screen cannot be used.\n\nEnables Shizuku to extract the pairing code from the wireless debugging pairing screen. It will disable itself once the pairing code is found.</string>
+
+    <!-- Bug Report -->
+    <string name="bug_report_dialog_before_reporting">Before reporting a bug</string>
+    <string name="bug_report_dialog_wiki">Please read the help first. Most problems have already been answered.</string>
+    <string name="bug_report_dialog_issues">Please search the existing issues on GitHub.</string>
+    <string name="bug_report_dialog_method">Bug reports must be submitted through GitHub.</string>
+    <string name="bug_report_dialog_method_2">Please do not send bug reports via email.</string>
+    <string name="bug_report_dialog_link_wiki">help</string>
+    <string name="bug_report_dialog_link_issues">GitHub issues</string>
+    <string name="bug_report_dialog_button_email">Send email</string>
+    <string name="toast_no_email_app">No email app found</string>
+    <string name="settings_report_bug">Report bug</string>
 
     <!-- Messages for legacy -->
     <string name="dialog_legacy_not_support_title">%1$s does not support modern Shizuku</string>

@@ -65,7 +65,6 @@ class AdbPairingTutorialActivity : AppBarActivity() {
         binding.apply {
             step1.isVisible = notificationEnabled
             step2.isVisible = notificationEnabled
-            step3.isVisible = notificationEnabled
             network.isVisible = notificationEnabled
             notification.isVisible = notificationEnabled
             notificationDisabled.isGone = notificationEnabled

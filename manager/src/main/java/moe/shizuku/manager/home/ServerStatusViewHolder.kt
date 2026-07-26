@@ -5,10 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import moe.shizuku.manager.R
 import moe.shizuku.manager.databinding.HomeItemContainerBinding
 import moe.shizuku.manager.databinding.HomeServerStatusBinding
 import moe.shizuku.manager.model.ServiceStatus
+import moe.shizuku.manager.utils.ShizukuStateMachine
 import rikka.html.text.HtmlCompat
 import rikka.html.text.toHtml
 import rikka.recyclerview.BaseViewHolder
@@ -30,6 +32,7 @@ class ServerStatusViewHolder(private val binding: HomeServerStatusBinding, root:
     private inline val textView get() = binding.text1
     private inline val summaryView get() = binding.text2
     private inline val iconView get() = binding.icon
+    private inline val stopButton get() = binding.button1
 
     override fun onBind() {
         val context = itemView.context
@@ -45,20 +48,12 @@ class ServerStatusViewHolder(private val binding: HomeServerStatusBinding, root:
         }
         val user = if (isRoot) "root" else "adb"
         val title = if (ok) {
-            context.getString(R.string.home_status_service_is_running, context.getString(R.string.app_name))
+            context.getString(R.string.home_status_service_is_running, context.getString(R.string.shizuku))
         } else {
-            context.getString(R.string.home_status_service_not_running, context.getString(R.string.app_name))
+            context.getString(R.string.home_status_service_not_running, context.getString(R.string.shizuku))
         }
         val summary = if (ok) {
-            if (apiVersion != Shizuku.getLatestServiceVersion() || status.patchVersion != ShizukuApiConstants.SERVER_PATCH_VERSION) {
-                context.getString(
-                    R.string.home_status_service_version_update, user,
-                    "${apiVersion}.${patchVersion}",
-                    "${Shizuku.getLatestServiceVersion()}.${ShizukuApiConstants.SERVER_PATCH_VERSION}"
-                )
-            } else {
-                context.getString(R.string.home_status_service_version, user, "${apiVersion}.${patchVersion}")
-            }
+            context.getString(R.string.home_status_service_version, user, "${apiVersion}.${patchVersion}")
         } else {
             ""
         }
@@ -68,6 +63,18 @@ class ServerStatusViewHolder(private val binding: HomeServerStatusBinding, root:
             summaryView.visibility = View.GONE
         } else {
             summaryView.visibility = View.VISIBLE
+        }
+
+        stopButton.visibility = if (ok) View.VISIBLE else View.GONE
+        stopButton.setOnClickListener {
+            MaterialAlertDialogBuilder(context)
+                .setMessage(R.string.dialog_stop_message)
+                .setPositiveButton(android.R.string.ok) { _, _ ->
+                    ShizukuStateMachine.set(ShizukuStateMachine.State.STOPPING)
+                    runCatching { Shizuku.exit() }
+                }
+                .setNegativeButton(android.R.string.cancel, null)
+                .show()
         }
     }
 }

@@ -22,12 +22,6 @@
             android:text="@string/bug_report_dialog_before_reporting" />
 
         <TextView
-            android:id="@+id/updateText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/bug_report_dialog_update" />
-
-        <TextView
             android:id="@+id/wikiText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

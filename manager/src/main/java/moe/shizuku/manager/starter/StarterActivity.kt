@@ -1,6 +1,7 @@
 package moe.shizuku.manager.starter
 
 import android.app.Application
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
@@ -25,6 +26,7 @@ import kotlinx.coroutines.withContext
 import moe.shizuku.manager.AppConstants.EXTRA
 import moe.shizuku.manager.R
 import moe.shizuku.manager.adb.AdbKeyException
+import moe.shizuku.manager.adb.AdbPairingHelper
 import moe.shizuku.manager.adb.AdbStarter
 import moe.shizuku.manager.app.AppBarActivity
 import moe.shizuku.manager.utils.ShizukuStateMachine
@@ -68,7 +70,13 @@ class StarterActivity : AppBarActivity() {
                         message = R.string.cannot_connect_port
                     }
                     is SSLProtocolException -> {
-                        message = R.string.adb_pair_required
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                            AdbPairingHelper.handlePairing(this@StarterActivity)
+                            finish()
+                            return@observe
+                        } else {
+                            message = R.string.adb_pair_required
+                        }
                     }
                 }
 

@@ -28,9 +28,6 @@ class BugReportDialog : DialogFragment() {
         val context = requireContext()
         binding = BugReportDialogBinding.inflate(layoutInflater)
 
-        val updateLink = getString(R.string.bug_report_dialog_link_update)
-            .asLink("https://github.com/thedjchi/Shizuku/releases/latest")
-
         val wikiLink = getString(R.string.bug_report_dialog_link_wiki)
             .asLink("https://github.com/thedjchi/Shizuku/releases/wiki#troubleshooting")
 
@@ -38,7 +35,6 @@ class BugReportDialog : DialogFragment() {
             .asLink("https://github.com/thedjchi/Shizuku/releases/issues")
 
         binding.apply {
-            updateText.applyTemplateArgs(updateLink)
             wikiText.applyTemplateArgs(wikiLink)
             issuesText.applyTemplateArgs(issuesLink)
             methodText.applyTemplateArgs("GitHub")

@@ -33,8 +33,6 @@ class AdbPairingService : Service() {
         private const val replyRequestId = 1
         private const val stopRequestId = 2
         private const val retryRequestId = 3
-        private const val launchRequestId = 4
-        private const val startRequestId = 5
         private const val startAction = "start"
         private const val stopAction = "stop"
         private const val replyAction = "reply"
@@ -184,33 +182,36 @@ class AdbPairingService : Service() {
         if (success) {
             Log.i(tag, "Pair succeed")
 
-            title = getString(R.string.notification_adb_pairing_succeed_title)
-            text = getString(R.string.notification_adb_pairing_succeed_text)
-
             stopSearch()
+
+            startActivity(launchIntent.apply {
+                putExtra(HomeActivity.EXTRA_START_SERVICE_VIA_WADB, true)
+            })
+            stopSelf()
+            return
+        }
+
+        title = getString(R.string.notification_adb_pairing_failed_title)
+
+        text = when (exception) {
+            is ConnectException -> {
+                getString(R.string.cannot_connect_port)
+            }
+            is AdbInvalidPairingCodeException -> {
+                getString(R.string.paring_code_is_wrong)
+            }
+            is AdbKeyException -> {
+                getString(R.string.adb_error_key_store)
+            }
+            else -> {
+                exception?.let { Log.getStackTraceString(it) }
+            }
+        }
+
+        if (exception != null) {
+            Log.w(tag, "Pair failed", exception)
         } else {
-            title = getString(R.string.notification_adb_pairing_failed_title)
-
-            text = when (exception) {
-                is ConnectException -> {
-                    getString(R.string.cannot_connect_port)
-                }
-                is AdbInvalidPairingCodeException -> {
-                    getString(R.string.paring_code_is_wrong)
-                }
-                is AdbKeyException -> {
-                    getString(R.string.adb_error_key_store)
-                }
-                else -> {
-                    exception?.let { Log.getStackTraceString(it) }
-                }
-            }
-
-            if (exception != null) {
-                Log.w(tag, "Pair failed", exception)
-            } else {
-                Log.w(tag, "Pair failed")
-            }
+            Log.w(tag, "Pair failed")
         }
 
         getSystemService(NotificationManager::class.java).notify(
@@ -220,15 +221,7 @@ class AdbPairingService : Service() {
                 .setSmallIcon(R.drawable.ic_system_icon)
                 .setContentTitle(title)
                 .setContentText(text)
-                .apply {
-                    if (!success) {
-                        addAction(retryNotificationAction)
-                    } else {
-                        setContentIntent(launchPendingIntent)
-                        addAction(startNotificationAction)
-                        setAutoCancel(true)
-                    }
-                }
+                .addAction(retryNotificationAction)
                 .build()
         )
         stopSelf()
@@ -242,28 +235,6 @@ class AdbPairingService : Service() {
                 Intent.FLAG_ACTIVITY_SINGLE_TOP
             )
         }
-    }
-
-    private val launchPendingIntent by unsafeLazy {
-        PendingIntent.getActivity(
-            this, launchRequestId, launchIntent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
-        )
-    }
-
-    private val startNotificationAction by unsafeLazy {
-        val startIntent = Intent(launchIntent)
-            .putExtra(HomeActivity.EXTRA_START_SERVICE_VIA_WADB, true)
-
-        val pendingIntent = PendingIntent.getActivity(
-            this, startRequestId, startIntent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
-        )
-
-        Notification.Action.Builder(
-            null,
-            getString(R.string.home_root_button_start),
-            pendingIntent
-        )
-            .build()
     }
 
     private val stopNotificationAction by unsafeLazy {
