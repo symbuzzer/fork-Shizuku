@@ -29,7 +29,9 @@ All versions and changelogs are distributed via [GitHub Releases](https://github
 1- **Remove all Shizuku variant before installing and reboot the device.** Because, all of them uses same package names.  
 2- **Disable Play Protect before installation.** Because, offical Shizuku is already uploaded to Play Store and it has same package name but different signature. So Play Protect detects all variants of Shizuku as malicious.  
 3- **Download and install the [latest apk](https://github.com/symbuzzer/fork-Shizuku/releases/latest/download/Shizuku-fork.apk)**  
-4- **Follow on-screen instructions.**
+4- **Follow on-screen instructions.**  
+
+*Note: During the first setup and each reboot, the device should only be connected to a Wi-Fi network once.*
 
 ## Added Features by symbuzzer
 
