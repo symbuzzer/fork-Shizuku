@@ -65,3 +65,4 @@
 -repackageclasses rikka.shizuku
 -keepattributes SourceFile,LineNumberTable
 -renamesourcefileattribute SourceFile
+-dontobfuscate
