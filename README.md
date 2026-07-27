@@ -76,7 +76,7 @@ Shizuku takes user privacy very seriously.
 * No Google Play Services
 * Open-source codebase
 * Reproducible builds
-* Internet access is only used for wireless debugging connections and to fetch updates from GitHub
+* Internet access is only used for wireless debugging connections
 * Only required permissions are declared
 
 ### Permissions
