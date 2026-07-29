@@ -132,7 +132,7 @@
     <string name="stealth_info_rish">Rish kullanıcıları: gizlenmiş sürümü yükledikten sonra dosyaları yeniden dışa aktarın.</string>
     <string name="stealth_info_intents">Intent kullanıcıları: intent\'lerinizi yeni paket adıyla güncelleyin.</string>
     <string name="stealth_package_name">Paket adı (isteğe bağlı)</string>
-    <string name="stealth_package_name_helper_text">Boş bırakılırsa, paket adına rastgele bir sonek eklenecektir.</string>
+    <string name="stealth_package_name_helper_text">Boş bırakılırsa, paket adına rastgele bir son ek eklenecektir.</string>
     <string name="stealth_error_ends_with_period">Paket adı bir nokta ile bitemez.</string>
     <string name="stealth_error_invalid_characters">Yalnızca harfler, rakamlar ve noktalara izin verilir.</string>
     <string name="stealth_error_needs_two_segments">Paket adı en az iki bölümden oluşmalıdır.</string>
