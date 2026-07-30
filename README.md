@@ -89,7 +89,7 @@ Shizuku takes user privacy very seriously.
 * **REQUEST_IGNORE_BATTERY_OPTIMIZATIONS:** prevents start on boot and watchdog services from being killed
 * **WRITE_SECURE_SETTINGS:** used to toggle USB and wireless debugging in the background when starting/stopping Shizuku
 * **REQUEST_DELETE_PACKAGES:** used to request uninstall for Shizuku/stub when using stealth mode
-* **REQUEST_INSTALL_PACKAGES:** used to request install for app updates, as well as Shizuku stub when using stealth mode
+* **REQUEST_INSTALL_PACKAGES:** used to request install for Shizuku stub when using stealth mode
 
 ## Translations
 
