@@ -95,8 +95,6 @@
   <string name="home_automation_bottom_sheet_label_extras">Extras</string>
   <string name="home_automation_regenerate_token">Gerar novo token?</string>
   <string name="home_automation_regenerate_token_message">Você precisará reconfigurar suas intents com o novo token.</string>
-  <string name="home_stealth_title" comment="home_stealth_title Home - Stealth mode">Ocultar o Shizuku de outros apps</string>
-  <string name="home_stealth_description">Nota: habilitar este recurso pode fazer com que apps que dependem do Shizuku parem de funcionar corretamente.</string>
   <string name="home_learn_more_title" comment="home_learn_more_title Home - Learn more">Guia do desenvolvedor</string>
   <string name="home_learn_more_description">Aprenda a desenvolver com Shizuku</string>
   <string name="home_adb_is_limited_title" comment="home_adb_is_limited_title Home - Adb permissions limited">Você precisa de um passo adicional</string>
@@ -127,26 +125,6 @@
   <string name="terminal_tutorial_2_description">Dica: Se o diretório inicial do seu aplicativo de terminal (~) estiver no diretório de arquivos privados, colocar os arquivos lá permitirá que você execute %1$s sem precisar escrever o caminho.\n\nCaso contrário, você pode criar um alias para %2$s no arquivo de configuração %3$s do seu app de terminal.</string>
   <string name="terminal_tutorial_3">Abra um terminal com o seguinte comando:</string>
   <string name="rish_description">Com %1$s, você pode executar comandos do shell em qualquer aplicativo de terminal.&lt;p&gt;Toque para saber mais sobre como usá-lo.</string>
-  <string name="stealth_warning_compatibility" comment="stealth_warning_compatibility Stealth">Alguns apps que usam o Shizuku podem não funcionar quando ele estiver oculto, porque tentam detectar se ele está instalado.</string>
-  <string name="stealth_warning_compatibility_2">Como uma alternativa, você pode revelar o Shizuku temporariamente, que instalará um engodo com o nome original do pacote. Quando terminar, você pode reocultar Shizuku.</string>
-  <string name="stealth_warning_compatibility_3">Toque neste cartão para copiar um trecho de código que você pode enviar para o desenvolvedor para que sua verificação de \"Shizuku instalado\" funcione quando Shizuku estiver oculto.</string>
-  <string name="stealth_warning_detection">Alguns apps ainda podem ser capazes de detectar o Shizuku mesmo quando ele estiver oculto.</string>
-  <string name="stealth_info_reconfigure">Você precisará parear e reconfigurar o Shizuku depois de instalar a versão oculta.</string>
-  <string name="stealth_info_rish">Usuários do Rish: reexportem os arquivos após instalar a versão oculta.</string>
-  <string name="stealth_info_intents">Usuários de intents: atualizem seus intents com o novo nome do pacote.</string>
-  <string name="stealth_info_update">Você deve atualizar o Shizuku através do app ao usar a versão oculta, porque tem uma assinatura diferente.</string>
-  <string name="stealth_package_name">Nome do pacote (opcional)</string>
-  <string name="stealth_package_name_helper_text">Se deixado vazio, um sufixo aleatório será adicionado ao nome do pacote.</string>
-  <string name="stealth_error_ends_with_period">O nome do pacote não pode terminar com um ponto final.</string>
-  <string name="stealth_error_invalid_characters">Apenas letras, números e pontos são permitidos.</string>
-  <string name="stealth_error_needs_two_segments">O nome do pacote deve ter pelo menos dois segmentos.</string>
-  <string name="stealth_error_segment_starts_with_number">Segmentos não podem começar com um número.</string>
-  <string name="stealth_choose_folder_message">Escolha uma pasta onde o novo APK será salvo.</string>
-  <string name="stealth_uninstall_required">Desinstalação necessária</string>
-  <string name="stealth_uninstall_message">O sistema agora irá solicitar que você desinstale o Shizuku. Em seguida, instale o clone.</string>
-  <string name="stealth_uninstall">Desinstalar</string>
-  <string name="stealth_hide">Ocultar</string>
-  <string name="stealth_unhide">Reexibir</string>
   <string name="settings_title" comment="settings_title Settings">Configurações</string>
   <string name="settings_behavior">Comportamento</string>
   <string name="settings_start_on_boot">Executar após a inicialização</string>
@@ -156,7 +134,7 @@
   <string name="settings_watchdog">Cão de guarda</string>
   <string name="settings_watchdog_summary">Reiniciar o serviço Shizuku automaticamente se ele travar</string>
   <string name="settings_tcp_mode">Modo TCP</string>
-  <string name="settings_tcp_mode_summary">Permite que Shizuku reinicie sem Wi-Fi. (Shizuku deve ter sido iniciado pelo menos uma vez desde a reinicialização)</string>
+  <string name="settings_tcp_mode_summary">Permite que Shizuku reinicie sem Wi-Fi (Shizuku deve ter sido iniciado pelo menos uma vez desde a reinicialização)</string>
   <string name="settings_tcp_mode_dialog_close_port">A porta TCP será fechada imediatamente. Você precisará de Wi-Fi para ativar o modo TCP novamente. Continuar?</string>
   <string name="settings_tcp_mode_closing_port">Fechando a porta TCP...</string>
   <string name="settings_restart_dialog_title">É Necessário Reiniciar</string>

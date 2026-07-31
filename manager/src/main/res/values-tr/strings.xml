@@ -89,10 +89,6 @@
     <string name="home_automation_regenerate_token">Belirteç yeniden oluşturulsun mu?</string>
     <string name="home_automation_regenerate_token_message">Intent\'lerinizi yeni belirteçle yeniden yapılandırmanız gerekecek.</string>
 
-    <!-- Ana Sayfa - Gizli mod -->
-    <string name="home_stealth_title">Shizuku\'yu diğer uygulamalardan gizleyin</string>
-    <string name="home_stealth_description">Not: Bu özelliği etkinleştirmek, Shizuku\'ya bağlı uygulamaların düzgün çalışmamasına neden olabilir.</string>
-
     <!-- Ana Sayfa - Adb izinleri kısıtlı -->
     <string name="home_adb_is_limited_title">Ekstra bir adım atmanız gerekiyor</string>
     <string name="home_adb_is_limited_description">Cihaz üreticiniz adb izinlerini kısıtlamış ve Shizuku kullanan uygulamalar düzgün çalışmayacak.\n\nGenellikle bu kısıtlama, \"Geliştirici seçenekleri\"nde bazı ayarlar değiştirilerek kaldırılabilir. Bunun nasıl yapılacağına dair ayrıntılar için lütfen yardımı okuyun.\n\nİşlemin etkili olması için Shizuku\'yu yeniden başlatmanız gerekebilir.</string>
@@ -119,30 +115,9 @@
     <string name="terminal_tutorial_1_description">İki dosya dışa aktarılacak: %1$s ve %2$s. Dosyalar seçilen klasörde zaten varsa silinecektir.</string>
     <string name="terminal_export_files">Dosyaları dışa aktar</string>
     <string name="terminal_tutorial_2">Dosyaları terminal uygulamanızın özel dosyalar dizinine kopyalamak için terminal uygulamanızı kullanın.</string>
-    <string name="terminal_tutorial_2_description">İpucu: Terminal uygulamanızın ana dizini (~) özel dosyalar dizinindeyse, dosyaları oraya yerleştirmek %1$s\'yi yol yazmadan çalıştırmanızı sağlar.\n\nAksi takdirde, terminal uygulamanızın %3$s yapılandırma dosyasında %2$s için bir takma ad oluşturabilirsiniz.</string>
+    <string name="terminal_tutorial_2_description">İpucu: Terminal uygulamanızın ana dizini (~) özel dosyalar dizinindeyse, dosyaları oraya yerleştirmek %1$s\'i yol yazmadan çalıştırmanızı sağlar.\n\nAksi takdirde, terminal uygulamanızın %3$s yapılandırma dosyasında %2$s için bir takma ad oluşturabilirsiniz.</string>
     <string name="terminal_tutorial_3">Aşağıdaki komutla bir shell açın:</string>
     <string name="rish_description"><![CDATA[%1$s ile herhangi bir terminal uygulamasında shell komutları çalıştırabilirsiniz.<p>Nasıl kullanılacağı hakkında bilgi almak için dokunun.]]></string>
-
-    <!-- Gizli mod -->
-    <string name="stealth_warning_compatibility">Shizuku\'nun kurulu olup olmadığını tespit etmeye çalıştıkları için, Shizuku kullanan bazı uygulamalar Shizuku gizliyken çalışmayabilir.</string>
-    <string name="stealth_warning_compatibility_2">Bir çözüm olarak, orijinal paket adıyla oluşturulmış bir stub yükleyerek Shizuku\'yu geçici olarak gösterebilirsiniz. İşiniz bittiğinde Shizuku\'yu tekrar gizleyebilirsiniz.</string>
-    <string name="stealth_warning_compatibility_3">Shizuku gizliyken \"Shizuku kurulu\" kontrolünün çalışması için geliştiriciye gönderebileceğiniz bir kod parçacığını kopyalamak için bu karta dokunun.</string>
-    <string name="stealth_warning_detection">Bazı uygulamalar gizliyken bile Shizuku\'yu tespit edebilir.</string>
-    <string name="stealth_info_reconfigure">Gizlenmiş sürümü yükledikten sonra Shizuku\'yu yeniden eşleştirmeniz ve yapılandırmanız gerekecek.</string>
-    <string name="stealth_info_rish">Rish kullanıcıları: gizlenmiş sürümü yükledikten sonra dosyaları yeniden dışa aktarın.</string>
-    <string name="stealth_info_intents">Intent kullanıcıları: intent\'lerinizi yeni paket adıyla güncelleyin.</string>
-    <string name="stealth_package_name">Paket adı (isteğe bağlı)</string>
-    <string name="stealth_package_name_helper_text">Boş bırakılırsa, paket adına rastgele bir son ek eklenecektir.</string>
-    <string name="stealth_error_ends_with_period">Paket adı bir nokta ile bitemez.</string>
-    <string name="stealth_error_invalid_characters">Yalnızca harfler, rakamlar ve noktalara izin verilir.</string>
-    <string name="stealth_error_needs_two_segments">Paket adı en az iki bölümden oluşmalıdır.</string>
-    <string name="stealth_error_segment_starts_with_number">Bölümler bir rakamla başlayamaz.</string>
-    <string name="stealth_choose_folder_message">Yeni APK\'nın kaydedileceği bir klasör seçin.</string>
-    <string name="stealth_uninstall_required">Kaldırma gerekli</string>
-    <string name="stealth_uninstall_message">Sistem şimdi Shizuku\'yu kaldırmanızı isteyecek. Ardından klonu yükleyin.</string>
-    <string name="stealth_uninstall">Kaldır</string>
-    <string name="stealth_hide">Gizle</string>
-    <string name="stealth_unhide">Göster</string>
 
     <!-- Ayarlar -->
     <string name="settings_title">Ayarlar</string>
@@ -154,7 +129,7 @@
     <string name="settings_watchdog">Bekçi köpeği (Watchdog)</string>
     <string name="settings_watchdog_summary">Çökerse Shizuku\'yu otomatik olarak yeniden başlat</string>
     <string name="settings_tcp_mode">TCP modu</string>
-    <string name="settings_tcp_mode_summary">"Shizuku\'nun Wi-Fi olmadan yeniden başlamasına izin verir. (Shizuku, yeniden başlatmadan bu yana en az bir kez çalışmış olmalıdır)"</string>
+    <string name="settings_tcp_mode_summary">"Shizuku\'nun Wi-Fi olmadan yeniden başlamasına izin verir (Shizuku, yeniden başlatmadan bu yana en az bir kez çalışmış olmalıdır)"</string>
     <string name="settings_tcp_mode_dialog_close_port">"TCP bağlantı noktası hemen kapatılacak. TCP modunu tekrar açmak için Wi-Fi\'a ihtiyacınız olacak. Devam edilsin mi?"</string>
     <string name="settings_tcp_mode_closing_port">TCP bağlantı noktası kapatılıyor...</string>
     <string name="settings_restart_dialog_title">Yeniden Başlatma Gerekli</string>

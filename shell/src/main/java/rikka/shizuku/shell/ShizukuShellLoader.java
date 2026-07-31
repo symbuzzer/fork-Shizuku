@@ -161,8 +161,7 @@ public class ShizukuShellLoader {
         handler.postDelayed(() -> abort(
                 String.format(
                         "Request timeout. " +
-                        "If you are using stealth mode, MANAGER_APPLICATION_ID may not be correct. Please set this environment variable in rish to the package name of Shizuku.\n" +
-                        "Otherwise, the connection between the current app (%1$s) and Shizuku app may be blocked by your system. " +
+                        "The connection between the current app (%1$s) and Shizuku app may be blocked by your system. " +
                         "Please disable all battery optimization features for both current app (%1$s) and Shizuku app.",
                         packageName)
         ), 5000);
