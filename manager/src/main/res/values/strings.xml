@@ -78,7 +78,7 @@
 
     <!-- Home - Automation -->
     <string name="home_automation_title">Control Shizuku with automation apps</string>
-    <string name="home_automation_description">Apps like Tasker and MacroDroid can send intents to start/stop Shizuku automatically.</string>
+    <string name="home_automation_description">Apps like Tasker and MacroDroid can send intents to start/stop Shizuku automatically</string>
     <string name="home_automation_description_device_restriction">To use the start intent on your device, you first need to enable ADB over TCP by running %1$s from a PC.</string>
     <string name="home_automation_button_view_intents">View intents</string>
     <string name="home_automation_bottom_sheet_intents">Intents</string>
