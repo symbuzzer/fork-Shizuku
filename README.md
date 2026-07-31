@@ -20,13 +20,13 @@ This is a **FORK** of [unofficial Shizuku fork by thedjchi](https://github.com/t
 
 ## Download
 
-You can download the APK file from IzzyOnDroid FOSS Repo  
+You can download the APK file from IzzyOnDroid FOSS Repo.  
 Changelogs are distributed via [CHANGELOG.md](CHANGELOG.md) file.  
 
 ## How to install
 1- **Remove all Shizuku variants before installing and reboot the device.** Because, all of them uses same package names.  
 2- **Disable Play Protect before installation.** Because, offical Shizuku is already uploaded to Play Store and it has same package name but different signature. So Play Protect detects all variants of Shizuku as malicious.  
-3- **Download and install the [latest apk](https://github.com/symbuzzer/fork-Shizuku/releases/latest/download/Shizuku-fork.apk)**  
+3- **Download and install the latest APK file from IzzyOnDroid repo**  
 4- **Follow on-screen instructions.**  
 
 *Note: During the first setup and each reboot, the device should only be connected to a Wi-Fi network once.*
