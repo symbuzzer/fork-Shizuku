@@ -45,7 +45,7 @@ This variant of thedjchi's Shizuku includes some extra features over the unoffic
 
 ## Added features by thedjchi
 
-This version of Shizuku includes some extra features over the original version, such as:
+thedjchi's original Shizuku version includes some extra features over the original version, such as:
 * **More robust "start on boot":** waits for a Wi-Fi connection before starting the Shizuku service
 * **TCP mode:** (i.e., the `adb tcpip` command) once Shizuku successfully starts with Wi-Fi after a reboot, you can stop/restart Shizuku without a Wi-Fi connection!
 * **Watchdog service:** automatically restarts Shizuku if it stops unexpectedly, and can alert you of crashes/potential fixes
