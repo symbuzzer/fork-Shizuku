@@ -20,8 +20,8 @@ This is a **FORK** of [unofficial Shizuku fork by thedjchi](https://github.com/t
 
 ## Download
 
-Get the [latest](https://github.com/symbuzzer/fork-Shizuku/releases/latest) version.  
-All versions and changelogs are distributed via [GitHub Releases](https://github.com/symbuzzer/fork-Shizuku/releases).  
+You can download the APK file from IzzyOnDroid FOSS Repo  
+Changelogs are distributed via [CHANGELOG.md](CHANGELOG.md) file.  
 
 ## How to install
 1- **Remove all Shizuku variants before installing and reboot the device.** Because, all of them uses same package names.  
