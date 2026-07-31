@@ -85,7 +85,7 @@
   <string name="home_app_management_view_authorized_apps">Toque para gerenciar os apps autorizados</string>
   <string name="home_app_management_empty">Os aplicativos que solicitaram ou declararam a permissão Shizuku serão exibidos aqui.</string>
   <string name="home_automation_title" comment="home_automation_title Home - Automation">Controle o Shizuku com apps de automação</string>
-  <string name="home_automation_description">Aplicativos como Tasker e MacroDroid podem enviar intents para iniciar/parar o Shizuku automaticamente.</string>
+  <string name="home_automation_description">Aplicativos como Tasker e MacroDroid podem enviar intents para iniciar/parar o Shizuku automaticamente</string>
   <string name="home_automation_description_device_restriction">Para usar a intent no seu dispositivo, você primeiro precisa habilitar o ADB sobre TCP executando %1$s a partir de um PC.</string>
   <string name="home_automation_button_view_intents">Visualizar intents</string>
   <string name="home_automation_bottom_sheet_intents">Intents</string>
