@@ -88,8 +88,10 @@ Shizuku takes user privacy very seriously.
 * **WRITE_SECURE_SETTINGS:** used to toggle USB and wireless debugging in the background when starting/stopping Shizuku
 
 ## Translations
-Supported languages for now: EN, TR, PT  
-Thanks [marciozomb13](https://github.com/symbuzzer/fork-Shizuku/issues?q=is%3Apr+author%3Amarciozomb13) for PT translation  
+Supported languages for now:  
+- EN
+- TR
+- PT *(thanks to [marciozomb13](https://github.com/symbuzzer/fork-Shizuku/issues?q=is%3Apr+author%3Amarciozomb13))* 
   
 You can always add the language you want by sending a Pull Request.  
 Many of the translations were chicken-translated, so all except English and Turkish have been removed.  
