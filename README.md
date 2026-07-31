@@ -86,6 +86,7 @@ Shizuku takes user privacy very seriously.
 * **FOREGROUND_SERVICE:** prevents watchdog from being killed
 * **REQUEST_IGNORE_BATTERY_OPTIMIZATIONS:** prevents start on boot and watchdog services from being killed
 * **WRITE_SECURE_SETTINGS:** used to toggle USB and wireless debugging in the background when starting/stopping Shizuku
+* **NEARBY_WIFI_DEVICES:** required for connecting device itself via wireless ADB
 
 ## Translations
 Supported languages for now:  
