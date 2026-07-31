@@ -78,7 +78,7 @@
 
     <!-- Ana Sayfa - Otomasyon -->
     <string name="home_automation_title">Shizuku\'yu otomasyon uygulamalarıyla kontrol edin</string>
-    <string name="home_automation_description">Tasker ve MacroDroid gibi uygulamalar, Shizuku\'yu otomatik olarak başlatmak/durdurmak için intent gönderebilir.</string>
+    <string name="home_automation_description">Tasker ve MacroDroid gibi uygulamalar, Shizuku\'yu otomatik olarak başlatmak/durdurmak için intent gönderebilir</string>
     <string name="home_automation_description_device_restriction">Cihazınızda başlatma intent\'ini kullanmak için önce bir bilgisayardan %1$s komutunu çalıştırarak ADB üzerinden TCP\'yi etkinleştirmeniz gerekir.</string>
     <string name="home_automation_button_view_intents">Intent\'leri görüntüle</string>
     <string name="home_automation_bottom_sheet_intents">Intent\'ler</string>
