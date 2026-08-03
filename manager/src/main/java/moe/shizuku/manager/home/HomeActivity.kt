@@ -4,6 +4,8 @@ import android.app.NotificationManager
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
+import android.net.Uri
+import moe.shizuku.manager.utils.UpdateChecker
 import android.os.Bundle
 import android.os.Process
 import android.text.method.LinkMovementMethod
@@ -174,11 +176,68 @@ abstract class HomeActivity : AppBarActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
+            R.id.action_update -> {
+                checkUpdate()
+                true
+            }
             R.id.action_settings -> {
                 startActivity(Intent(this, SettingsActivity::class.java))
                 true
             }
             else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun checkUpdate() {
+        if (!UpdateChecker.isNetworkAvailable(this)) {
+            MaterialAlertDialogBuilder(this)
+                .setTitle(R.string.error)
+                .setMessage(R.string.update_check_failed)
+                .setPositiveButton(android.R.string.ok, null)
+                .show()
+            return
+        }
+
+        val progressDialog = MaterialAlertDialogBuilder(this)
+            .setMessage(R.string.update_checking)
+            .setCancelable(false)
+            .show()
+
+        lifecycleScope.launch {
+            val result = UpdateChecker.checkUpdate(moe.shizuku.manager.BuildConfig.VERSION_NAME)
+            progressDialog.dismiss()
+
+            when (result) {
+                is UpdateChecker.UpdateResult.NewVersion -> {
+                    MaterialAlertDialogBuilder(this@HomeActivity)
+                        .setTitle(R.string.action_update)
+                        .setMessage(R.string.update_available)
+                        .setPositiveButton(R.string.update_download) { _, _ ->
+                            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(result.downloadUrl))
+                            try {
+                                startActivity(intent)
+                            } catch (e: Exception) {
+                                SnackbarHelper.show(this@HomeActivity, rootView, getString(R.string.dialog_cannot_open_browser_title), Snackbar.LENGTH_SHORT)
+                            }
+                        }
+                        .setNegativeButton(android.R.string.cancel, null)
+                        .show()
+                }
+                is UpdateChecker.UpdateResult.NoUpdate -> {
+                    MaterialAlertDialogBuilder(this@HomeActivity)
+                        .setTitle(R.string.action_update)
+                        .setMessage(R.string.update_not_available)
+                        .setPositiveButton(android.R.string.ok, null)
+                        .show()
+                }
+                is UpdateChecker.UpdateResult.Error -> {
+                    MaterialAlertDialogBuilder(this@HomeActivity)
+                        .setTitle(R.string.error)
+                        .setMessage(R.string.update_check_failed)
+                        .setPositiveButton(android.R.string.ok, null)
+                        .show()
+                }
+            }
         }
     }
 

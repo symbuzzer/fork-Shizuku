@@ -126,7 +126,7 @@ afterEvaluate {
 
 android.applicationVariants.configureEach { variant ->
     variant.outputs.configureEach {
-        outputFileName = "shizuku-v${variant.versionName}-${variant.name}.apk"
+        outputFileName = "Shizuku-fork.apk"
 
         variant.assembleProvider.get().doLast {
             def outDir = new File(rootDir, "out")

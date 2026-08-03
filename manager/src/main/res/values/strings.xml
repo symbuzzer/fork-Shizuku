@@ -168,6 +168,12 @@
      <string name="start">Start</string>
      <string name="stop">Stop</string>
     <string name="action_stop">Stop Shizuku</string>
+    <string name="action_update">Update</string>
+    <string name="update_checking">Checking for updates…</string>
+    <string name="update_not_available">No update available.</string>
+    <string name="update_available">Update available, download?</string>
+    <string name="update_download">Download</string>
+    <string name="update_check_failed">Failed to check for updates. Please check your internet connection.</string>
     <string name="dialog_stop_message">Shizuku service will be stopped</string>
 
     <!-- Notification -->

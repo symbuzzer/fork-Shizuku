@@ -169,7 +169,6 @@
   <string name="snackbar_action_update">Atualizar</string>
   <string name="check_for_updates" comment="check_for_updates Updates">Procurar atualizações</string>
   <string name="update_latest_installed">A versão mais recente já está instalada</string>
-  <string name="update_check_failed">Não foi possível procurar por atualizações</string>
   <string name="update_downloading">Baixando atualização...</string>
   <string name="update_download_failed">Falha ao baixar a atualização</string>
   <string name="update_success">Atualizado com sucesso</string>
@@ -188,6 +187,12 @@
   <string name="buy_me_a_coffee">Me pagar um café</string>
   <string name="start" comment="start Start/Stop">Iniciar</string>
   <string name="stop">Parar</string>
+  <string name="action_update">Atualizar</string>
+  <string name="update_checking">Procurando atualizações…</string>
+  <string name="update_not_available">A versão mais recente já está instalada.</string>
+  <string name="update_available">Uma atualização está disponível, baixar?</string>
+  <string name="update_download">Baixar</string>
+  <string name="update_check_failed">Não foi possível procurar por atualizações. Por favor, verifique sua conexão com a internet.</string>
   <string name="action_stop">Parar o Shizuku</string>
   <string name="notification_channel_service_status" comment="notification_channel_service_status Notification">Status de início do serviço</string>
   <string name="notification_service_starting">O serviço do Shizuku está iniciando…</string>
