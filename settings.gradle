@@ -41,6 +41,11 @@ dependencyResolutionManagement {
             library("refine-runtime", "dev.rikka.tools.refine", "runtime").versionRef("refine")
             library("refine-annotation", "dev.rikka.tools.refine", "annotation").versionRef("refine")
             library("refine-annotation-processor", "dev.rikka.tools.refine", "annotation-processor").versionRef("refine")
+
+            plugin("android-library", "com.android.library").version("8.11.1")
+            plugin("rikka-refine", "dev.rikka.tools.refine").versionRef("refine")
+            library("androidx-annotation", "androidx.annotation", "annotation").version("1.10.0")
+            library("androidx-core", "androidx.core", "core").version("1.18.0")
         }
     }
 }

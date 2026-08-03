@@ -169,8 +169,6 @@
   <string name="snackbar_action_update">Atualizar</string>
   <string name="check_for_updates" comment="check_for_updates Updates">Procurar atualizações</string>
   <string name="update_latest_installed">A versão mais recente já está instalada</string>
-  <string name="update_downloading">Baixando atualização...</string>
-  <string name="update_download_failed">Falha ao baixar a atualização</string>
   <string name="update_success">Atualizado com sucesso</string>
   <string name="update_failed">Falha na atualização</string>
   <string name="toast_no_email_app">Nenhum app de e-mail encontrado</string>
@@ -192,6 +190,9 @@
   <string name="update_not_available">A versão mais recente já está instalada.</string>
   <string name="update_available">Uma atualização está disponível, baixar?</string>
   <string name="update_download">Baixar</string>
+  <string name="update_downloading_progress">Baixando: %1$d%%</string>
+  <string name="update_download_finished">Download concluído, iniciando a instalação…</string>
+  <string name="update_download_failed">O download falhou. Verifique sua conexão com a Internet.</string>
   <string name="update_check_failed">Não foi possível procurar por atualizações. Por favor, verifique sua conexão com a internet.</string>
   <string name="action_stop">Parar o Shizuku</string>
   <string name="notification_channel_service_status" comment="notification_channel_service_status Notification">Status de início do serviço</string>

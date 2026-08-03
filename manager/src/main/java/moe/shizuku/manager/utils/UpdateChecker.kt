@@ -7,8 +7,11 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
 import okhttp3.Request
+import okhttp3.ResponseBody
 import org.json.JSONArray
 import org.json.JSONObject
+import java.io.File
+import java.io.FileOutputStream
 
 object UpdateChecker {
 
@@ -69,6 +72,44 @@ object UpdateChecker {
             }
         } catch (e: Exception) {
             UpdateResult.Error(e.message ?: "Unknown error")
+        }
+    }
+
+    suspend fun downloadApk(
+        context: Context,
+        url: String,
+        targetFile: File,
+        onProgress: (Int) -> Unit
+    ): Boolean = withContext(Dispatchers.IO) {
+        try {
+            val request = Request.Builder().url(url).build()
+            client.newCall(request).execute().use { response ->
+                if (!response.isSuccessful) return@withContext false
+                val body = response.body ?: return@withContext false
+                val contentLength = body.contentLength()
+                
+                body.byteStream().use { inputStream ->
+                    FileOutputStream(targetFile).use { outputStream ->
+                        val buffer = ByteArray(8192)
+                        var bytesRead: Int
+                        var totalBytesRead = 0L
+                        
+                        while (inputStream.read(buffer).also { bytesRead = it } != -1) {
+                            outputStream.write(buffer, 0, bytesRead)
+                            totalBytesRead += bytesRead
+                            if (contentLength > 0) {
+                                val progress = (totalBytesRead * 100 / contentLength).toInt()
+                                withContext(Dispatchers.Main) {
+                                    onProgress(progress)
+                                }
+                            }
+                        }
+                    }
+                }
+                true
+            }
+        } catch (e: Exception) {
+            false
         }
     }
 

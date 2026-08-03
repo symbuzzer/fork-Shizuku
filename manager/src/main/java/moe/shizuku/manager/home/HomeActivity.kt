@@ -5,9 +5,11 @@ import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.net.Uri
+import androidx.core.content.FileProvider
 import moe.shizuku.manager.utils.UpdateChecker
 import android.os.Bundle
 import android.os.Process
+import java.io.File
 import android.text.method.LinkMovementMethod
 import android.util.TypedValue
 import android.view.LayoutInflater
@@ -213,12 +215,7 @@ abstract class HomeActivity : AppBarActivity() {
                         .setTitle(R.string.action_update)
                         .setMessage(R.string.update_available)
                         .setPositiveButton(R.string.update_download) { _, _ ->
-                            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(result.downloadUrl))
-                            try {
-                                startActivity(intent)
-                            } catch (e: Exception) {
-                                SnackbarHelper.show(this@HomeActivity, rootView, getString(R.string.dialog_cannot_open_browser_title), Snackbar.LENGTH_SHORT)
-                            }
+                            downloadAndUpdate(result.downloadUrl)
                         }
                         .setNegativeButton(android.R.string.cancel, null)
                         .show()
@@ -238,6 +235,52 @@ abstract class HomeActivity : AppBarActivity() {
                         .show()
                 }
             }
+        }
+    }
+
+    private fun downloadAndUpdate(downloadUrl: String) {
+        val downloadDialog = MaterialAlertDialogBuilder(this)
+            .setTitle(R.string.update_download)
+            .setMessage(getString(R.string.update_downloading_progress, 0))
+            .setCancelable(false)
+            .show()
+
+        lifecycleScope.launch {
+            val targetFile = File(externalCacheDir, "update.apk")
+            val success = UpdateChecker.downloadApk(this@HomeActivity, downloadUrl, targetFile) { progress ->
+                downloadDialog.setMessage(getString(R.string.update_downloading_progress, progress))
+            }
+
+            downloadDialog.dismiss()
+
+            if (success) {
+                SnackbarHelper.show(this@HomeActivity, rootView, getString(R.string.update_download_finished), Snackbar.LENGTH_SHORT)
+                installApk(targetFile)
+            } else {
+                MaterialAlertDialogBuilder(this@HomeActivity)
+                    .setTitle(R.string.error)
+                    .setMessage(R.string.update_download_failed)
+                    .setPositiveButton(android.R.string.ok, null)
+                    .show()
+            }
+        }
+    }
+
+    private fun installApk(file: File) {
+        val uri = FileProvider.getUriForFile(this, "${moe.shizuku.manager.BuildConfig.APPLICATION_ID}.fileprovider", file)
+        val intent = Intent(Intent.ACTION_VIEW).apply {
+            setDataAndType(uri, "application/vnd.android.package-archive")
+            addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        }
+        try {
+            startActivity(intent)
+        } catch (e: Exception) {
+            MaterialAlertDialogBuilder(this)
+                .setTitle(R.string.error)
+                .setMessage(e.message)
+                .setPositiveButton(android.R.string.ok, null)
+                .show()
         }
     }
 

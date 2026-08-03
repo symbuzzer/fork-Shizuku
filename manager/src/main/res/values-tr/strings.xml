@@ -173,6 +173,9 @@
     <string name="update_not_available">Güncelleme mevcut değil</string>
     <string name="update_available">Güncelleme mevcut, indirilsin mi?</string>
     <string name="update_download">İndir</string>
+    <string name="update_downloading_progress">İndiriliyor: %1$d%%</string>
+    <string name="update_download_finished">İndirme tamamlandı, kurulum başlatılıyor…</string>
+    <string name="update_download_failed">İndirme başarısız. Lütfen internet bağlantınızı kontrol edin.</string>
     <string name="update_check_failed">Güncelleme kontrol edilemedi. Lütfen internet bağlantınızı kontrol edin.</string>
     <string name="dialog_stop_message">Shizuku hizmeti durdurulacak</string>
 

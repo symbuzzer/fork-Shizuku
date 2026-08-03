@@ -39,7 +39,7 @@ This variant of thedjchi's Shizuku includes some extra features over the unoffic
 * **All external links that I deemed unnecessary have been removed:** Instructions in the application interface are quite adequate.
 * **User experience has been improved:** "Stop" button and "About" section have been moved to more native locations.
 * **Language selection feature has been integrated into Android's native feature:** Instead of changing the language from the app's own settings, you can change it in a more integrated way through Android's settings.
-* **Reimplemented in-app update feature.**
+* **Reimplemented in-app update feature:** Now updates can be downloaded and installed directly within the app.
 * **Removed "Stealth mode" feature to allow the application to be published on and FOSS Repository in future.**
 * **Turkish translations fixed.**
 * **Portuguese translation added.**
@@ -86,6 +86,7 @@ Shizuku takes user privacy very seriously.
 * **RECEIVE_BOOT_COMPLETED:** required for start on boot
 * **FOREGROUND_SERVICE:** prevents watchdog from being killed
 * **REQUEST_IGNORE_BATTERY_OPTIMIZATIONS:** prevents start on boot and watchdog services from being killed
+* **REQUEST_INSTALL_PACKAGES:** allows the app to install downloaded updates.
 * **WRITE_SECURE_SETTINGS:** used to toggle USB and wireless debugging in the background when starting/stopping Shizuku
 * **NEARBY_WIFI_DEVICES:** required for connecting device itself via wireless ADB
 
