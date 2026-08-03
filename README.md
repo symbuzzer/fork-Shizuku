@@ -20,13 +20,13 @@ This is a **FORK** of [unofficial Shizuku fork by thedjchi](https://github.com/t
 
 ## Download
 
-You can download the APK file from IzzyOnDroid FOSS Repo.  
-Changelogs are distributed via [CHANGELOG.md](CHANGELOG.md) file.  
+Get the [latest](https://github.com/symbuzzer/fork-Shizuku/releases/latest) version.  
+All versions and changelogs are distributed via [GitHub Releases](https://github.com/symbuzzer/fork-Shizuku/releases).  
 
 ## How to install
 1- **Remove all Shizuku variants before installing and reboot the device.** Because, all of them uses same package names.  
 2- **Disable Play Protect before installation.** Because, offical Shizuku is already uploaded to Play Store and it has same package name but different signature. So Play Protect detects all variants of Shizuku as malicious.  
-3- **Download and install the latest APK file from IzzyOnDroid repo**  
+3- **Download and install the [latest apk](https://github.com/symbuzzer/fork-Shizuku/releases/latest/download/Shizuku-fork.apk)**  
 4- **Follow on-screen instructions.**  
 
 *Note: During the first setup and each reboot, the device should only be connected to a Wi-Fi network once.*
@@ -35,11 +35,12 @@ Changelogs are distributed via [CHANGELOG.md](CHANGELOG.md) file.
 
 This variant of thedjchi's Shizuku includes some extra features over the unoffical thedjchi's forked version, such as:
 * **Fewer options, much easier to use:** Many options/features have been hidden and will only be shown when needed. Additionally, those I considered redundant have been removed entirely.
-* **The initial setup process has been made more automated:** Instead of displaying unnecessary notifications/warnings, processes are now automated. Additionally, the "Pairing" button has been completely removed. All processes can now be completed using only the "Start" button.
-* **All external links that I deemed unnecessary have been removed:** The instructions in the application interface are quite adequate.
-* **User experience has been improved:** The "Stop" button and "About" section have been moved to more native locations.
-* **The "Stealth mode" and "In-app updates" features were removed to allow the application to be published on the IzzyOnDroid Repository.**
-* **The language selection feature has been integrated into Android's native feature:** Instead of changing the language from the app's own settings, you can change it in a more integrated way through Android's settings.
+* **Initial setup process has been made more automated:** Instead of displaying unnecessary notifications/warnings, processes are now automated. Additionally, the "Pairing" button has been completely removed. All processes can now be completed using only the "Start" button.
+* **All external links that I deemed unnecessary have been removed:** Instructions in the application interface are quite adequate.
+* **User experience has been improved:** "Stop" button and "About" section have been moved to more native locations.
+* **Language selection feature has been integrated into Android's native feature:** Instead of changing the language from the app's own settings, you can change it in a more integrated way through Android's settings.
+* **Reimplemented in-app update feature.**
+* **Removed "Stealth mode" feature to allow the application to be published on and FOSS Repository in future.**
 * **Turkish translations fixed.**
 * **Portuguese translation added.**
 
