@@ -144,8 +144,13 @@
     <string name="settings_black_night_theme">Siyah gece teması</string>
     <string name="settings_black_night_theme_summary">Gece modu etkinse tam siyah temayı kullan</string>
     <string name="settings_advanced">Gelişmiş</string>
+    <string name="settings_advanced_show_title">Gelişmiş özellikleri göster</string>
+    <string name="settings_advanced_show_summary">Gelişmiş Shizuku özelliklerini ve ayarlarını göster</string>
     <string name="settings_legacy_pairing">Eski tip eşleştirme</string>
     <string name="settings_legacy_pairing_summary">Eşleştirme kodunu bir bildirim yerine bir iletişim kutusuna girin</string>
+
+    <string name="settings_other">Diğer</string>
+    <string name="settings_about">Hakkında</string>
 
     <!-- Snackbar -->
     <string name="snackbar_invalid_port">Bağlantı noktası 1 ile 65535 arasında olmalıdır</string>

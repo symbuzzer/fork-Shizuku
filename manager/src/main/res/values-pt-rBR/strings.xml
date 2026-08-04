@@ -157,8 +157,13 @@
   <string name="settings_update_beta">Beta</string>
   <string name="settings_help">Ajuda</string>
   <string name="settings_advanced">Avançado</string>
+  <string name="settings_advanced_show_title">Mostrar recursos avançados</string>
+  <string name="settings_advanced_show_summary">Mostrar recursos e configurações avançadas do Shizuku</string>
   <string name="settings_legacy_pairing">Pareamento legado</string>
   <string name="settings_legacy_pairing_summary">Insira o código de pareamento em uma caixa de diálogo em vez de uma notificação</string>
+
+  <string name="settings_other">Outro</string>
+  <string name="settings_about">Sobre</string>
   <string name="bug_report_dialog_update">Verifique se você está usando a ^1.</string>
   <string name="bug_report_dialog_link_update">versão mais recente</string>
   <string name="snackbar_invalid_port" comment="snackbar_invalid_port Snackbar">A porta deve estar entre 1 e 65535.</string>

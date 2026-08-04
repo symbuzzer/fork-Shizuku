@@ -65,9 +65,26 @@
         android:title="@string/settings_advanced">
 
         <SwitchPreferenceCompat
+            android:key="show_advanced"
+            android:title="@string/settings_advanced_show_title"
+            android:summary="@string/settings_advanced_show_summary"
+            android:defaultValue="false" />
+
+        <SwitchPreferenceCompat
             android:key="legacy_pairing"
             android:summary="@string/settings_legacy_pairing_summary"
             android:title="@string/settings_legacy_pairing" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="category_other"
+        android:title="@string/settings_other">
+
+        <Preference
+            android:key="about"
+            android:title="@string/settings_about"
+            android:summary="@string/developed_by" />
 
     </PreferenceCategory>
 

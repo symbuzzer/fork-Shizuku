@@ -35,6 +35,7 @@ public class ShizukuSettings {
         public static final String KEY_USE_SYSTEM_COLOR = "use_system_color";
         public static final String KEY_REPORT_BUG = "report_bug";
         public static final String KEY_LEGACY_PAIRING = "legacy_pairing";
+        public static final String KEY_SHOW_ADVANCED = "show_advanced";
         public static final String KEY_CATEGORY_ADVANCED = "category_advanced";
     }
 
@@ -175,6 +176,14 @@ public class ShizukuSettings {
 
     public static boolean getLegacyPairing() {
         return getPreferences().getBoolean(Keys.KEY_LEGACY_PAIRING, false);
+    }
+
+    public static boolean getShowAdvanced() {
+        return getPreferences().getBoolean(Keys.KEY_SHOW_ADVANCED, false);
+    }
+
+    public static void setShowAdvanced(boolean enable) {
+        getPreferences().edit().putBoolean(Keys.KEY_SHOW_ADVANCED, enable).apply();
     }
 
     @AppCompatDelegate.NightMode

@@ -46,13 +46,16 @@ class HomeAdapter(private val homeModel: HomeViewModel, private val appsModel: A
         val adbPermission = status.permission
         val running = status.isRunning
         val isPrimaryUser = UserHandleCompat.myUserId() == 0
+        val showAdvanced = moe.shizuku.manager.ShizukuSettings.getShowAdvanced()
 
         clear()
         addItem(ServerStatusViewHolder.CREATOR, status, ID_STATUS)
 
         if (adbPermission) {
             addItem(ManageAppsViewHolder.CREATOR, status to grantedCount, ID_APPS)
-            addItem(TerminalViewHolder.CREATOR, status, ID_TERMINAL)
+            if (showAdvanced) {
+                addItem(TerminalViewHolder.CREATOR, status, ID_TERMINAL)
+            }
         }
 
         if (running && !adbPermission) {
@@ -73,25 +76,11 @@ class HomeAdapter(private val homeModel: HomeViewModel, private val appsModel: A
                 addItem(StartAdbViewHolder.CREATOR, null, ID_START_ADB)
             }
         }
-        addItem(AutomationViewHolder.CREATOR, null, ID_AUTOMATION)
-
-        addItem(FooterViewHolder.CREATOR, null, ID_FOOTER)
+        if (showAdvanced) {
+            addItem(AutomationViewHolder.CREATOR, null, ID_AUTOMATION)
+        }
 
         notifyDataSetChanged()
     }
 }
 
-class FooterViewHolder(root: View) : BaseViewHolder<Any?>(root) {
-    companion object {
-        val CREATOR = Creator<Any> { inflater, parent ->
-            FooterViewHolder(inflater.inflate(R.layout.home_footer, parent, false))
-        }
-    }
-
-    init {
-        root.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/symbuzzer/fork-Shizuku"))
-            it.context.startActivity(intent)
-        }
-    }
-}

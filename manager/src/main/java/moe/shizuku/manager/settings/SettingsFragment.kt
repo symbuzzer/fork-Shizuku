@@ -71,6 +71,8 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
     private lateinit var blackNightThemePreference: TwoStatePreference
     private lateinit var useSystemColorPreference: TwoStatePreference
     private lateinit var legacyPairingPreference: TwoStatePreference
+    private lateinit var showAdvancedPreference: TwoStatePreference
+    private lateinit var aboutPreference: Preference
     private lateinit var advancedCategory: PreferenceCategory
 
     private lateinit var batteryOptimizationListener: ActivityResultLauncher<Intent>
@@ -99,7 +101,28 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
         blackNightThemePreference = findPreference(KEY_BLACK_NIGHT_THEME)!!
         useSystemColorPreference = findPreference(KEY_USE_SYSTEM_COLOR)!!
         legacyPairingPreference = findPreference(KEY_LEGACY_PAIRING)!!
+        showAdvancedPreference = findPreference(KEY_SHOW_ADVANCED)!!
+        aboutPreference = findPreference("about")!!
         advancedCategory = findPreference(KEY_CATEGORY_ADVANCED)!!
+
+        val updateAdvancedVisibility = {
+            val show = showAdvancedPreference.isChecked
+            tcpPortPreference.isVisible = show && tcpModePreference.isVisible && tcpModePreference.isChecked
+            legacyPairingPreference.isVisible = show && !EnvironmentUtils.isTelevision()
+        }
+
+        showAdvancedPreference.setOnPreferenceChangeListener { _, newValue ->
+            val show = newValue as Boolean
+            tcpPortPreference.isVisible = show && tcpModePreference.isVisible && tcpModePreference.isChecked
+            legacyPairingPreference.isVisible = show && !EnvironmentUtils.isTelevision()
+            true
+        }
+
+        aboutPreference.setOnPreferenceClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/symbuzzer/fork-Shizuku"))
+            it.context.startActivity(intent)
+            true
+        }
 
         batteryOptimizationListener = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             val accepted = SettingsHelper.isIgnoringBatteryOptimizations(requireContext())
@@ -176,7 +199,7 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
                             isEnabled = true
                             summary = context.getString(R.string.settings_tcp_mode_summary)
                             icon = maybeGetRestartIcon(KEY_TCP_MODE)
-                            tcpPortPreference.isVisible = newValue
+                            tcpPortPreference.isVisible = newValue && showAdvancedPreference.isChecked
                         }
                         
                         if (!newValue && !ShizukuStateMachine.isRunning() && needsRestart(KEY_TCP_MODE, newValue)) {
@@ -265,7 +288,9 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
             isVisible = !EnvironmentUtils.isTelevision()
         }
 
-        advancedCategory.isVisible = legacyPairingPreference.isVisible
+        updateAdvancedVisibility()
+
+        advancedCategory.isVisible = true
     }
 
     override fun onResume() {

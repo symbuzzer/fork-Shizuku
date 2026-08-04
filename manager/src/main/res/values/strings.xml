@@ -144,8 +144,13 @@
     <string name="settings_black_night_theme">Black night theme</string>
     <string name="settings_black_night_theme_summary">Use the pure black theme if night mode is enabled</string>
     <string name="settings_advanced">Advanced</string>
+    <string name="settings_advanced_show_title">Show advanced features</string>
+    <string name="settings_advanced_show_summary">Show advanced Shizuku features and settings</string>
     <string name="settings_legacy_pairing">Legacy pairing</string>
     <string name="settings_legacy_pairing_summary">Enter the pairing code in a dialog instead of a notification</string>
+
+    <string name="settings_other">Other</string>
+    <string name="settings_about">About</string>
 
     <!-- Snackbar -->
     <string name="snackbar_invalid_port">Port must be between 1 and 65535</string>
