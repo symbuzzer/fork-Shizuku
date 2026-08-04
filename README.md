@@ -42,9 +42,9 @@ This variant of thedjchi's Shizuku includes some extra features over the unoffic
 * **Added hide/show advanced Shizuku features and settings option:** This allows you to hide some features and settings that aren't used very often and can be confusing.
 * **All external links that I deemed unnecessary have been removed:** Instructions in the application interface are quite adequate.
 * **Improved user experience:** "Stop" button and "About" section have been moved to more native locations.
-* **Integrated Language selection feature into native Android Settings:** Instead of changing the language from the app's own settings, you can change it in a more integrated way through Android's settings.
+* **Integrated language selection feature into native Android Settings:** Instead of changing the language from the app's own settings, you can change it in a more integrated way through Android's settings.
 * **Reimplemented in-app update feature:** Now updates can be downloaded and installed directly within the app.
-* **Removed "Stealth mode" feature to allow the application to be published on and FOSS Repository in future.**
+* **Removed "Stealth mode" feature to allow the application to be published on any FOSS Repository in future.**
 * **Fixed Turkish and Portugguese translations.**
 
 ## Added features by thedjchi
