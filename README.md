@@ -3,12 +3,14 @@
 The new and easy-to-use Shizuku variant.
 
 ## What is Shizuku?
+
 An Android app that allows other apps to use system-level APIs that require adb/root privileges.
 
 ## Screenshots
-<img width="108" height="287" alt="main-stopped" src="https://github.com/user-attachments/assets/4438cfe1-7a2e-418f-aa17-dacc9bbb471d" />
-<img width="108" height="313" alt="main-running" src="https://github.com/user-attachments/assets/ca3c2420-b81c-4eda-b2a5-01f040ccdf43" />
-<img width="108" height="313" alt="settings" src="https://github.com/user-attachments/assets/f0dae81d-000f-4751-ba79-77684ea6ea9e" />
+
+<img width="108" height="287" alt="main-stopped" src="https://github.com/user-attachments/assets/a238dbae-da32-479f-81e7-74729643232e" />
+<img width="108" height="313" alt="main-running" src="https://github.com/user-attachments/assets/5c5ea03a-88a7-4f9b-a9b1-8e9db6289404" />
+<img width="108" height="313" alt="settings" src="https://github.com/user-attachments/assets/3277a971-519d-452c-939f-cca4fa5360d0" />
 
 ## Disclaimer
 
@@ -24,6 +26,7 @@ Get the [latest](https://github.com/symbuzzer/fork-Shizuku/releases/latest) vers
 All versions and changelogs are distributed via [GitHub Releases](https://github.com/symbuzzer/fork-Shizuku/releases).  
 
 ## How to install
+
 1- **Remove all Shizuku variants before installing and reboot the device.** Because, all of them uses same package names.  
 2- **Disable Play Protect before installation.** Because, offical Shizuku is already uploaded to Play Store and it has same package name but different signature. So Play Protect detects all variants of Shizuku as malicious.  
 3- **Download and install the [latest apk](https://github.com/symbuzzer/fork-Shizuku/releases/latest/download/Shizuku-fork.apk)**  
@@ -36,13 +39,13 @@ All versions and changelogs are distributed via [GitHub Releases](https://github
 This variant of thedjchi's Shizuku includes some extra features over the unoffical thedjchi's forked version, such as:
 * **Fewer options, much easier to use:** Many options/features have been hidden and will only be shown when needed. Additionally, those I considered redundant have been removed entirely.
 * **Initial setup process has been made more automated:** Instead of displaying unnecessary notifications/warnings, processes are now automated. Additionally, the "Pairing" button has been completely removed. All processes can now be completed using only the "Start" button.
+* **Added hide/show advanced Shizuku features and settings option:** This allows you to hide some features and settings that aren't used very often and can be confusing.
 * **All external links that I deemed unnecessary have been removed:** Instructions in the application interface are quite adequate.
-* **User experience has been improved:** "Stop" button and "About" section have been moved to more native locations.
-* **Language selection feature has been integrated into Android's native feature:** Instead of changing the language from the app's own settings, you can change it in a more integrated way through Android's settings.
+* **Improved user experience:** "Stop" button and "About" section have been moved to more native locations.
+* **Integrated Language selection feature into native Android Settings:** Instead of changing the language from the app's own settings, you can change it in a more integrated way through Android's settings.
 * **Reimplemented in-app update feature:** Now updates can be downloaded and installed directly within the app.
 * **Removed "Stealth mode" feature to allow the application to be published on and FOSS Repository in future.**
-* **Turkish translations fixed.**
-* **Portuguese translation added.**
+* **Fixed Turkish and Portugguese translations.**
 
 ## Added features by thedjchi
 
