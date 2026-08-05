@@ -223,7 +223,6 @@
     <string name="wadb_notification_wifi_required">Devam etmeden önce Wi-Fi bağlantısı bekleniyor</string>
     <string name="wadb_notification_retry">Yeniden denemek için bekleniyor</string>
     <string name="wadb_error_title">Açılışta başlatma sırasında hata</string>
-    <string name="wadb_error_notify_dev">Geliştiricieye bildirmek için dokunun.</string>
     <string name="wadb_permission_error_notification_title">İzin Hatası</string>
     <string name="wadb_permission_error_notification_content">Shizuku\'nun açılışta başlaması için WRITE_SECURE_SETTINGS iznine ihtiyacı var. Nasıl verileceğini öğrenmek için dokunun.</string>
     <string name="wadb_notification_channel">ADB otomatik başlatma hizmeti</string>
@@ -240,6 +239,7 @@
     <string name="error">Hata</string>
     <string name="off">Kapalı</string>
     <string name="developed_by">Ali BEYAZ tarafından geliştirilmiştir</string>
+    <string name="settings_about">Hakkında</string>
     <string name="choose_folder">Klasör seç</string>
     <string name="dialog_cannot_open_browser_title">Tarayıcı başlatılamıyor</string>
     <string name="toast_copied_to_clipboard">Panoya kopyalandı</string>

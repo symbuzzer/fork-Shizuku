@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="translation_contributors" comment="translation_contributors To translators: you can leave your here">Marcio de Andrade</string>
-  <string name="home_status_service_is_running" comment="home_status_service_is_running To translators: you can leave your here Home - Status">%1$s em execução</string>
+  <string name="app_name">Shizuku-fork</string>
+  <string name="app_name_launcher">Shizuku++</string>
+  <string name="shizuku">Shizuku</string>
+  <string name="home_status_service_is_running">%1$s em execução</string>
   <string name="home_status_service_not_running">%1$s não está em execução</string>
-  <string name="home_status_service_version_update">Versão %2$s, %1$s&lt;br&gt;Reinicie para atualizar para a versão %3$s</string>
-  <string name="home_adb_title" comment="home_adb_title Home - Adb">Comece conectando-se a um computador</string>
+  <string name="home_status_service_version">v%2$s, %1$s</string>
+  <string name="home_adb_title">Comece conectando-se a um computador</string>
+  <string name="home_adb_description">Para dispositivos sem root, você precisa usar adb para iniciar o Shizuku (requer conexão com o computador). Este processo precisa ser repetido toda vez que o dispositivo é reiniciado.</string>
   <string name="home_adb_button_view_help">Ler a ajuda</string>
   <string name="home_adb_button_view_command">Ver o comando</string>
   <string name="home_adb_dialog_view_command_message">&lt;font face=monospace&gt;%1$s&lt;/font&gt;&lt;br&gt;&lt;br&gt;* Existem algumas outras considerações, por favor confirme se você leu o documento de ajuda primeiro.</string>
   <string name="home_adb_dialog_view_command_copy_button">Copiar</string>
   <string name="home_adb_dialog_view_command_button_send">Enviar</string>
-  <string name="home_wireless_adb_title" comment="home_wireless_adb_title Home - Wireless Adb">Iniciar via Depuração por Wi-Fi</string>
+  <string name="home_wireless_adb_title">Iniciar via Depuração por Wi-Fi</string>
+  <string name="home_wireless_adb_description">No Android 11 ou versões posteriores, você pode ativar a depuração sem fio e iniciar o Shizuku diretamente do seu dispositivo, sem precisar conectá-lo a um computador.</string>
   <string name="home_wireless_adb_description_pre_11">Antes do Android 11, é necessário conectar-se a um computador para habilitar a Depuração por Wi-Fi.</string>
-  <string name="home_wireless_adb_view_guide_button">Guia passo a passo</string>
-  <string name="dialog_adb_discovery" comment="dialog_adb_discovery Adb">Procurando o serviço de Depuração por Wi-Fi</string>
+  <string name="dialog_adb_discovery">Procurando o serviço de Depuração por Wi-Fi</string>
   <string name="dialog_adb_discovery_message">Por favor, ative \"Depuração via Wireless\" ou \"Depuração por Wi-Fi\" nas \"Opções do desenvolvedor\". A Depuração via Wireless é automaticamente desativada ao trocar de rede.\n\nImportante: não desative \"Opções do desenvolvedor\" ou \"Depuração via USB\", ou o Shizuku será interrompido.</string>
   <string name="dialog_adb_discovery_message_toggle_wireless_debugging">Por favor, tente desativar e reativar a \"Depuração por Wi-Fi\" se não parar de ficar procurando.</string>
   <string name="dialog_adb_port">Porta</string>
@@ -23,40 +26,16 @@
   <string name="dialog_adb_pairing_discovery">Procurando o serviço de pareamento</string>
   <string name="dialog_adb_pairing_paring_code">Código de pareamento</string>
   <string name="paring_code_is_wrong">O código de pareamento está incorreto.</string>
-  <string name="cannot_connect_port">Não consigo conectar ao serviço de depuração sem fio.\n\nPor
-        favor, certifique-se de que o Shizuku esteja na lista branca em todos os apps de firewall,
-        bloqueador de anúncios, VPN ou similares que possam restringir o acesso à rede.</string>
-  <string name="dialog_wireless_adb_not_enabled">A Depuração via Wireless não está ativada.
-        \nObserve que, antes do Android 11, para habilitar a Depuração via Wireless a conexão com um
-        computador é obrigatória.</string>
-  <string name="dialog_usb_debugging_not_enabled">A depuração USB não está ativada.\nAtive-a nas
-        \"Opções do desenvolvedor\".</string>
-  <string name="dialog_adb_pairing_message">Para iniciar o emparelhamento, siga estes passos:\n-
-        Acesse \"Opções do desenvolvedor\"\n- Ative \"Depuração USB\" e \"Depuração sem fio\"\n-
-        Toque no lado esquerdo de \"Depuração sem fio\"\n- Toque em \"Emparelhar dispositivo com
-        código de emparelhamento\"\n- Insira o código de emparelhamento na notificação</string>
-  <string name="dialog_adb_pairing_accessibility_permission">No Android 14, instalar/atualizar o
-        Shizuku com o Instalador de Pacotes revoga a permissão ^1, necessária para habilitar o
-        serviço de acessibilidade para o emparelhamento.\n\nPara concedê-la, execute o seguinte
-        comando ADB:\n\n^2\n\nApós executar o comando, você pode continuar com o processo de
-        emparelhamento.\n\nObservação: você pode contornar isso instalando/atualizando o Shizuku com
-        o ADB.</string>
-  <string name="dialog_adb_pairing_accessibility_enable">Por favor, habilite o serviço de
-        acessibilidade para iniciar o processo de emparelhamento. Isso permite que Shizuku detecte o
-        código de emparelhamento.\n\nO serviço de acessibilidade será desativado quando o código for
-        encontrado ou após 1 minuto para economizar energia.</string>
-  <string name="dialog_adb_pairing_accessibility_navigate">Para iniciar o emparelhamento, siga
-        estes passos:\n- Acesse \"Opções do desenvolvedor\"\n- Ative \"Depuração USB\" e \"Depuração
-        sem fio\"\n- Toque no lado esquerdo de \"Depuração sem fio\"\n- Toque em \"Emparelhar
-        dispositivo com código de emparelhamento\". O Shizuku detectará o código de emparelhamento
-        automaticamente.</string>
-  <string name="adb_pairing_requires_multi_window">Primeiramente, ative o modo de janela dividida,
-        por favor.</string>
-  <string name="adb_pairing_requires_multi_window_reason">O sistema exige que o diálogo de
-        pareamento esteja sempre visível. Usar o modo tela dividida é a única forma de deixar esse
-        app e o diálogo do sistema visíveis ao mesmo tempo.</string>
-  <string name="adb_error_key_store">Não é possível gerar a chave para depuração sem fio.\nIsso
-        pode ser porque o mecanismo KeyStore desse dispositivo está com defeito.</string>
+  <string name="cannot_connect_port">Não consigo conectar ao serviço de depuração sem fio.\n\nPor favor, certifique-se de que o Shizuku esteja na lista branca em todos os apps de firewall, bloqueador de anúncios, VPN veya benzeri uygulamalarda beyaz listeye eklendiğinden emin olun.</string>
+  <string name="dialog_wireless_adb_not_enabled">A Depuração via Wireless não está ativada.\nObserve que, antes do Android 11, para habilitar a Depuração via Wireless a conexão com um computador é obrigatória.</string>
+  <string name="dialog_usb_debugging_not_enabled">A depuração USB não está ativada.\nAtive-a nas \"Opções do desenvolvedor\".</string>
+  <string name="dialog_adb_pairing_message">Para iniciar o emparelhamento, siga estes passos:\n- Acesse \"Opções do desenvolvedor\"\n- Ative \"Depuração USB\" e \"Depuração sem fio\"\n- Toque no lado esquerdo de \"Depuração sem fio\"\n- Toque em \"Emparelhar dispositivo com código de emparelhamento\"\n- Insira o código de emparelhamento na notificação</string>
+  <string name="dialog_adb_pairing_accessibility_permission">No Android 14, instalar/atualizar o Shizuku com o Instalador de Pacotes revoga a permissão ^1, necessária para habilitar o serviço de acessibilidade para o emparelhamento.\n\nPara concedê-la, execute o seguinte comando ADB:\n\n^2\n\nApós executar o comando, você pode continuar com o processo de emparelhamento.\n\nObservação: você pode contornar isso instalando/atualizando o Shizuku com o ADB.</string>
+  <string name="dialog_adb_pairing_accessibility_enable">Por favor, habilite o serviço de acessibilidade para iniciar o processo de emparelhamento. Isso permite que Shizuku detecte o código de emparelhamento.\n\nO serviço de acessibilidade será desativado quando o código for encontrado ou após 1 minuto para economizar energia.</string>
+  <string name="dialog_adb_pairing_accessibility_navigate">Para iniciar o emparelhamento, siga estes passos:\n- Acesse \"Opções do desenvolvedor\"\n- Ative \"Depuração USB\" e \"Depuração sem fio\"\n- Toque no lado esquerdo de \"Depuração sem fio\"\n- Toque em \"Emparelhar dispositivo com código de emparelhamento\". O Shizuku detectará o código de emparelhamento automaticamente.</string>
+  <string name="adb_pairing_requires_multi_window">Primeiramente, ative o modo de janela dividida, por favor.</string>
+  <string name="adb_pairing_requires_multi_window_reason">O sistema exige que o diálogo de pareamento esteja sempre visível. Usar o modo tela dividida é a única forma de deixar esse app e o diálogo do sistema visíveis ao mesmo tempo.</string>
+  <string name="adb_error_key_store">Não é possível gerar a chave para depuração sem fio.\nIsso pode ser porque o mecanismo KeyStore desse dispositivo está com defeito.</string>
   <string name="adb_stopping_tcp">Fechando a porta TCP</string>
   <string name="adb_error_stop_tcp">Falha ao interromper o ADB sobre TCP</string>
   <string name="adb_pair_required">Primeiramente, execute o pareamento.</string>
@@ -68,23 +47,22 @@
   <string name="adb_pairing_tutorial_content_steps">Acesse as \"Opções do desenvolvedor\" e ative \"Depuração USB\" e a \"Depuração por Wi-Fi\".</string>
   <string name="adb_pairing_tutorial_content_enter_pairing_code">Toque no lado esquerdo de \"Depuração por Wi-Fi\" e, em seguida, toque em \"Parear dispositivo com um código de pareamento\". Insira o código na notificação para concluir o pareamento.</string>
   <string name="adb_pairing_tutorial_content_notification_blocked">O processo de pareamento precisa que você interaja com uma notificação do Shizuku. Por favor, permita que o Shizuku envie notificações.</string>
-  <string name="adb_pairing_tutorial_content_miui">Os usuários da MIUI podem precisar mudar o estilo de notificação de \"MIUI\" para \"Android\". Para isso, acesse \"Configurações\", em seguida toque em \"Notificações\", em seguida toque em \"Área de Notificação\". Se você não usa MIUI, ignore isso.</string>
+  <string name="adb_pairing_tutorial_content_miui">Os usuários da MIUI podem precisar mudar o estilo de notificação de \"MIUI\" para \"Android\". Para isso, acesse \"Configurações\", em seguida toque em \"Notificações\", em seguida toque em \"Área de Notificação\".</string>
   <string name="adb_pairing_tutorial_content_miui_2">Caso contrário, você pode não conseguir inserir o código de pareamento a partir da notificação.</string>
-  <string name="adb_pairing_tutorial_content_finish">Volte para o Shizuku e escolha \"Iniciar\".</string>
   <string name="adb_pairing_tutorial_content_network">Shizuku precisa acessar a rede local. Ela é controlado pela permissão da rede.</string>
   <string name="adb_pairing_tutorial_content_network_limation_not_foreground">Alguns sistemas (como o MIUI) impedem que apps acessem a rede quando não estão visíveis, mesmo que o app use um serviço em primeiro plano. Por favor, desative os recursos de otimização de bateria para o Shizuku nesses sistemas.</string>
-  <string name="home_root_title" comment="home_root_title Home - Root">Iniciar (aparelho rooteado)</string>
+  <string name="home_root_title">Iniciar (aparelho rooteado)</string>
   <string name="home_root_description">Se você estiver usando o Magisk, pode tentar %1$s. Para usuários root, ele eventualmente substituirá o Shizuku. Observe que os apps existentes precisarão ser ligeiramente alterados para usar %2$s.</string>
   <string name="home_root_button_start">Iniciar</string>
   <string name="home_root_button_restart">Reiniciar</string>
-  <string name="home_app_management_title" comment="home_app_management_title Home - Application management">Gerenciamento de apps</string>
-  <plurals name="home_app_management_authorized_apps_count" comment="home_app_management_authorized_apps_count [one] [other]">
+  <string name="home_app_management_title">Gerenciamento de apps</string>
+  <plurals name="home_app_management_authorized_apps_count">
     <item quantity="one">%d aplicativo autorizado</item>
     <item quantity="other">%d apps autorizados</item>
   </plurals>
   <string name="home_app_management_view_authorized_apps">Toque para gerenciar os apps autorizados</string>
   <string name="home_app_management_empty">Os aplicativos que solicitaram ou declararam a permissão Shizuku serão exibidos aqui.</string>
-  <string name="home_automation_title" comment="home_automation_title Home - Automation">Controle o Shizuku com apps de automação</string>
+  <string name="home_automation_title">Controle o Shizuku com apps de automação</string>
   <string name="home_automation_description">Aplicativos como Tasker e MacroDroid podem enviar intents para iniciar/parar o Shizuku automaticamente</string>
   <string name="home_automation_description_device_restriction">Para usar a intent no seu dispositivo, você primeiro precisa habilitar o ADB sobre TCP executando %1$s a partir de um PC.</string>
   <string name="home_automation_button_view_intents">Visualizar intents</string>
@@ -95,26 +73,18 @@
   <string name="home_automation_bottom_sheet_label_extras">Extras</string>
   <string name="home_automation_regenerate_token">Gerar novo token?</string>
   <string name="home_automation_regenerate_token_message">Você precisará reconfigurar suas intents com o novo token.</string>
-  <string name="home_learn_more_title" comment="home_learn_more_title Home - Learn more">Guia do desenvolvedor</string>
-  <string name="home_learn_more_description">Aprenda a desenvolver com Shizuku</string>
-  <string name="home_adb_is_limited_title" comment="home_adb_is_limited_title Home - Adb permissions limited">Você precisa de um passo adicional</string>
-  <string name="home_adb_is_limited_description">O fabricante do seu dispositivo restringiu as
-        permissões ADB e os apps que usam o Shizuku não funcionarão corretamente.
-        \n
-        \nNormalmente, essa limitação pode ser eliminada ajustando algumas opções nas “Opções do
-        desenvolvedor”. Por favor, leia a ajuda para obter detalhes sobre como fazer isso.
-        \n
-        \nPode ser necessário reiniciar o Shizuku para que a operação tenha efeito.</string>
-  <string name="home_dialog_reboot_required_title" comment="home_dialog_reboot_required_title Home - Dialogs">Reinicialização necessária</string>
+  <string name="home_adb_is_limited_title">Você precisa de um passo adicional</string>
+  <string name="home_adb_is_limited_description">O fabricante do seu dispositivo restringiu as permissões ADB e os apps que usam o Shizuku não funcionarão corretamente.\n\nNormalmente, essa limitação pode ser eliminada ajustando algumas opções nas “Opções do desenvolvedor”. Por favor, leia a ajuda para obter detalhes sobre como fazer isso.\n\nPode ser necessário reiniciar o Shizuku para que a operação tenha efeito.</string>
+  <string name="home_dialog_reboot_required_title">Reinicialização necessária</string>
   <string name="home_dialog_reboot_required_message">É necessário reiniciar o dispositivo para que o Shizuku funcione corretamente. Para continuar, reinicie seu dispositivo.</string>
   <string name="home_dialog_duplicate_app_detected_title">App duplicado detectado</string>
-  <string name="home_dialog_duplicate_app_detected_message">Outra versão deste app está instalada no seu dispositivo. Para continuar, desinstale todas as versões duplicadas e reinicie o seu dispositivo.</string>
+  <string name="home_dialog_duplicate_app_detected_message">Outra version deste app está instalada no seu dispositivo. Para continuar, desinstale todas as versões duplicadas e reinicie o seu dispositivo.</string>
   <string name="home_dialog_button_exit">Sair</string>
-  <string name="app_management_dialog_adb_is_limited_title" comment="app_management_dialog_adb_is_limited_title Application management">A permissão do ADB é limitada</string>
-  <string name="app_management_dialog_adb_is_limited_message">É bem provável que o fabricante do seu dispositivo limite a permissão do ADB.&lt;p&gt;Pode haver uma solução para seu sistema &lt;b&gt;&lt;a href="%1$s"&gt;neste documento&lt;/a&gt;&lt;/b&gt;.</string>
+  <string name="app_management_dialog_adb_is_limited_title">A permissão do ADB é limitada</string>
+  <string name="app_management_dialog_adb_is_limited_message">É bem provável que o fabricante do seu dispositivo limite a permissão do ADB.&lt;p&gt;Pode haber uma solução para seu sistema &lt;b&gt;&lt;a href="%1$s"&gt;neste documento&lt;/a&gt;&lt;/b&gt;.</string>
   <string name="app_management_item_summary_requires_root">* precisa do Shizuku executado com privilégios de root</string>
   <string name="app_management_toggle_all">Alternar tudo</string>
-  <string name="home_terminal_title" comment="home_terminal_title Terminal">Usar o Shizuku em apps de terminal</string>
+  <string name="home_terminal_title">Usar o Shizuku em apps de terminal</string>
   <string name="home_terminal_description">Execute comandos shell em apps de terminal através do Shizuku</string>
   <string name="terminal_tutorial_miui">Usuários relataram que a MIUI quebra o Storage Access Framework, que é usado pela função de exportação.</string>
   <string name="terminal_tutorial_miui_2">Se você estiver usando MIUI, talvez precise extrair o arquivo da pasta \"assets\" no APK do Shizuku.</string>
@@ -125,7 +95,7 @@
   <string name="terminal_tutorial_2_description">Dica: Se o diretório inicial do seu aplicativo de terminal (~) estiver no diretório de arquivos privados, colocar os arquivos lá permitirá que você execute %1$s sem precisar escrever o caminho.\n\nCaso contrário, você pode criar um alias para %2$s no arquivo de configuração %3$s do seu app de terminal.</string>
   <string name="terminal_tutorial_3">Abra um terminal com o seguinte comando:</string>
   <string name="rish_description">Com %1$s, você pode executar comandos do shell em qualquer aplicativo de terminal.&lt;p&gt;Toque para saber mais sobre como usá-lo.</string>
-  <string name="settings_title" comment="settings_title Settings">Configurações</string>
+  <string name="settings_title">Configurações</string>
   <string name="settings_behavior">Comportamento</string>
   <string name="settings_start_on_boot">Executar após a inicialização</string>
   <string name="settings_start_on_boot_summary">Requer Android 11 ou superior ou root.</string>
@@ -145,49 +115,28 @@
   <string name="settings_tcp_port_hint">Deixe em branco para usar o padrão (5555)</string>
   <string name="settings_auto_disable_usb_debugging">Desativar depuração USB automaticamente</string>
   <string name="settings_auto_disable_usb_debugging_summary">Desativar a depuração USB ao parar o Shizuku</string>
-  <string name="settings_language">Idioma</string>
-  <string name="settings_translation_contributors">Tradutores do Shizuku</string>
-  <string name="settings_translation">Contribua com a tradução</string>
-  <string name="settings_translation_summary">Ajude-nos à traduzir %s para o seu idioma</string>
   <string name="settings_user_interface">Aparência</string>
   <string name="settings_black_night_theme">Tema preto AMOLED</string>
   <string name="settings_black_night_theme_summary">Use o tema preto puro se o modo escuro estiver habilitado. Em telas AMOLED, economiza bateria</string>
-  <string name="settings_support">Suporte</string>
-  <string name="settings_update_stable">Estável</string>
-  <string name="settings_update_beta">Beta</string>
-  <string name="settings_help">Ajuda</string>
   <string name="settings_advanced">Avançado</string>
   <string name="settings_advanced_show_title">Mostrar recursos avançados</string>
   <string name="settings_advanced_show_summary">Mostrar recursos e configurações avançadas do Shizuku</string>
   <string name="settings_legacy_pairing">Pareamento legado</string>
   <string name="settings_legacy_pairing_summary">Insira o código de pareamento em uma caixa de diálogo em vez de uma notificação</string>
-
-  <string name="bug_report_dialog_update">Verifique se você está usando a ^1.</string>
-  <string name="bug_report_dialog_link_update">versão mais recente</string>
-  <string name="snackbar_invalid_port" comment="snackbar_invalid_port Snackbar">A porta deve estar entre 1 e 65535.</string>
+  <string name="snackbar_invalid_port">A porta deve estar entre 1 e 65535.</string>
   <string name="snackbar_battery_optimization_home">A otimização de bateria deve estar desativada para que a execução na inicialização/vigilância funcione corretamente.</string>
   <string name="snackbar_battery_optimization_settings">Desative a otimização de bateria para usar este recurso.</string>
   <string name="snackbar_action_fix">Corrigir</string>
-  <string name="snackbar_update_available">Uma atualização está disponível</string>
-  <string name="snackbar_action_update">Atualizar</string>
-  <string name="check_for_updates" comment="check_for_updates Updates">Procurar atualizações</string>
-  <string name="update_latest_installed">A versão mais recente já está instalada</string>
-  <string name="update_success">Atualizado com sucesso</string>
-  <string name="update_failed">Falha na atualização</string>
-  <string name="toast_no_email_app">Nenhum app de e-mail encontrado</string>
-  <string name="toast_shizuku_already_starting" comment="toast_shizuku_already_starting Toast">O Shizuku já está iniciando em segundo plano</string>
+  <string name="toast_shizuku_already_starting">O Shizuku já está iniciando em segundo plano</string>
   <string name="toast_accessibility_tv_only">Esse serviço é suportado apenas em TVs</string>
   <string name="toast_pairing_timeout">O serviço de pareamento do Shizuku expirou</string>
-  <string name="dark_theme" comment="dark_theme Dark Mode Setting Override">Tema</string>
+  <string name="dark_theme">Tema</string>
   <string name="dark_theme_off">Sempre claro</string>
   <string name="dark_theme_on">Sempre escuro</string>
   <string name="follow_system">Seguir sistema</string>
-  <string name="action_about" comment="action_about About">Sobre</string>
-  <string name="about_dialog_button_close">Fechar</string>
-  <string name="about_view_source_code">Conferir o código-fonte em %s</string>
-  <string name="buy_me_a_coffee">Me pagar um café</string>
-  <string name="start" comment="start Start/Stop">Iniciar</string>
+  <string name="start">Iniciar</string>
   <string name="stop">Parar</string>
+  <string name="action_stop">Parar o Shizuku</string>
   <string name="action_update">Atualizar</string>
   <string name="home_update_summary">Verificar atualizações</string>
   <string name="home_settings_summary">Configurações do app e mais</string>
@@ -199,8 +148,8 @@
   <string name="update_download_finished">Download concluído, iniciando a instalação…</string>
   <string name="update_download_failed">O download falhou. Verifique sua conexão com a Internet.</string>
   <string name="update_check_failed">Não foi possível procurar por atualizações. Por favor, verifique sua conexão com a internet.</string>
-  <string name="action_stop">Parar o Shizuku</string>
-  <string name="notification_channel_service_status" comment="notification_channel_service_status Notification">Status de início do serviço</string>
+  <string name="dialog_stop_message">O serviço do Shizuku será interrompido</string>
+  <string name="notification_channel_service_status">Status de início do serviço</string>
   <string name="notification_service_starting">O serviço do Shizuku está iniciando…</string>
   <string name="notification_service_start_failed">Falha ao iniciar o serviço do Shizuku.</string>
   <string name="notification_service_start_no_root">Falha ao solicitar acesso ao root.</string>
@@ -211,56 +160,49 @@
   <string name="notification_adb_pairing_service_found_title">Serviço de pareamento encontrado</string>
   <string name="notification_adb_pairing_stop_searching">Parar a busca</string>
   <string name="notification_adb_pairing_working_title">Pareamento em andamento</string>
-  <string name="notification_adb_pairing_succeed_title">Pareamento concluído</string>
   <string name="notification_adb_pairing_failed_title">Falha no pareamento</string>
+  <string name="notification_adb_pairing_succeed_title">Pareamento concluído</string>
+  <string name="notification_adb_pairing_succeed_text">O pareamento do Shizuku foi concluído com sucesso.</string>
   <string name="notification_adb_pairing_retry">Tentar novamente</string>
   <string name="notification_auth_missing_title">Token de autenticação necessário</string>
   <string name="notification_auth_missing_message">Adicionar a extra \"auth\" à sua intenção. Você pode encontrar seu token tocando em \"Visualizar intents\" no app.</string>
   <string name="notification_auth_invalid_title">Token de autenticação inválido</string>
   <string name="notification_auth_invalid_message">Certifique-se de que o token na sua intent corresponda ao token mostrado em \"Visualizar intents\" no app.</string>
-  <string name="permission_group_label" comment="permission_group_label Permission related, appears in system permission UI">Shizuku</string>
+  <string name="permission_group_label" translatable="false">Shizuku</string>
   <string name="permission_group_description">@string/permission_label</string>
   <string name="permission_label">acessar o Shizuku</string>
   <string name="permission_description">Permitir que o app use o Shizuku.</string>
   <string name="permission_warning_template">Permitir que o app <b>%1$s</b> %2$s\?</string>
   <string name="grant_dialog_button_allow_always">Permitir o tempo todo</string>
   <string name="grant_dialog_button_deny">Negar</string>
-  <string name="starter" comment="starter Starter">Iniciante</string>
+  <string name="starter">Iniciante</string>
   <string name="starting_root_shell">Starting root shell…</string>
   <string name="start_with_root_failed">Não é possível iniciar o serviço porque a permissão de root não foi concedida ou este aparelho não está rooteado.</string>
-  <string name="wadb_notification_title" comment="wadb_notification_title WADB Starter">Iniciando o Shizuku…</string>
+  <string name="wadb_notification_title">Iniciando o Shizuku…</string>
   <string name="wadb_notification_wifi_required">Aguardando conexão Wi-Fi antes de prosseguir.</string>
   <string name="wadb_notification_retry">Aguardando para tentar novamente</string>
   <string name="wadb_error_title">Erro ao iniciar automaticamente</string>
-  <string name="wadb_error_notify_dev">Toque para notificar o desenvolvedor.</string>
   <string name="wadb_permission_error_notification_title">Erro de permissão</string>
   <string name="wadb_permission_error_notification_content">Shizuku precisa da permissão WRITE_SECURE_SETTINGS para iniciar na inicialização do sistema. Toque para saber como concedê-la.</string>
   <string name="wadb_notification_channel">Serviço de inicialização automática do ADB</string>
-  <string name="watchdog_running" comment="watchdog_running Watchdog">O cão de guarda está em execução</string>
+  <string name="watchdog_running">O cão de guarda está em execução</string>
   <string name="watchdog_turn_off">Desativar</string>
   <string name="watchdog_shizuku_crashed_title">O Shizuku travou recentemente</string>
   <string name="watchdog_shizuku_crashed_text">O serviço foi reiniciado pelo Cão de guarda. Toque para saber mais sobre possíveis soluções para evitar futuras falhas.</string>
   <string name="watchdog_shizuku_crashed_action_turn_off_alerts">Desativar alertas</string>
-  <string name="success" comment="success Misc">Sucesso</string>
+  <string name="success">Sucesso</string>
   <string name="error">Erro</string>
   <string name="off">Desligado</string>
+  <string name="developed_by">Desenvolvido por Ali BEYAZ</string>
+  <string name="settings_about">Sobre</string>
   <string name="choose_folder">Escolher pasta</string>
   <string name="dialog_cannot_open_browser_title">Não consigo iniciar o navegador</string>
   <string name="toast_copied_to_clipboard">Copiado para a área de transferência</string>
   <string name="accessibility_service_description">Fornece suporte para pareamento com dispositivos (por exemplo, TVs com Android 14 ou superior) onde as notificações ou a tela dividida não podem ser usadas.\n\nPermite que o Shizuku extraia o código de pareamento da tela de depuração sem fio. Ele será desativado assim que o código de pareamento for encontrado.</string>
-  <string name="dialog_legacy_not_support_title" comment="dialog_legacy_not_support_title Messages for legacy">%1$s não suporta as versões novas do Shizuku</string>
+  <string name="dialog_legacy_not_support_title">%1$s não suporta as versões novas do Shizuku</string>
   <string name="dialog_legacy_not_support_message">O Shizuku legado está obsoleto desde março de 2019. Além disso, o Shizuku legado não funciona em sistemas Android mais recentes.&lt;p&gt;Peça ao desenvolvedor de &lt;b&gt;%1$s&lt;/b&gt; para atualizar.</string>
   <string name="dialog_requesting_legacy_title">%1$s está pedindo o Shizuku legado</string>
   <string name="dialog_requesting_legacy_message">&lt;b&gt;%1$s&lt;/b&gt; tem suporte a Shizuku moderno, mas está solicitando o Shizuku legado. Isso pode acontecer porque o Shizuku não está funcionando, verifique no aplicativo Shizuku.&lt;p&gt;O Shizuku legado foi descontinuado desde março de 2019.</string>
   <string name="dialog_requesting_legacy_button_open_shizuku">Abrir Shizuku</string>
   <string name="wadb_notification_attempt_now">Tente agora</string>
-  <string name="app_name">Shizuku-fork</string>
-  <string name="app_name_launcher">Shizuku++</string>
-  <string name="shizuku">Shizuku</string>
-  <string name="home_status_service_version">v%2$s, %1$s</string>
-  <string name="home_adb_description">Para dispositivos sem root, você precisa usar adb para iniciar o Shizuku (requer conexão com o computador). Este processo precisa ser repetido toda vez que o dispositivo é reiniciado.</string>
-  <string name="home_wireless_adb_description">No Android 11 ou versões posteriores, você pode ativar a depuração sem fio e iniciar o Shizuku diretamente do seu dispositivo, sem precisar conectá-lo a um computador.</string>
-  <string name="dialog_stop_message">O serviço do Shizuku será interrompido</string>
-  <string name="notification_adb_pairing_succeed_text">O pareamento do Shizuku foi concluído com sucesso.</string>
-  <string name="developed_by">Desenvolvido por Ali BEYAZ</string>
 </resources>

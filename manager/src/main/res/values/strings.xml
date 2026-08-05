@@ -223,7 +223,6 @@
     <string name="wadb_notification_wifi_required">Awaiting Wi-Fi connection before proceeding</string>
     <string name="wadb_notification_retry">Waiting to retry</string>
     <string name="wadb_error_title">Error while starting on boot</string>
-    <string name="wadb_error_notify_dev">Tap to notify the developer.</string>
     <string name="wadb_permission_error_notification_title">Permission Error</string>
     <string name="wadb_permission_error_notification_content">Shizuku needs WRITE_SECURE_SETTINGS to start on boot. Tap to learn how to grant it.</string>
     <string name="wadb_notification_channel">ADB auto-start service</string>
@@ -240,6 +239,7 @@
     <string name="error">Error</string>
     <string name="off">Off</string>
     <string name="developed_by">Developed by Ali BEYAZ</string>
+    <string name="settings_about">About</string>
     <string name="choose_folder">Choose folder</string>
     <string name="dialog_cannot_open_browser_title">Can\'t start browser</string>
     <string name="toast_copied_to_clipboard">Copied to clipboard</string>

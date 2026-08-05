@@ -43,16 +43,22 @@
 }
 
 -assumenosideeffects class android.util.Log {
+    public static *** v(...);
     public static *** d(...);
+    public static *** i(...);
 }
 
 -assumenosideeffects class moe.shizuku.manager.utils.Logger {
+    public *** v(...);
     public *** d(...);
+    public *** i(...);
 }
 
 #noinspection ShrinkerUnresolvedReference
 -assumenosideeffects class rikka.shizuku.server.util.Logger {
+    public *** v(...);
     public *** d(...);
+    public *** i(...);
 }
 
 -allowaccessmodification

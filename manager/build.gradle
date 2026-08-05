@@ -17,6 +17,7 @@ android {
         applicationId = "moe.shizuku.privileged.api"
         versionCode = rootProject.ext.versionCode
         versionName = rootProject.ext.versionName
+        resConfigs "en", "tr", "pt-rBR"
         externalNativeBuild {
             cmake {
                 arguments = ["-DANDROID_STL=none"]
@@ -198,7 +199,6 @@ dependencies {
     implementation "io.github.vvb2060.ndk:boringssl:20250114"
 
     implementation "org.bouncycastle:bcpkix-jdk18on:1.80"
-    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.10.0"
     implementation "org.lsposed.libcxx:libcxx:27.0.12077973"
     implementation "org.lsposed.hiddenapibypass:hiddenapibypass:6.1"
 
