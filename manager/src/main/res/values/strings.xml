@@ -149,13 +149,10 @@
     <string name="settings_legacy_pairing">Legacy pairing</string>
     <string name="settings_legacy_pairing_summary">Enter the pairing code in a dialog instead of a notification</string>
 
-    <string name="settings_other">Other</string>
-    <string name="settings_about">About</string>
-
     <!-- Snackbar -->
     <string name="snackbar_invalid_port">Port must be between 1 and 65535</string>
-    <string name="snackbar_battery_optimization_home">Battery optimization must be disabled for start on boot/watchdog to work properly.</string>
-    <string name="snackbar_battery_optimization_settings">Please disable battery optimization to use this feature.</string>
+    <string name="snackbar_battery_optimization_home">Battery optimization must be disabled for start on boot/watchdog to work properly</string>
+    <string name="snackbar_battery_optimization_settings">Please disable battery optimization to use this feature</string>
     <string name="snackbar_action_fix">Fix</string>
 
     <!-- Toast -->
@@ -170,20 +167,20 @@
     <string name="follow_system">Follow system</string>
 
     <!-- Start/Stop -->
-     <string name="start">Start</string>
-     <string name="stop">Stop</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
     <string name="action_stop">Stop Shizuku</string>
     <string name="action_update">Update</string>
     <string name="home_update_summary">Check for updates</string>
     <string name="home_settings_summary">App settings and more</string>
     <string name="update_checking">Checking for updates…</string>
-    <string name="update_not_available">No update available.</string>
+    <string name="update_not_available">No update available</string>
     <string name="update_available">Update available, download?</string>
     <string name="update_download">Download</string>
     <string name="update_downloading_progress">Downloading: %1$d%%</string>
     <string name="update_download_finished">Download finished, starting installation…</string>
-    <string name="update_download_failed">Download failed. Please check your internet connection.</string>
-    <string name="update_check_failed">Failed to check for updates. Please check your internet connection.</string>
+    <string name="update_download_failed">Download failed. Please check your internet connection</string>
+    <string name="update_check_failed">Failed to check for updates. Please check your internet connection</string>
     <string name="dialog_stop_message">Shizuku service will be stopped</string>
 
     <!-- Notification -->
@@ -247,18 +244,6 @@
     <string name="dialog_cannot_open_browser_title">Can\'t start browser</string>
     <string name="toast_copied_to_clipboard">Copied to clipboard</string>
     <string name="accessibility_service_description">Provides pairing support for devices (e.g., TVs running Android 14+) where notifications or split screen cannot be used.\n\nEnables Shizuku to extract the pairing code from the wireless debugging pairing screen. It will disable itself once the pairing code is found.</string>
-
-    <!-- Bug Report -->
-    <string name="bug_report_dialog_before_reporting">Before reporting a bug</string>
-    <string name="bug_report_dialog_wiki">Please read the help first. Most problems have already been answered.</string>
-    <string name="bug_report_dialog_issues">Please search the existing issues on GitHub.</string>
-    <string name="bug_report_dialog_method">Bug reports must be submitted through GitHub.</string>
-    <string name="bug_report_dialog_method_2">Please do not send bug reports via email.</string>
-    <string name="bug_report_dialog_link_wiki">help</string>
-    <string name="bug_report_dialog_link_issues">GitHub issues</string>
-    <string name="bug_report_dialog_button_email">Send email</string>
-    <string name="toast_no_email_app">No email app found</string>
-    <string name="settings_report_bug">Report bug</string>
 
     <!-- Messages for legacy -->
     <string name="dialog_legacy_not_support_title">%1$s does not support modern Shizuku</string>
