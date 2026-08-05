@@ -8,9 +8,9 @@ An Android app that allows other apps to use system-level APIs that require adb/
 
 ## Screenshots
 
-<img width="108" height="287" alt="main-stopped" src="https://github.com/user-attachments/assets/a238dbae-da32-479f-81e7-74729643232e" />
-<img width="108" height="287" alt="main-running" src="https://github.com/user-attachments/assets/5c5ea03a-88a7-4f9b-a9b1-8e9db6289404" />
-<img width="108" height="313" alt="settings" src="https://github.com/user-attachments/assets/3277a971-519d-452c-939f-cca4fa5360d0" />
+<img width="108" height="234" alt="main-stopped" src="https://github.com/user-attachments/assets/4cdbb5ac-55e2-47af-891c-2bd86165f346" />
+<img width="108" height="234" alt="main-running" src="https://github.com/user-attachments/assets/6e3ef91c-78e9-48fc-b70a-18bd85ee5a84" />
+<img width="108" height="290" alt="settings" src="https://github.com/user-attachments/assets/1253fc04-4da3-403e-a2c1-c0df61abffd0" />
 
 ## Disclaimer
 
