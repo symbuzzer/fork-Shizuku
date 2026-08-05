@@ -72,7 +72,6 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
     private lateinit var useSystemColorPreference: TwoStatePreference
     private lateinit var legacyPairingPreference: TwoStatePreference
     private lateinit var showAdvancedPreference: TwoStatePreference
-    private lateinit var aboutPreference: Preference
     private lateinit var advancedCategory: PreferenceCategory
 
     private lateinit var batteryOptimizationListener: ActivityResultLauncher<Intent>
@@ -102,7 +101,6 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
         useSystemColorPreference = findPreference(KEY_USE_SYSTEM_COLOR)!!
         legacyPairingPreference = findPreference(KEY_LEGACY_PAIRING)!!
         showAdvancedPreference = findPreference(KEY_SHOW_ADVANCED)!!
-        aboutPreference = findPreference("about")!!
         advancedCategory = findPreference(KEY_CATEGORY_ADVANCED)!!
 
         val updateAdvancedVisibility = {
@@ -115,12 +113,6 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
             val show = newValue as Boolean
             tcpPortPreference.isVisible = show && tcpModePreference.isVisible && tcpModePreference.isChecked
             legacyPairingPreference.isVisible = show && !EnvironmentUtils.isTelevision()
-            true
-        }
-
-        aboutPreference.setOnPreferenceClickListener {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/symbuzzer/fork-Shizuku"))
-            it.context.startActivity(intent)
             true
         }
 

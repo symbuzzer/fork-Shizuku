@@ -15,7 +15,14 @@ import rikka.recyclerview.IdBasedRecyclerViewAdapter
 import rikka.recyclerview.IndexCreatorPool
 import rikka.shizuku.Shizuku
 
-class HomeAdapter(private val homeModel: HomeViewModel, private val appsModel: AppsViewModel, private val scope: CoroutineScope) :
+class HomeAdapter(
+    private val homeModel: HomeViewModel,
+    private val appsModel: AppsViewModel,
+    private val scope: CoroutineScope,
+    private val onUpdateClick: () -> Unit,
+    private val onSettingsClick: () -> Unit,
+    private val onAboutClick: () -> Unit
+) :
     IdBasedRecyclerViewAdapter(ArrayList()) {
 
     init {
@@ -33,7 +40,10 @@ class HomeAdapter(private val homeModel: HomeViewModel, private val appsModel: A
         private const val ID_START_ADB = 5L
         private const val ID_ADB_PERMISSION_LIMITED = 7L
         private const val ID_AUTOMATION = 8L
-        private const val ID_FOOTER = 10L
+        private const val ID_UPDATE = 9L
+        private const val ID_SETTINGS = 10L
+        private const val ID_ABOUT = 11L
+        private const val ID_FOOTER = 12L
     }
 
     override fun onCreateCreatorPool(): IndexCreatorPool {
@@ -79,6 +89,39 @@ class HomeAdapter(private val homeModel: HomeViewModel, private val appsModel: A
         if (showAdvanced) {
             addItem(AutomationViewHolder.CREATOR, null, ID_AUTOMATION)
         }
+
+        addItem(
+            HomeButtonViewHolder.CREATOR,
+            HomeButtonViewHolder.Data(
+                R.drawable.ic_settings_outline_24dp,
+                R.string.settings_title,
+                R.string.home_settings_summary,
+                onSettingsClick
+            ),
+            ID_SETTINGS
+        )
+
+        addItem(
+            HomeButtonViewHolder.CREATOR,
+            HomeButtonViewHolder.Data(
+                R.drawable.ic_autorenew,
+                R.string.action_update,
+                R.string.home_update_summary,
+                onUpdateClick
+            ),
+            ID_UPDATE
+        )
+
+        addItem(
+            HomeButtonViewHolder.CREATOR,
+            HomeButtonViewHolder.Data(
+                R.drawable.ic_outline_info_24,
+                R.string.settings_about,
+                R.string.developed_by,
+                onAboutClick
+            ),
+            ID_ABOUT
+        )
 
         notifyDataSetChanged()
     }

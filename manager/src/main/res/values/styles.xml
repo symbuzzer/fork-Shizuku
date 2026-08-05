@@ -45,8 +45,9 @@
     </style>
 
     <style name="CardIcon">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:scaleType">center</item>
         <item name="android:background">@drawable/shape_circle_icon_background</item>
         <item name="android:tint">?colorOnPrimaryContainer</item>
         <item name="android:tintMode">src_in</item>

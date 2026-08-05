@@ -77,15 +77,4 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:key="category_other"
-        android:title="@string/settings_other">
-
-        <Preference
-            android:key="about"
-            android:title="@string/settings_about"
-            android:summary="@string/developed_by" />
-
-    </PreferenceCategory>
-
 </PreferenceScreen>
