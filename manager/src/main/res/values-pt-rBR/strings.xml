@@ -162,8 +162,6 @@
   <string name="settings_legacy_pairing">Pareamento legado</string>
   <string name="settings_legacy_pairing_summary">Insira o código de pareamento em uma caixa de diálogo em vez de uma notificação</string>
 
-  <string name="settings_other">Outro</string>
-  <string name="settings_about">Sobre</string>
   <string name="bug_report_dialog_update">Verifique se você está usando a ^1.</string>
   <string name="bug_report_dialog_link_update">versão mais recente</string>
   <string name="snackbar_invalid_port" comment="snackbar_invalid_port Snackbar">A porta deve estar entre 1 e 65535.</string>
@@ -265,13 +263,4 @@
   <string name="dialog_stop_message">O serviço do Shizuku será interrompido</string>
   <string name="notification_adb_pairing_succeed_text">O pareamento do Shizuku foi concluído com sucesso.</string>
   <string name="developed_by">Desenvolvido por Ali BEYAZ</string>
-  <string name="bug_report_dialog_before_reporting" comment="bug_report_dialog_before_reporting Bug Report">Antes de relatar um bug</string>
-  <string name="bug_report_dialog_wiki">Por favor, leia a ajuda primeiro. A maioria dos problemas já foram respondidos.</string>
-  <string name="bug_report_dialog_issues">Por favor, pesquise os problemas existentes no GitHub.</string>
-  <string name="bug_report_dialog_method">Relatórios de bugs devem ser enviados através do GitHub.</string>
-  <string name="bug_report_dialog_method_2">Por favor, não envie relatórios de erros por e-mail.</string>
-  <string name="bug_report_dialog_link_wiki">ajuda</string>
-  <string name="bug_report_dialog_link_issues">Problemas no GitHub</string>
-  <string name="bug_report_dialog_button_email">Enviar e-mail</string>
-  <string name="settings_report_bug">Reportar bug</string>
 </resources>
