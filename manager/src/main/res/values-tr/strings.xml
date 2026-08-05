@@ -149,9 +149,6 @@
     <string name="settings_legacy_pairing">Eski tip eşleştirme</string>
     <string name="settings_legacy_pairing_summary">Eşleştirme kodunu bir bildirim yerine bir iletişim kutusuna girin</string>
 
-    <string name="settings_other">Diğer</string>
-    <string name="settings_about">Hakkında</string>
-
     <!-- Snackbar -->
     <string name="snackbar_invalid_port">Bağlantı noktası 1 ile 65535 arasında olmalıdır</string>
     <string name="snackbar_battery_optimization_home">Açılışta başlat/bekçi köpeğinin (Watchdog) düzgün çalışması için pil optimizasyonu devre dışı bırakılmalıdır.</string>
@@ -170,8 +167,8 @@
     <string name="follow_system">Sistemi izle</string>
 
     <!-- Başlat/Durdur -->
-     <string name="start">Başlat</string>
-     <string name="stop">Durdur</string>
+    <string name="start">Başlat</string>
+    <string name="stop">Durdur</string>
     <string name="action_stop">Shizuku\'yu durdur</string>
     <string name="action_update">Güncelleme</string>
     <string name="home_update_summary">Güncellemeleri denetleyin</string>
@@ -189,8 +186,8 @@
     <!-- Bildirim -->
     <string name="notification_channel_service_status">Hizmet başlatma durumu</string>
     <string name="notification_service_starting">Shizuku hizmeti başlatılıyor…</string>
-    <string name="notification_service_start_failed">Shizuku hizmeti başlatılamadı.</string>
-    <string name="notification_service_start_no_root">Root izni istenirken hata oluştu.</string>
+    <string name="notification_service_start_failed">Shizuku hizmeti başlatılamadı</string>
+    <string name="notification_service_start_no_root">Root izni istenirken hata oluştu</string>
     <string name="notification_working">Çalışıyor…</string>
     <string name="notification_channel_adb_pairing">Kablosuz hata ayıklama eşleştirmesi</string>
     <string name="notification_adb_pairing_input_paring_code">Eşleştirme kodunu girin</string>
@@ -200,7 +197,7 @@
     <string name="notification_adb_pairing_working_title">Eşleştirme sürüyor</string>
     <string name="notification_adb_pairing_failed_title">Eşleştirme başarısız</string>
     <string name="notification_adb_pairing_succeed_title">Eşleştirme başarılı</string>
-    <string name="notification_adb_pairing_succeed_text">Shizuku eşleştirmesi başarıyla tamamlandı.</string>
+    <string name="notification_adb_pairing_succeed_text">Shizuku eşleştirmesi başarıyla tamamlandı</string>
     <string name="notification_adb_pairing_retry">Yeniden dene</string>
     <string name="notification_auth_missing_title">Yetkilendirme belirteci gerekli</string>
     <string name="notification_auth_missing_message">Intent\'inize \"auth\" ekstrasını ekleyin. Belirtecinizi uygulamada \"Intent\'leri görüntüle\"ye dokunarak bulabilirsiniz.</string>
@@ -247,18 +244,6 @@
     <string name="dialog_cannot_open_browser_title">Tarayıcı başlatılamıyor</string>
     <string name="toast_copied_to_clipboard">Panoya kopyalandı</string>
     <string name="accessibility_service_description">Bildirimlerin veya bölünmüş ekranın kullanılamadığı cihazlar için (ör. Android 14+ çalıştıran TV\'ler) eşleştirme desteği sağlar.\n\nShizuku\'nun kablosuz hata ayıklama eşleştirme ekranından eşleştirme kodunu çıkarmasını sağlar. Eşleştirme kodu bulunduğunda kendini devre dışı bırakır.</string>
-
-    <!-- Hata Bildirimi -->
-    <string name="bug_report_dialog_before_reporting">Bildirmeden önce</string>
-    <string name="bug_report_dialog_wiki">Lütfen önce yardımı okuyun. Çoğu sorun zaten yanıtlanmıştır.</string>
-    <string name="bug_report_dialog_issues">Lütfen GitHub\'daki mevcut sorunları arayın.</string>
-    <string name="bug_report_dialog_method">Hata bildirimleri yalnızca GitHub üzerinden gönderilmelidir.</string>
-    <string name="bug_report_dialog_method_2">Lütfen hata bildirimlerini e-posta ile göndermeyin.</string>
-    <string name="bug_report_dialog_link_wiki">yardım</string>
-    <string name="bug_report_dialog_link_issues">GitHub sorunları</string>
-    <string name="bug_report_dialog_button_email">E-posta gönder</string>
-    <string name="toast_no_email_app">E-posta uygulaması bulunamadı</string>
-    <string name="settings_report_bug">Hata bildir</string>
 
     <!-- Eski sürüm mesajları -->
     <string name="dialog_legacy_not_support_title">%1$s modern Shizuku\'yu desteklemiyor</string>
