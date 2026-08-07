@@ -8,7 +8,6 @@
   <string name="home_status_service_version">v%2$s, %1$s</string>
   <string name="home_adb_title">Comece conectando-se a um computador</string>
   <string name="home_adb_description">Para dispositivos sem root, você precisa usar adb para iniciar o Shizuku (requer conexão com o computador). Este processo precisa ser repetido toda vez que o dispositivo é reiniciado.</string>
-  <string name="home_adb_button_view_help">Ler a ajuda</string>
   <string name="home_adb_button_view_command">Ver o comando</string>
   <string name="home_adb_dialog_view_command_message">&lt;font face=monospace&gt;%1$s&lt;/font&gt;</string>
   <string name="home_adb_dialog_view_command_copy_button">Copiar</string>

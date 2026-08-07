@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/Card.Large"
     android:background="?colorErrorContainer">
 
@@ -47,15 +46,5 @@
         android:layout_height="wrap_content"
         android:text="@string/home_adb_is_limited_description"
         android:textColor="?colorOnErrorContainer" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@android:id/button1"
-        style="@style/CardButton"
-        android:text="@string/home_adb_button_view_help"
-        android:textColor="?colorOnError"
-        app:backgroundTint="?colorError"
-        app:icon="@drawable/ic_outline_open_in_new_24"
-        app:iconTint="?colorOnError" />
-
 
 </LinearLayout>

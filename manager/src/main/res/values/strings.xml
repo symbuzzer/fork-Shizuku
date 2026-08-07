@@ -13,7 +13,7 @@
     <!-- Home - Adb -->
     <string name="home_adb_title"><![CDATA[Start by connecting to a computer]]></string>
     <string name="home_adb_description"><![CDATA[For devices without root, you need to use adb to start Shizuku (requires computer connection). This process needs to be repeated every time the device is restarted.]]></string>
-    <string name="home_adb_button_view_help">Read help</string>
+
     <string name="home_adb_button_view_command">View command</string>
     <string name="home_adb_dialog_view_command_message"><![CDATA[<font face="monospace">%1$s</font>]]></string>
     <string name="home_adb_dialog_view_command_copy_button">Copy</string>

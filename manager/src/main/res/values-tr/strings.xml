@@ -13,7 +13,6 @@
     <!-- Ana Sayfa - Adb -->
     <string name="home_adb_title"><![CDATA[Bir bilgisayara bağlanarak başlayın]]></string>
     <string name="home_adb_description"><![CDATA[Root olmayan cihazlarda Shizuku\'yu başlatmak için adb kullanmanız gerekir (bilgisayar bağlantısı gerektirir). Bu işlem cihaz her yeniden başlatıldığında tekrarlanmalıdır.]]></string>
-    <string name="home_adb_button_view_help">Yardımı oku</string>
     <string name="home_adb_button_view_command">Komutu görüntüle</string>
     <string name="home_adb_dialog_view_command_message"><![CDATA[<font face="monospace">%1$s</font>]]></string>
     <string name="home_adb_dialog_view_command_copy_button">Kopyala</string>

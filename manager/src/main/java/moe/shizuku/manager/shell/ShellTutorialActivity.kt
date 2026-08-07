@@ -101,7 +101,7 @@ class ShellTutorialActivity : AppBarActivity() {
             summary1.text = getString(R.string.terminal_tutorial_1_description, shName, dexName)
                 .toHtml(HtmlCompat.FROM_HTML_OPTION_TRIM_WHITESPACE)
 
-            text2.text = getString(R.string.terminal_tutorial_2, shName).toHtml()
+            text2.text = getString(R.string.terminal_tutorial_2).toHtml()
             command2.text = "cp /sdcard/chosen-folder/* /data/data/terminal.package.name/files"
             summary2.text = getString(R.string.terminal_tutorial_2_description, shName, shName, ".bashrc").toHtml()
 

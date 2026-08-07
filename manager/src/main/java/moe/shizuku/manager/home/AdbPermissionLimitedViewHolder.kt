@@ -19,6 +19,5 @@ class AdbPermissionLimitedViewHolder(binding: HomeExtraStepRequiredBinding, root
     }
 
     init {
-        binding.button1.visibility = View.GONE
     }
 }
