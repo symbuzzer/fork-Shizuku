@@ -12,7 +12,6 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withTimeout
 import kotlinx.coroutines.TimeoutCancellationException
-import moe.shizuku.manager.Helps
 import moe.shizuku.manager.R
 import moe.shizuku.manager.app.AppActivity
 import moe.shizuku.manager.databinding.ConfirmationDialogBinding
@@ -50,7 +49,7 @@ class RequestPermissionActivity : AppActivity() {
         val dialog = MaterialAlertDialogBuilder(this)
                 .setIcon(icon)
                 .setTitle("Shizuku: ${getString(R.string.app_management_dialog_adb_is_limited_title)}")
-                .setMessage(getString(R.string.app_management_dialog_adb_is_limited_message, Helps.ADB.get()).toHtml(HtmlCompat.FROM_HTML_OPTION_TRIM_WHITESPACE))
+                .setMessage(getString(R.string.app_management_dialog_adb_is_limited_message).toHtml(HtmlCompat.FROM_HTML_OPTION_TRIM_WHITESPACE))
                 .setPositiveButton(android.R.string.ok, null)
                 .setOnDismissListener { finish() }
                 .create()

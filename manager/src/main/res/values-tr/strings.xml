@@ -15,7 +15,7 @@
     <string name="home_adb_description"><![CDATA[Root olmayan cihazlarda Shizuku\'yu başlatmak için adb kullanmanız gerekir (bilgisayar bağlantısı gerektirir). Bu işlem cihaz her yeniden başlatıldığında tekrarlanmalıdır.]]></string>
     <string name="home_adb_button_view_help">Yardımı oku</string>
     <string name="home_adb_button_view_command">Komutu görüntüle</string>
-    <string name="home_adb_dialog_view_command_message"><![CDATA[<font face="monospace">%1$s</font><br><br>* Ayrıca dikkat edilmesi gereken bazı hususlar var, lütfen önce yardımı okuduğunuzdan emin olun.]]></string>
+    <string name="home_adb_dialog_view_command_message"><![CDATA[<font face="monospace">%1$s</font>]]></string>
     <string name="home_adb_dialog_view_command_copy_button">Kopyala</string>
     <string name="home_adb_dialog_view_command_button_send">Gönder</string>
 
@@ -63,7 +63,7 @@
 
     <!-- Ana Sayfa - Root -->
     <string name="home_root_title"><![CDATA[Başlat (root\'lu cihazlar için)]]></string>
-    <string name="home_root_description"><![CDATA[Magisk kullanıyorsanız %1$s\'yi deneyebilirsiniz. Root kullanıcıları için bu, sonunda Shizuku\'nun yerini alacak. Not: mevcut uygulamaların %2$s\'yi kullanabilmesi için küçük değişiklikler yapılması gerekir.]]></string>
+    <string name="home_root_description"><![CDATA[Magisk kullanıyorsanız Sui\'yi deneyebilirsiniz. Root kullanıcıları için bu, sonunda Shizuku\'nun yerini alacak. Not: mevcut uygulamaların Sui\'yi kullanabilmesi için küçük değişiklikler yapılması gerekir.]]></string>
     <string name="home_root_button_start">Başlat</string>
     <string name="home_root_button_restart">Yeniden başlat</string>
 
@@ -91,7 +91,7 @@
 
     <!-- Ana Sayfa - Adb izinleri kısıtlı -->
     <string name="home_adb_is_limited_title">Ekstra bir adım atmanız gerekiyor</string>
-    <string name="home_adb_is_limited_description">Cihaz üreticiniz adb izinlerini kısıtlamış ve Shizuku kullanan uygulamalar düzgün çalışmayacak.\n\nGenellikle bu kısıtlama, \"Geliştirici seçenekleri\"nde bazı ayarlar değiştirilerek kaldırılabilir. Bunun nasıl yapılacağına dair ayrıntılar için lütfen yardımı okuyun.\n\nİşlemin etkili olması için Shizuku\'yu yeniden başlatmanız gerekebilir.</string>
+    <string name="home_adb_is_limited_description">Cihaz üreticiniz adb izinlerini kısıtlamış ve Shizuku kullanan uygulamalar düzgün çalışmayacak.\n\nGenellikle bu kısıtlama, \"Geliştirici seçenekleri\"nde bazı ayarlar değiştirilerek kaldırılabilir.\n\nİşlemin etkili olması için Shizuku\'yu yeniden başlatmanız gerekebilir.</string>
 
     <!-- Ana Sayfa - İletişim kutuları -->
     <string name="home_dialog_reboot_required_title">Yeniden başlatma gerekli</string>
@@ -102,7 +102,7 @@
 
     <!-- Uygulama yönetimi -->
     <string name="app_management_dialog_adb_is_limited_title">adb izni kısıtlı</string>
-    <string name="app_management_dialog_adb_is_limited_message"><![CDATA[Cihaz üreticinizin adb iznini kısıtlamış olması yüksek olasılık.<p>Sisteminiz için bir çözüm <b><a href=\"%1$s\">bu belgede</a></b> bulunabilir.]]></string>
+    <string name="app_management_dialog_adb_is_limited_message"><![CDATA[Cihaz üreticinizin adb iznini kısıtlamış olması yüksek olasılık.]]></string>
     <string name="app_management_item_summary_requires_root">* Shizuku\'nun root ile çalışmasını gerektirir</string>
     <string name="app_management_toggle_all">Tümünü aç/kapat</string>
 
@@ -117,7 +117,7 @@
     <string name="terminal_tutorial_2">Dosyaları terminal uygulamanızın özel dosyalar dizinine kopyalamak için terminal uygulamanızı kullanın.</string>
     <string name="terminal_tutorial_2_description">İpucu: Terminal uygulamanızın ana dizini (~) özel dosyalar dizinindeyse, dosyaları oraya yerleştirmek %1$s\'i yol yazmadan çalıştırmanızı sağlar.\n\nAksi takdirde, terminal uygulamanızın %3$s yapılandırma dosyasında %2$s için bir takma ad oluşturabilirsiniz.</string>
     <string name="terminal_tutorial_3">Aşağıdaki komutla bir shell açın:</string>
-    <string name="rish_description"><![CDATA[%1$s ile herhangi bir terminal uygulamasında shell komutları çalıştırabilirsiniz.<p>Nasıl kullanılacağı hakkında bilgi almak için dokunun.]]></string>
+    <string name="rish_description"><![CDATA[%1$s ile herhangi bir terminal uygulamasında shell komutları çalıştırabilirsiniz.]]></string>
 
     <!-- Ayarlar -->
     <string name="settings_title">Ayarlar</string>
@@ -224,14 +224,14 @@
     <string name="wadb_notification_retry">Yeniden denemek için bekleniyor</string>
     <string name="wadb_error_title">Açılışta başlatma sırasında hata</string>
     <string name="wadb_permission_error_notification_title">İzin Hatası</string>
-    <string name="wadb_permission_error_notification_content">Shizuku\'nun açılışta başlaması için WRITE_SECURE_SETTINGS iznine ihtiyacı var. Nasıl verileceğini öğrenmek için dokunun.</string>
+    <string name="wadb_permission_error_notification_content">Shizuku\'nun açılışta başlaması için WRITE_SECURE_SETTINGS iznine ihtiyacı var.</string>
     <string name="wadb_notification_channel">ADB otomatik başlatma hizmeti</string>
 
     <!-- Bekçi köpeği -->
     <string name="watchdog_running">Bekçi köpeği (Watchdog) çalışıyor</string>
     <string name="watchdog_turn_off">Kapat</string>
     <string name="watchdog_shizuku_crashed_title">Shizuku yakın zamanda çöktü</string>
-    <string name="watchdog_shizuku_crashed_text">Bekçi köpeği (Watchdog) hizmeti yeniden başlattı. Gelecekteki çökmeleri önlemek için olası çözümleri öğrenmek üzere dokunun.</string>
+    <string name="watchdog_shizuku_crashed_text">Bekçi köpeği (Watchdog) hizmeti yeniden başlattı.</string>
     <string name="watchdog_shizuku_crashed_action_turn_off_alerts">Uyarıları Kapat</string>
 
     <!-- Çeşitli -->

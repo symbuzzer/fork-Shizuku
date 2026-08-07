@@ -10,7 +10,7 @@
   <string name="home_adb_description">Para dispositivos sem root, você precisa usar adb para iniciar o Shizuku (requer conexão com o computador). Este processo precisa ser repetido toda vez que o dispositivo é reiniciado.</string>
   <string name="home_adb_button_view_help">Ler a ajuda</string>
   <string name="home_adb_button_view_command">Ver o comando</string>
-  <string name="home_adb_dialog_view_command_message">&lt;font face=monospace&gt;%1$s&lt;/font&gt;&lt;br&gt;&lt;br&gt;* Existem algumas outras considerações, por favor confirme se você leu o documento de ajuda primeiro.</string>
+  <string name="home_adb_dialog_view_command_message">&lt;font face=monospace&gt;%1$s&lt;/font&gt;</string>
   <string name="home_adb_dialog_view_command_copy_button">Copiar</string>
   <string name="home_adb_dialog_view_command_button_send">Enviar</string>
   <string name="home_wireless_adb_title">Iniciar via Depuração por Wi-Fi</string>
@@ -52,7 +52,7 @@
   <string name="adb_pairing_tutorial_content_network">Shizuku precisa acessar a rede local. Ela é controlado pela permissão da rede.</string>
   <string name="adb_pairing_tutorial_content_network_limation_not_foreground">Alguns sistemas (como o MIUI) impedem que apps acessem a rede quando não estão visíveis, mesmo que o app use um serviço em primeiro plano. Por favor, desative os recursos de otimização de bateria para o Shizuku nesses sistemas.</string>
   <string name="home_root_title">Iniciar (aparelho rooteado)</string>
-  <string name="home_root_description">Se você estiver usando o Magisk, pode tentar %1$s. Para usuários root, ele eventualmente substituirá o Shizuku. Observe que os apps existentes precisarão ser ligeiramente alterados para usar %2$s.</string>
+  <string name="home_root_description">Se você estiver usando o Magisk, pode tentar o Sui. Para usuários root, ele eventualmente substituirá o Shizuku. Observe que os apps existentes precisarão ser ligeiramente alterados para usar o Sui.</string>
   <string name="home_root_button_start">Iniciar</string>
   <string name="home_root_button_restart">Reiniciar</string>
   <string name="home_app_management_title">Gerenciamento de apps</string>
@@ -74,14 +74,14 @@
   <string name="home_automation_regenerate_token">Gerar novo token?</string>
   <string name="home_automation_regenerate_token_message">Você precisará reconfigurar suas intents com o novo token.</string>
   <string name="home_adb_is_limited_title">Você precisa de um passo adicional</string>
-  <string name="home_adb_is_limited_description">O fabricante do seu dispositivo restringiu as permissões ADB e os apps que usam o Shizuku não funcionarão corretamente.\n\nNormalmente, essa limitação pode ser eliminada ajustando algumas opções nas “Opções do desenvolvedor”. Por favor, leia a ajuda para obter detalhes sobre como fazer isso.\n\nPode ser necessário reiniciar o Shizuku para que a operação tenha efeito.</string>
+  <string name="home_adb_is_limited_description">O fabricante do seu dispositivo restringiu as permissões ADB e os apps que usam o Shizuku não funcionarão corretamente.\n\nNormalmente, essa limitação pode ser eliminada ajustando algumas opções nas “Opções do desenvolvedor”.\n\nPode ser necessário reiniciar o Shizuku para que a operação tenha efeito.</string>
   <string name="home_dialog_reboot_required_title">Reinicialização necessária</string>
   <string name="home_dialog_reboot_required_message">É necessário reiniciar o dispositivo para que o Shizuku funcione corretamente. Para continuar, reinicie seu dispositivo.</string>
   <string name="home_dialog_duplicate_app_detected_title">App duplicado detectado</string>
   <string name="home_dialog_duplicate_app_detected_message">Outra version deste app está instalada no seu dispositivo. Para continuar, desinstale todas as versões duplicadas e reinicie o seu dispositivo.</string>
   <string name="home_dialog_button_exit">Sair</string>
   <string name="app_management_dialog_adb_is_limited_title">A permissão do ADB é limitada</string>
-  <string name="app_management_dialog_adb_is_limited_message">É bem provável que o fabricante do seu dispositivo limite a permissão do ADB.&lt;p&gt;Pode haber uma solução para seu sistema &lt;b&gt;&lt;a href="%1$s"&gt;neste documento&lt;/a&gt;&lt;/b&gt;.</string>
+  <string name="app_management_dialog_adb_is_limited_message">É bem provável que o fabricante do seu dispositivo limite a permissão do ADB.</string>
   <string name="app_management_item_summary_requires_root">* precisa do Shizuku executado com privilégios de root</string>
   <string name="app_management_toggle_all">Alternar tudo</string>
   <string name="home_terminal_title">Usar o Shizuku em apps de terminal</string>
@@ -94,7 +94,7 @@
   <string name="terminal_tutorial_2">Use o app de terminal para copiar os arquivos para o diretório de arquivos privados.</string>
   <string name="terminal_tutorial_2_description">Dica: Se o diretório inicial do seu aplicativo de terminal (~) estiver no diretório de arquivos privados, colocar os arquivos lá permitirá que você execute %1$s sem precisar escrever o caminho.\n\nCaso contrário, você pode criar um alias para %2$s no arquivo de configuração %3$s do seu app de terminal.</string>
   <string name="terminal_tutorial_3">Abra um terminal com o seguinte comando:</string>
-  <string name="rish_description">Com %1$s, você pode executar comandos do shell em qualquer aplicativo de terminal.&lt;p&gt;Toque para saber mais sobre como usá-lo.</string>
+  <string name="rish_description">Com %1$s, você pode executar comandos do shell em qualquer aplicativo de terminal.</string>
   <string name="settings_title">Configurações</string>
   <string name="settings_behavior">Comportamento</string>
   <string name="settings_start_on_boot">Executar após a inicialização</string>
@@ -183,12 +183,12 @@
   <string name="wadb_notification_retry">Aguardando para tentar novamente</string>
   <string name="wadb_error_title">Erro ao iniciar automaticamente</string>
   <string name="wadb_permission_error_notification_title">Erro de permissão</string>
-  <string name="wadb_permission_error_notification_content">Shizuku precisa da permissão WRITE_SECURE_SETTINGS para iniciar na inicialização do sistema. Toque para saber como concedê-la.</string>
+  <string name="wadb_permission_error_notification_content">Shizuku precisa da permissão WRITE_SECURE_SETTINGS para iniciar na inicialização do sistema.</string>
   <string name="wadb_notification_channel">Serviço de inicialização automática do ADB</string>
   <string name="watchdog_running">O cão de guarda está em execução</string>
   <string name="watchdog_turn_off">Desativar</string>
   <string name="watchdog_shizuku_crashed_title">O Shizuku travou recentemente</string>
-  <string name="watchdog_shizuku_crashed_text">O serviço foi reiniciado pelo Cão de guarda. Toque para saber mais sobre possíveis soluções para evitar futuras falhas.</string>
+  <string name="watchdog_shizuku_crashed_text">O serviço foi reiniciado pelo Cão de guarda.</string>
   <string name="watchdog_shizuku_crashed_action_turn_off_alerts">Desativar alertas</string>
   <string name="success">Sucesso</string>
   <string name="error">Erro</string>

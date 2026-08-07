@@ -121,11 +121,6 @@ class WatchdogService : Service() {
         )
         nm.createNotificationChannel(channel)
 
-        val learnMoreIntent = Intent(Intent.ACTION_VIEW).apply {
-            setData(Uri.parse("https://github.com/thedjchi/Shizuku/wiki#shizuku-keeps-stopping-randomly"))
-        }
-        val learnMorePendingIntent = PendingIntent.getActivity(this, 0, learnMoreIntent, PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT)
-
         val disableIntent = SettingsPage.Notifications.NotificationChannel.buildIntent(applicationContext)
         val disablePendingIntent = PendingIntent.getActivity(this, 0, disableIntent, PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT)
 
@@ -133,7 +128,6 @@ class WatchdogService : Service() {
             .setContentTitle(getString(R.string.watchdog_shizuku_crashed_title))
             .setContentText(getString(R.string.watchdog_shizuku_crashed_text))
             .setSmallIcon(R.drawable.ic_system_icon)
-            .setContentIntent(learnMorePendingIntent)
             .setAutoCancel(true)
             .addAction(0, getString(R.string.watchdog_shizuku_crashed_action_turn_off_alerts), disablePendingIntent)
             .build()

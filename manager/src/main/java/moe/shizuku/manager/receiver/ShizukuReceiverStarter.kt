@@ -138,11 +138,6 @@ object ShizukuReceiverStarter {
         val nm = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         nm.createNotificationChannel(channel)
 
-        val webpageIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/thedjchi/Shizuku/wiki#shizuku-isnt-starting-on-boot-for-me"))
-        val pendingWebpageIntent = PendingIntent.getActivity(
-            context, 0, webpageIntent, PendingIntent.FLAG_IMMUTABLE
-        )
-
         val msg = context.getString(R.string.wadb_permission_error_notification_content)
 
         val notification = NotificationCompat.Builder(context, CHANNEL_ID)
@@ -150,7 +145,6 @@ object ShizukuReceiverStarter {
             .setContentTitle(context.getString(R.string.wadb_permission_error_notification_title))
             .setContentText(msg)
             .setSilent(true)
-            .setContentIntent(pendingWebpageIntent)
             .setStyle(NotificationCompat.BigTextStyle().bigText(msg))
             .build()
 

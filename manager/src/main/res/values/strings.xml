@@ -15,7 +15,7 @@
     <string name="home_adb_description"><![CDATA[For devices without root, you need to use adb to start Shizuku (requires computer connection). This process needs to be repeated every time the device is restarted.]]></string>
     <string name="home_adb_button_view_help">Read help</string>
     <string name="home_adb_button_view_command">View command</string>
-    <string name="home_adb_dialog_view_command_message"><![CDATA[<font face="monospace">%1$s</font><br><br>* There are some other considerations, please confirm that you have read the help first.]]></string>
+    <string name="home_adb_dialog_view_command_message"><![CDATA[<font face="monospace">%1$s</font>]]></string>
     <string name="home_adb_dialog_view_command_copy_button">Copy</string>
     <string name="home_adb_dialog_view_command_button_send">Send</string>
 
@@ -63,7 +63,7 @@
 
     <!-- Home - Root -->
     <string name="home_root_title"><![CDATA[Start (for rooted devices)]]></string>
-    <string name="home_root_description"><![CDATA[If you are using Magisk, you can try %1$s. For root users, it will eventually replace Shizuku. Note, existing applications need to change a little to use %2$s.]]></string>
+    <string name="home_root_description"><![CDATA[If you are using Magisk, you can use Sui. For root users, it will eventually replace Shizuku. Note, existing applications need to change a little to use Sui.]]></string>
     <string name="home_root_button_start">Start</string>
     <string name="home_root_button_restart">Restart</string>
 
@@ -91,7 +91,7 @@
 
     <!-- Home - Adb permissions limited -->
     <string name="home_adb_is_limited_title">You need to take an extra step</string>
-    <string name="home_adb_is_limited_description">Your device manufacturer has restricted adb permissions and apps using Shizuku will not work properly.\n\nUsually, this limitation can be lifted by adjusting some options in \"Developer options\". Please read the help for details on how to do this.\n\nYou may need to restart Shizuku for the operation to take effect.</string>
+    <string name="home_adb_is_limited_description">Your device manufacturer has restricted adb permissions and apps using Shizuku will not work properly.\n\nUsually, this limitation can be lifted by adjusting some options in \"Developer options\".\n\nYou may need to restart Shizuku for the operation to take effect.</string>
 
     <!-- Home - Dialogs -->
     <string name="home_dialog_reboot_required_title">Reboot required</string>
@@ -102,7 +102,7 @@
 
     <!-- Application management -->
     <string name="app_management_dialog_adb_is_limited_title">The permission of adb is limited</string>
-    <string name="app_management_dialog_adb_is_limited_message"><![CDATA[It\'s highly possible that your device manufacturer limits the permission of adb.<p>There may be a solution for your system in <b><a href=\"%1$s\">this document</a></b>.]]></string>
+    <string name="app_management_dialog_adb_is_limited_message"><![CDATA[It\'s highly possible that your device manufacturer limits the permission of adb.]]></string>
     <string name="app_management_item_summary_requires_root">* requires Shizuku runs with root</string>
     <string name="app_management_toggle_all">Toggle all</string>
 
@@ -117,7 +117,7 @@
     <string name="terminal_tutorial_2">Use your terminal app to copy the files to its private files directory.</string>
     <string name="terminal_tutorial_2_description">Tip: If your terminal app\'s home directory (~) is in the private files directory, placing the files there will allow you to run %1$s without writing the path.\n\nOtherwise, you can create an alias for %2$s in your terminal app\'s %3$s configuration file.</string>
     <string name="terminal_tutorial_3">Open a shell with the following command:</string>
-    <string name="rish_description"><![CDATA[With %1$s, you can run shell commands in any terminal app.<p>Tap to learn more about how to use it.]]></string>
+    <string name="rish_description"><![CDATA[With %1$s, you can run shell commands in any terminal app.]]></string>
 
     <!-- Settings -->
     <string name="settings_title">Settings</string>
@@ -224,14 +224,14 @@
     <string name="wadb_notification_retry">Waiting to retry</string>
     <string name="wadb_error_title">Error while starting on boot</string>
     <string name="wadb_permission_error_notification_title">Permission Error</string>
-    <string name="wadb_permission_error_notification_content">Shizuku needs WRITE_SECURE_SETTINGS to start on boot. Tap to learn how to grant it.</string>
+    <string name="wadb_permission_error_notification_content">Shizuku needs WRITE_SECURE_SETTINGS to start on boot.</string>
     <string name="wadb_notification_channel">ADB auto-start service</string>
 
     <!-- Watchdog -->
     <string name="watchdog_running">Watchdog is running</string>
     <string name="watchdog_turn_off">Turn Off</string>
     <string name="watchdog_shizuku_crashed_title">Shizuku crashed recently</string>
-    <string name="watchdog_shizuku_crashed_text">Watchdog restarted the service. Tap to learn about potential fixes to prevent future crashes.</string>
+    <string name="watchdog_shizuku_crashed_text">Watchdog restarted the service.</string>
     <string name="watchdog_shizuku_crashed_action_turn_off_alerts">Turn Off Alerts</string>
 
     <!-- Misc -->

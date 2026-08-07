@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import moe.shizuku.manager.Helps
 import moe.shizuku.manager.R
 import moe.shizuku.manager.databinding.HomeItemContainerBinding
 import moe.shizuku.manager.databinding.HomeStartAdbBinding
@@ -64,7 +63,7 @@ class StartAdbViewHolder(binding: HomeStartAdbBinding, root: View) : BaseViewHol
                 .show()
         }
         binding.text1.movementMethod = LinkMovementMethod.getInstance()
-        binding.text1.text = context.getString(R.string.home_adb_description, Helps.ADB.get())
+        binding.text1.text = context.getString(R.string.home_adb_description)
             .toHtml(HtmlCompat.FROM_HTML_OPTION_TRIM_WHITESPACE)
     }
 }
