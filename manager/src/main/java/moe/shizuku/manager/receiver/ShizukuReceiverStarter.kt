@@ -45,8 +45,13 @@ object ShizukuReceiverStarter {
         } else if ((Build.VERSION.SDK_INT >= Build.VERSION_CODES.R || EnvironmentUtils.isTelevision() || EnvironmentUtils.getAdbTcpPort() > 0)
             && ShizukuSettings.getLastLaunchMode() == LaunchMethod.ADB) {
                 if (context.checkSelfPermission(WRITE_SECURE_SETTINGS) == PackageManager.PERMISSION_GRANTED) {
-                    AdbStartWorker.enqueue(context)
-                    updateNotification(context, WorkerState.AWAITING_WIFI)
+                    val wifiConnected = EnvironmentUtils.isWifiConnected()
+                    AdbStartWorker.enqueue(context, force = wifiConnected)
+                    if (!wifiConnected) {
+                        updateNotification(context, WorkerState.AWAITING_WIFI)
+                    } else {
+                        updateNotification(context, WorkerState.RUNNING)
+                    }
                 } else {
                     showPermissionErrorNotification(context)
                 }

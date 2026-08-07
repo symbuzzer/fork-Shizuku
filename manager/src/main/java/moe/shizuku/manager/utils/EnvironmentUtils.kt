@@ -4,6 +4,8 @@ import android.app.UiModeManager
 import android.content.Context
 import android.content.pm.PackageManager
 import android.content.res.Configuration
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.os.Build
 import android.os.SystemProperties
 import moe.shizuku.manager.ShizukuApplication
@@ -46,5 +48,12 @@ object EnvironmentUtils {
         if (port == -1) port = SystemProperties.getInt("persist.adb.tcp.port", -1)
         if (port == -1 && isTelevision() && !isTlsSupported()) port = ShizukuSettings.getTcpPort()
         return port
+    }
+
+    fun isWifiConnected(): Boolean {
+        val cm = appContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val network = cm.activeNetwork ?: return false
+        val capabilities = cm.getNetworkCapabilities(network) ?: return false
+        return capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)
     }
 }

@@ -40,6 +40,14 @@ import moe.shizuku.manager.utils.EnvironmentUtils
 import moe.shizuku.manager.utils.ShizukuStateMachine
 
 class AdbStartWorker(context: Context, params: WorkerParameters) : CoroutineWorker(context, params) {
+
+    override suspend fun getForegroundInfo(): ForegroundInfo {
+        return ForegroundInfo(
+            ShizukuReceiverStarter.NOTIFICATION_ID,
+            ShizukuReceiverStarter.buildNotification(applicationContext, applicationContext.getString(R.string.wadb_notification_title))
+        )
+    }
+
     override suspend fun doWork(): Result {
         try {
             updateNotification(
@@ -192,14 +200,22 @@ class AdbStartWorker(context: Context, params: WorkerParameters) : CoroutineWork
     }
 
     companion object {
-        fun enqueue(context: Context) {
+        fun enqueue(context: Context, force: Boolean = false) {
             val cb = Constraints.Builder()
-            if (EnvironmentUtils.isWifiRequired())
-                cb.setRequiredNetworkType(NetworkType.UNMETERED)
+            
+            if (!force && EnvironmentUtils.isWifiRequired()) {
+                cb.setRequiredNetworkType(NetworkType.CONNECTED)
+            }
+            
             val constraints = cb.build()
 
             val request = OneTimeWorkRequestBuilder<AdbStartWorker>()
                 .setConstraints(constraints)
+                .apply {
+                    if (force) {
+                        setExpedited(OutOfQuotaPolicy.RUN_AS_NON_EXPEDITED_WORK_REQUEST)
+                    }
+                }
                 .build()
 
             WorkManager.getInstance(context).enqueueUniqueWork(
