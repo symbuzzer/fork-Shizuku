@@ -15,6 +15,7 @@ import androidx.annotation.RequiresApi
 import androidx.core.view.isVisible
 import androidx.fragment.app.FragmentActivity
 import androidx.work.WorkManager
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -68,6 +69,27 @@ class StartWirelessAdbViewHolder(binding: HomeStartWirelessAdbBinding, root: Vie
             val tcpPort = EnvironmentUtils.getAdbTcpPort()
             val tcpMode = ShizukuSettings.getTcpMode()
 
+            // 1. If ADB IS listening to a TCP port and the user wants to keep it open. Start Shizuku via TCP.
+            // This works even without Wi-Fi if TCP mode was enabled once.
+            if (tcpPort > 0 && tcpMode) {
+                val intent = Intent(context, StarterActivity::class.java).apply {
+                    putExtra(StarterActivity.EXTRA_PORT, tcpPort)
+                }
+                context.startActivity(intent)
+                return
+            }
+
+            // 2. Check Wi-Fi connection for non-TCP starts (discovery or TLS)
+            if (!EnvironmentUtils.isWifiConnected() && !EnvironmentUtils.isTelevision()) {
+                MaterialAlertDialogBuilder(context)
+                    .setTitle(R.string.dialog_wifi_required_title)
+                    .setMessage(R.string.dialog_wifi_required_message)
+                    .setPositiveButton(android.R.string.ok, null)
+                    .show()
+                return
+            }
+
+            // 3. Normal Wireless ADB Flow
             // If ADB is NOT listening to a TCP port and the device doesn't support TLS, inform the user
             if (tcpPort <= 0 && !EnvironmentUtils.isTlsSupported()) {
                 WadbNotEnabledDialogFragment().show(context.asActivity<FragmentActivity>().supportFragmentManager)
@@ -80,12 +102,6 @@ class StartWirelessAdbViewHolder(binding: HomeStartWirelessAdbBinding, root: Vie
                     AdbStarter.stopTcp(context, tcpPort)
                 }
                 AdbDialogFragment().show(context.asActivity<FragmentActivity>().supportFragmentManager)
-            // Otherwise ADB IS listening to a TCP port and the user wants to keep it open. Start Shizuku via TCP
-            } else {
-                val intent = Intent(context, StarterActivity::class.java).apply {
-                    putExtra(StarterActivity.EXTRA_PORT, tcpPort)
-                }
-                context.startActivity(intent)
             }
         }
     }

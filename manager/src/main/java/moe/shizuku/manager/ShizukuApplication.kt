@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import com.topjohnwu.superuser.Shell
 import moe.shizuku.manager.ktx.logd
 import moe.shizuku.manager.service.WatchdogService
+import moe.shizuku.manager.adb.AdbConnectivityManager
 import moe.shizuku.manager.utils.ShizukuStateMachine
 import org.lsposed.hiddenapibypass.HiddenApiBypass
 import rikka.core.util.BuildUtils.atLeast30
@@ -51,6 +52,7 @@ class ShizukuApplication : Application() {
         application = this
         appContext = applicationContext
         init(this)
+        AdbConnectivityManager.start(this)
     }
 
 }

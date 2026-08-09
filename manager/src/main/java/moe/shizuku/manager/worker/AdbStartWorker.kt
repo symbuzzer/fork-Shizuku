@@ -77,9 +77,21 @@ class AdbStartWorker(context: Context, params: WorkerParameters) : CoroutineWork
                 fun startDiscoveryWithTimeout() {
                     adbMdns.start()
                     timeoutJob?.cancel()
-                    timeoutJob = launch {
-                        delay(15_000)
-                        close(TimeoutException("Timed out during mDNS port discovery"))
+                    timeoutJob = launch(Dispatchers.IO) {
+                        try {
+                            withTimeout(15_000) {
+                                // Wait for MDNS to find port (it will trySend to callbackFlow)
+                                delay(15_000)
+                            }
+                        } catch (e: Exception) {
+                            // Fallback scan if MDNS fails or times out
+                            val scannedPort = scanLocalAdbPorts()
+                            if (scannedPort > 0) {
+                                trySend(scannedPort)
+                            } else {
+                                close(TimeoutException("Timed out during mDNS port discovery and fallback scan"))
+                            }
+                        }
                     }
                 }
 
@@ -175,11 +187,32 @@ class AdbStartWorker(context: Context, params: WorkerParameters) : CoroutineWork
         }
     }
 
+    private fun scanLocalAdbPorts(): Int {
+        val port = EnvironmentUtils.getAdbTcpPort()
+        if (port > 0) return port
+
+        val commonPorts = listOf(5555, 3333, 4444)
+        for (p in commonPorts) {
+            if (isAdbPort(p)) return p
+        }
+        return -1
+    }
+
+    private fun isAdbPort(port: Int): Boolean {
+        return try {
+            java.net.Socket().apply {
+                connect(java.net.InetSocketAddress("127.0.0.1", port), 500)
+            }.use { true }
+        } catch (e: Exception) {
+            false
+        }
+    }
+
     private fun showErrorNotification(context: Context, e: Exception) {
         val channel = NotificationChannel(
             CHANNEL_ID,
             context.getString(R.string.wadb_notification_title),
-            NotificationManager.IMPORTANCE_LOW
+            NotificationManager.IMPORTANCE_DEFAULT
         )
         val nm = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         nm.createNotificationChannel(channel)
@@ -211,11 +244,7 @@ class AdbStartWorker(context: Context, params: WorkerParameters) : CoroutineWork
 
             val request = OneTimeWorkRequestBuilder<AdbStartWorker>()
                 .setConstraints(constraints)
-                .apply {
-                    if (force) {
-                        setExpedited(OutOfQuotaPolicy.RUN_AS_NON_EXPEDITED_WORK_REQUEST)
-                    }
-                }
+                .setExpedited(OutOfQuotaPolicy.RUN_AS_NON_EXPEDITED_WORK_REQUEST)
                 .build()
 
             WorkManager.getInstance(context).enqueueUniqueWork(

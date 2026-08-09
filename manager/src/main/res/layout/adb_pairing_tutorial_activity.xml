@@ -212,78 +212,27 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/step1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_marginStart="8dp"
-                android:importantForAccessibility="no"
-                android:padding="4dp"
-                android:src="@drawable/ic_numeric_1_circle_outline_24"
-                android:tint="?android:textColorSecondary"
-                android:tintMode="src_in" />
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    style="@style/TerminalTutorialText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/adb_pairing_tutorial_content_steps" />
-
-                <Button
-                    android:id="@+id/developer_options"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/development_settings"
-                    app:icon="@drawable/ic_outline_open_in_new_24"
-                    app:iconPadding="16dp" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
             android:id="@+id/step2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_marginTop="8dp"
+            android:paddingHorizontal="8dp"
+            android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_marginStart="8dp"
-                android:importantForAccessibility="no"
-                android:padding="4dp"
-                android:src="@drawable/ic_numeric_2_circle_outline_24"
-                android:tint="?android:textColorSecondary"
-                android:tintMode="src_in" />
-
-            <LinearLayout
-                android:layout_width="0dp"
+            <TextView
+                style="@style/TerminalTutorialText"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:text="@string/adb_pairing_tutorial_content_enter_pairing_code" />
 
-                <TextView
-                    style="@style/TerminalTutorialText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/adb_pairing_tutorial_content_enter_pairing_code" />
-
-            </LinearLayout>
+            <Button
+                android:id="@+id/developer_options"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/development_settings"
+                app:icon="@drawable/ic_outline_open_in_new_24"
+                app:iconPadding="16dp" />
 
         </LinearLayout>
 

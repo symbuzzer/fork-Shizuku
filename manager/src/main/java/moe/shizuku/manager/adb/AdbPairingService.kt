@@ -182,6 +182,7 @@ class AdbPairingService : Service() {
         if (success) {
             Log.i(tag, "Pair succeed")
 
+            ShizukuSettings.setPaired(true)
             stopSearch()
 
             startActivity(launchIntent.apply {

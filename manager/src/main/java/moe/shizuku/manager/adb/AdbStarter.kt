@@ -107,10 +107,10 @@ object AdbStarter {
 
     private suspend fun connectWithRetry(client: AdbClient) {
         var delayTime = 0L
-        val maxAttempts = 5
+        val maxAttempts = 8
         for (attempt in 1..maxAttempts) {
             try {
-                delay(delayTime)
+                if (delayTime > 0) delay(delayTime)
                 client.connect()
                 break
             } catch (e: Exception) {
@@ -119,7 +119,8 @@ object AdbStarter {
                     e is CancellationException ||
                     e is SocketTimeoutException
                 ) throw e
-                delayTime += 1000
+                
+                delayTime = (attempt * 1000L).coerceAtMost(5000L)
             }
         }
     }

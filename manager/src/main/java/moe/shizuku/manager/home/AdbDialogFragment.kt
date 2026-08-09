@@ -37,7 +37,6 @@ class AdbDialogFragment : DialogFragment() {
         }
 
         val builder = MaterialAlertDialogBuilder(context).apply {
-            setTitle(R.string.dialog_adb_discovery)
             setView(binding.root)
             setNegativeButton(android.R.string.cancel, null)
             setPositiveButton(R.string.development_settings, null)

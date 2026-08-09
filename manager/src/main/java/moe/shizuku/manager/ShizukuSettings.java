@@ -35,6 +35,7 @@ public class ShizukuSettings {
         public static final String KEY_USE_SYSTEM_COLOR = "use_system_color";
         public static final String KEY_REPORT_BUG = "report_bug";
         public static final String KEY_LEGACY_PAIRING = "legacy_pairing";
+        public static final String KEY_IS_PAIRED = "is_paired";
         public static final String KEY_SHOW_ADVANCED = "show_advanced";
         public static final String KEY_CATEGORY_ADVANCED = "category_advanced";
     }
@@ -176,6 +177,14 @@ public class ShizukuSettings {
 
     public static boolean getLegacyPairing() {
         return getPreferences().getBoolean(Keys.KEY_LEGACY_PAIRING, false);
+    }
+
+    public static boolean isPaired() {
+        return getPreferences().getBoolean(Keys.KEY_IS_PAIRED, false);
+    }
+
+    public static void setPaired(boolean paired) {
+        getPreferences().edit().putBoolean(Keys.KEY_IS_PAIRED, paired).apply();
     }
 
     public static boolean getShowAdvanced() {

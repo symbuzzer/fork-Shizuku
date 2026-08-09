@@ -64,7 +64,7 @@ object ShizukuReceiverStarter {
         val channel = NotificationChannel(
             CHANNEL_ID,
             context.getString(R.string.wadb_notification_title),
-            NotificationManager.IMPORTANCE_LOW
+            NotificationManager.IMPORTANCE_DEFAULT
         )
         val nm = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         nm.createNotificationChannel(channel)
@@ -138,7 +138,7 @@ object ShizukuReceiverStarter {
         val channel = NotificationChannel(
             CHANNEL_ID,
             context.getString(R.string.wadb_notification_title),
-            NotificationManager.IMPORTANCE_LOW
+            NotificationManager.IMPORTANCE_DEFAULT
         )
         val nm = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         nm.createNotificationChannel(channel)

@@ -71,9 +71,22 @@ class StarterActivity : AppBarActivity() {
                     }
                     is SSLProtocolException -> {
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                            AdbPairingHelper.handlePairing(this@StarterActivity)
-                            finish()
-                            return@observe
+                            if (moe.shizuku.manager.ShizukuSettings.isPaired()) {
+                                MaterialAlertDialogBuilder(this)
+                                    .setTitle(R.string.dialog_adb_pairing_invalid_title)
+                                    .setMessage(R.string.dialog_adb_pairing_invalid_message)
+                                    .setPositiveButton(R.string.dialog_adb_pairing_invalid_positive) { _, _ ->
+                                        AdbPairingHelper.handlePairing(this@StarterActivity)
+                                        finish()
+                                    }
+                                    .setNegativeButton(android.R.string.cancel, null)
+                                    .show()
+                                return@observe
+                            } else {
+                                AdbPairingHelper.handlePairing(this@StarterActivity)
+                                finish()
+                                return@observe
+                            }
                         } else {
                             message = R.string.adb_pair_required
                         }
