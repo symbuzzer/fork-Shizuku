@@ -4,7 +4,10 @@ import android.app.NotificationManager
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Build
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.FileProvider
 import moe.shizuku.manager.utils.UpdateChecker
 import android.os.Bundle
@@ -56,6 +59,27 @@ abstract class HomeActivity : AppBarActivity() {
                 startActivity(intent)
             }
         )
+    }
+
+    private val requestPermissionsLauncher =
+        registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) {
+            // Permission result handled by the system
+        }
+
+    private fun checkAndRequestRequiredPermissions() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            val permissions = arrayOf(
+                android.Manifest.permission.POST_NOTIFICATIONS,
+                android.Manifest.permission.NEARBY_WIFI_DEVICES
+            )
+            val missingPermissions = permissions.filter {
+                checkSelfPermission(it) != PackageManager.PERMISSION_GRANTED
+            }.toTypedArray()
+
+            if (missingPermissions.isNotEmpty()) {
+                requestPermissionsLauncher.launch(missingPermissions)
+            }
+        }
     }
 
     private val stateListener: (ShizukuStateMachine.State) -> Unit = {
@@ -127,6 +151,8 @@ abstract class HomeActivity : AppBarActivity() {
 
         recyclerView.addItemSpacing(top = itemSpacing, bottom = itemSpacing)
         recyclerView.addEdgeSpacing(top = edgeSpacingV, bottom = edgeSpacingV, left = edgeSpacingH, right = edgeSpacingH)
+
+        checkAndRequestRequiredPermissions()
 
         ShizukuStateMachine.addListener(stateListener)
     }
