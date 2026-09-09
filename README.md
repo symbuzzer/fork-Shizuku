@@ -1,6 +1,5 @@
-# Shizuku-fork
-
-The new and easy-to-use Shizuku variant.
+# Shizuku-fork [![Github All Releases](https://img.shields.io/github/downloads/symbuzzer/fork-Shizuku/total.svg)](https://github.com/symbuzzer/fork-Shizuku/releases)[![shields.io Stars](https://img.shields.io/github/stars/symbuzzer/fork-Shizuku?color=gr)](https://github.com/symbuzzer/fork-Shizuku/stargazers)  
+The new and easy-to-use Shizuku variant.  
 
 ## What is Shizuku?
 
