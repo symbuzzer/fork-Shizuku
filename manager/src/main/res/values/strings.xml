@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name" translatable="false">Shizuku-fork</string>
     <string name="shizuku" translatable="false">Shizuku</string>
+    <string name="github_url" translatable="false">https://github.com/symbuzzer/fork-Shizuku</string>
+    <string name="about_version" translatable="false">v%1$s</string>
+    <string name="github" translatable="false">GitHub</string>
 
     <!-- To translators: you can leave your here -->
 
@@ -205,6 +208,16 @@
     <string name="permission_warning_template"><![CDATA[Allow <b>%1$s</b> to %2$s?]]></string>
     <string name="grant_dialog_button_allow_always">Allow all the time</string>
     <string name="grant_dialog_button_deny">"Deny"</string>
+    <string name="permission_denied_exit_message">Required permissions were not granted. The application will close.</string>
+    <string name="permission_settings_dialog_title">Permission required</string>
+    <string name="permission_settings_dialog_message">Required permissions are missing. Please grant the missing permissions in Settings to continue using Shizuku.</string>
+    <string name="unused_app_restrictions_dialog_title">Disable unused app restrictions</string>
+    <string name="unused_app_restrictions_dialog_message">To ensure Shizuku operates reliably in the background, please turn off “Pause app activity if unused” in Settings.</string>
+    <string name="unused_app_restrictions_button_open_settings">Open settings</string>
+    <string name="unused_app_restrictions_not_disabled_exit_message">Unused app restrictions were not disabled. The application will close.</string>
+    <string name="battery_optimization_dialog_title">Disable battery optimization</string>
+    <string name="battery_optimization_dialog_message">To ensure Shizuku operates reliably in the background, please turn off battery optimization for this app.</string>
+    <string name="battery_optimization_not_disabled_exit_message">Battery optimization was not disabled. The application will close.</string>
 
     <!-- Starter -->
     <string name="starter">Starter</string>

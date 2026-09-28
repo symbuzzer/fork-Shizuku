@@ -7,8 +7,11 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
+import android.provider.Settings
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.FileProvider
+import androidx.core.content.IntentCompat
 import moe.shizuku.manager.utils.UpdateChecker
 import android.os.Bundle
 import android.os.Process
@@ -29,12 +32,14 @@ import moe.shizuku.manager.ShizukuSettings
 import moe.shizuku.manager.adb.AdbPairingService
 import moe.shizuku.manager.app.AppBarActivity
 import moe.shizuku.manager.app.SnackbarHelper
+import moe.shizuku.manager.databinding.DialogAboutBinding
 import moe.shizuku.manager.databinding.HomeActivityBinding
 import moe.shizuku.manager.home.showAccessibilityDialog
 import moe.shizuku.manager.ktx.toHtml
 import moe.shizuku.manager.management.AppsViewModel
 import moe.shizuku.manager.settings.SettingsActivity
 import moe.shizuku.manager.utils.AppIconCache
+import moe.shizuku.manager.utils.CustomTabsHelper
 import moe.shizuku.manager.utils.EnvironmentUtils
 import moe.shizuku.manager.utils.SettingsHelper
 import moe.shizuku.manager.utils.ShizukuStateMachine
@@ -54,30 +59,192 @@ abstract class HomeActivity : AppBarActivity() {
         HomeAdapter(homeModel, appsModel, lifecycleScope,
             onUpdateClick = { checkUpdate() },
             onSettingsClick = { startActivity(Intent(this, SettingsActivity::class.java)) },
-            onAboutClick = {
-                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/symbuzzer/fork-Shizuku"))
-                startActivity(intent)
-            }
+            onAboutClick = { showAboutDialog() }
         )
+    }
+
+    private fun getRequiredPermissions(): Array<String> {
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            arrayOf(
+                android.Manifest.permission.POST_NOTIFICATIONS,
+                android.Manifest.permission.NEARBY_WIFI_DEVICES
+            )
+        } else {
+            emptyArray()
+        }
     }
 
     private val requestPermissionsLauncher =
         registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) {
-            // Permission result handled by the system
+            checkRequiredPermissionsOrExit()
         }
 
-    private fun checkAndRequestRequiredPermissions() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            val permissions = arrayOf(
-                android.Manifest.permission.POST_NOTIFICATIONS,
-                android.Manifest.permission.NEARBY_WIFI_DEVICES
-            )
-            val missingPermissions = permissions.filter {
-                checkSelfPermission(it) != PackageManager.PERMISSION_GRANTED
-            }.toTypedArray()
+    private val appSettingsLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            checkRequiredPermissionsOrExit()
+        }
 
-            if (missingPermissions.isNotEmpty()) {
-                requestPermissionsLauncher.launch(missingPermissions)
+    private val unusedAppRestrictionsLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            checkUnusedAppRestrictionsOrExit()
+        }
+
+    private val batteryOptimizationLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            checkBatteryOptimizationOrExit()
+        }
+
+    private fun isUnusedAppRestrictionsDisabled(): Boolean {
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            packageManager.isAutoRevokeWhitelisted
+        } else {
+            true
+        }
+    }
+
+    private fun checkAndRequestRequiredPermissions() {
+        val permissions = getRequiredPermissions()
+        val missingPermissions = permissions.filter {
+            checkSelfPermission(it) != PackageManager.PERMISSION_GRANTED
+        }.toTypedArray()
+
+        if (missingPermissions.isNotEmpty()) {
+            requestPermissionsLauncher.launch(missingPermissions)
+        } else {
+            checkAndRequestUnusedAppRestrictions()
+        }
+    }
+
+    private fun checkRequiredPermissionsOrExit() {
+        val missingPermissions = getRequiredPermissions().filter {
+            checkSelfPermission(it) != PackageManager.PERMISSION_GRANTED
+        }
+        if (missingPermissions.isNotEmpty()) {
+            promptOpenAppSettingsForPermissions()
+        } else {
+            checkAndRequestUnusedAppRestrictions()
+        }
+    }
+
+    private fun promptOpenAppSettingsForPermissions() {
+        val dialog = MaterialAlertDialogBuilder(this)
+            .setTitle(R.string.permission_settings_dialog_title)
+            .setMessage(R.string.permission_settings_dialog_message)
+            .setPositiveButton(R.string.unused_app_restrictions_button_open_settings) { _, _ ->
+                val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).apply {
+                    data = Uri.fromParts("package", packageName, null)
+                }
+                appSettingsLauncher.launch(intent)
+            }
+            .setNegativeButton(R.string.home_dialog_button_exit) { _, _ ->
+                finishAffinity()
+            }
+            .setOnDismissListener {
+                val stillMissing = getRequiredPermissions().any {
+                    checkSelfPermission(it) != PackageManager.PERMISSION_GRANTED
+                }
+                if (stillMissing) {
+                    finishAffinity()
+                }
+            }
+            .create()
+
+        dialog.setCanceledOnTouchOutside(false)
+        dialog.show()
+    }
+
+    private fun areAllPermissionsGranted(): Boolean {
+        val permissionsGranted = getRequiredPermissions().all {
+            checkSelfPermission(it) == PackageManager.PERMISSION_GRANTED
+        }
+        return permissionsGranted && isUnusedAppRestrictionsDisabled() && SettingsHelper.isIgnoringBatteryOptimizations(this)
+    }
+
+    private fun checkAndRequestUnusedAppRestrictions() {
+        if (!isUnusedAppRestrictionsDisabled()) {
+            promptDisableUnusedAppRestrictions()
+        } else {
+            checkAndRequestBatteryOptimization()
+        }
+    }
+
+    private fun promptDisableUnusedAppRestrictions() {
+        val dialog = MaterialAlertDialogBuilder(this)
+            .setTitle(R.string.unused_app_restrictions_dialog_title)
+            .setMessage(R.string.unused_app_restrictions_dialog_message)
+            .setPositiveButton(R.string.unused_app_restrictions_button_open_settings) { _, _ ->
+                val intent = IntentCompat.createManageUnusedAppRestrictionsIntent(this, packageName)
+                unusedAppRestrictionsLauncher.launch(intent)
+            }
+            .setNegativeButton(R.string.home_dialog_button_exit) { _, _ ->
+                finishAffinity()
+            }
+            .setOnDismissListener {
+                if (!isUnusedAppRestrictionsDisabled()) {
+                    finishAffinity()
+                } else {
+                    checkAndRequestBatteryOptimization()
+                }
+            }
+            .create()
+
+        dialog.setCanceledOnTouchOutside(false)
+        dialog.show()
+    }
+
+    private fun checkUnusedAppRestrictionsOrExit() {
+        if (!isUnusedAppRestrictionsDisabled()) {
+            showExitDialog(
+                getString(R.string.error),
+                getString(R.string.unused_app_restrictions_not_disabled_exit_message)
+            )
+        } else {
+            checkAndRequestBatteryOptimization()
+        }
+    }
+
+    private fun checkAndRequestBatteryOptimization() {
+        if (!SettingsHelper.isIgnoringBatteryOptimizations(this)) {
+            promptDisableBatteryOptimization()
+        } else {
+            if (ShizukuStateMachine.isRunning()) {
+                ShizukuSettings.configureInitialSettingsIfNeeded(this)
+            }
+        }
+    }
+
+    private fun promptDisableBatteryOptimization() {
+        val dialog = MaterialAlertDialogBuilder(this)
+            .setTitle(R.string.battery_optimization_dialog_title)
+            .setMessage(R.string.battery_optimization_dialog_message)
+            .setPositiveButton(R.string.unused_app_restrictions_button_open_settings) { _, _ ->
+                SettingsHelper.requestIgnoreBatteryOptimizations(this, batteryOptimizationLauncher)
+            }
+            .setNegativeButton(R.string.home_dialog_button_exit) { _, _ ->
+                finishAffinity()
+            }
+            .setOnDismissListener {
+                if (!SettingsHelper.isIgnoringBatteryOptimizations(this)) {
+                    finishAffinity()
+                } else if (ShizukuStateMachine.isRunning()) {
+                    ShizukuSettings.configureInitialSettingsIfNeeded(this)
+                }
+            }
+            .create()
+
+        dialog.setCanceledOnTouchOutside(false)
+        dialog.show()
+    }
+
+    private fun checkBatteryOptimizationOrExit() {
+        if (!SettingsHelper.isIgnoringBatteryOptimizations(this)) {
+            showExitDialog(
+                getString(R.string.error),
+                getString(R.string.battery_optimization_not_disabled_exit_message)
+            )
+        } else {
+            if (ShizukuStateMachine.isRunning()) {
+                ShizukuSettings.configureInitialSettingsIfNeeded(this)
             }
         }
     }
@@ -86,14 +253,30 @@ abstract class HomeActivity : AppBarActivity() {
         if (ShizukuStateMachine.isRunning()) {
             checkServerStatus()
             appsModel.load()
+            if (areAllPermissionsGranted()) {
+                ShizukuSettings.configureInitialSettingsIfNeeded(this)
+            }
         } else if (ShizukuStateMachine.isDead()) {
             checkServerStatus()
         }
     }
 
+    private fun showAboutDialog() {
+        val binding = DialogAboutBinding.inflate(layoutInflater)
+        binding.appVersion.text = "v${moe.shizuku.manager.BuildConfig.VERSION_NAME}"
+
+        binding.appName.setOnClickListener {
+            CustomTabsHelper.launchUrlOrCopy(this, "https://github.com/symbuzzer/fork-Shizuku")
+        }
+
+        MaterialAlertDialogBuilder(this)
+            .setView(binding.root)
+            .show()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setTitle("${getString(R.string.app_name)} v${moe.shizuku.manager.BuildConfig.VERSION_NAME}")
+        setTitle(R.string.app_name)
 
         val binding = HomeActivityBinding.inflate(layoutInflater, rootView, true)
 
@@ -102,6 +285,9 @@ abstract class HomeActivity : AppBarActivity() {
                 val status = homeModel.serviceStatus.value?.data ?: return@observe
                 adapter.updateData()
                 ShizukuSettings.setLastLaunchMode(if (status.uid == 0) ShizukuSettings.LaunchMethod.ROOT else ShizukuSettings.LaunchMethod.ADB)
+                if (status.isRunning && areAllPermissionsGranted()) {
+                    ShizukuSettings.configureInitialSettingsIfNeeded(this)
+                }
             }
         }
 
@@ -118,18 +304,6 @@ abstract class HomeActivity : AppBarActivity() {
                 getString(R.string.home_dialog_duplicate_app_detected_message)
             )
         }
-
-        homeModel.shouldShowBatteryOptimizationSnackbar.observe(this) { shouldShow ->
-            if (shouldShow) SnackbarHelper.show(
-                this,
-                binding.root,
-                msg = getString(R.string.snackbar_battery_optimization_home),
-                duration = Snackbar.LENGTH_INDEFINITE,
-                actionText = getString(R.string.snackbar_action_fix),
-                action = { SettingsHelper.requestIgnoreBatteryOptimizations(this, null) }
-            )
-        }
-        homeModel.checkBatteryOptimization()
 
         appsModel.grantedCount.observe(this) {
             if (it.status == Status.SUCCESS) {
@@ -237,11 +411,7 @@ abstract class HomeActivity : AppBarActivity() {
                         .show()
                 }
                 is UpdateChecker.UpdateResult.NoUpdate -> {
-                    MaterialAlertDialogBuilder(this@HomeActivity)
-                        .setTitle(R.string.action_update)
-                        .setMessage(R.string.update_not_available)
-                        .setPositiveButton(android.R.string.ok, null)
-                        .show()
+                    Toast.makeText(this@HomeActivity, R.string.update_not_available, Toast.LENGTH_SHORT).show()
                 }
                 is UpdateChecker.UpdateResult.Error -> {
                     MaterialAlertDialogBuilder(this@HomeActivity)

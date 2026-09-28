@@ -204,6 +204,16 @@
     <string name="permission_warning_template"><![CDATA[<b>%1$s</b> uygulamasının %2$s işlemini gerçekleştirmesine izin verilsin mi?]]></string>
     <string name="grant_dialog_button_allow_always">Her zaman izin ver</string>
     <string name="grant_dialog_button_deny">"Reddet"</string>
+    <string name="permission_denied_exit_message">Gerekli izinler verilmediği için uygulama kapatılacak.</string>
+    <string name="permission_settings_dialog_title">İzin gerekli</string>
+    <string name="permission_settings_dialog_message">Gerekli izinler verilmedi. Shizuku\'yu kullanmaya devam etmek için lütfen verilmeyen izinleri Ayarlar sayfasından etkinleştirin.</string>
+    <string name="unused_app_restrictions_dialog_title">Kullanılmayan uygulamayı yönet seçeneğini kapatın</string>
+    <string name="unused_app_restrictions_dialog_message">Shizuku\'nun arka planda sorunsuz çalışabilmesi için Ayarlar sayfasından \"Kullanılmayan uygulamayı yönet\" seçeneğini kapatmanız gerekmektedir.</string>
+    <string name="unused_app_restrictions_button_open_settings">Ayarları aç</string>
+    <string name="unused_app_restrictions_not_disabled_exit_message">Kullanılmayan uygulamayı yönet seçeneği kapatılmadığı için uygulama kapatılacak.</string>
+    <string name="battery_optimization_dialog_title">Pil optimizasyonunu kapatın</string>
+    <string name="battery_optimization_dialog_message">Shizuku\'nun arka planda kesintisiz çalışabilmesi için pil optimizasyonunu kapatmanız gerekmektedir.</string>
+    <string name="battery_optimization_not_disabled_exit_message">Pil optimizasyonu kapatılmadığı için uygulama kapatılacak.</string>
 
     <!-- Başlatıcı -->
     <string name="starter">Başlatıcı</string>

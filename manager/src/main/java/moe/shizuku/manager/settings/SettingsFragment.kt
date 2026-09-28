@@ -408,29 +408,6 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
         newValue: Boolean,
         onResult: (Boolean) -> Unit
     ) {
-        val context = requireContext()
-        if (!newValue || SettingsHelper.isIgnoringBatteryOptimizations(context) || EnvironmentUtils.isTelevision()) {
-            onResult(true)
-            return
-        }
-            
-        lifecycleScope.launch {
-            val result = suspendCancellableCoroutine<Boolean> { continuation ->
-                batteryOptimizationContinuation = continuation
-                SnackbarHelper.show(
-                    context,
-                    requireView(),
-                    msg = context.getString(R.string.snackbar_battery_optimization_settings),
-                    duration = 6000,
-                    actionText = context.getString(R.string.snackbar_action_fix),
-                    action = { SettingsHelper.requestIgnoreBatteryOptimizations(context, batteryOptimizationListener) },
-                    onDismiss = { event ->
-                        if (event != Snackbar.Callback.DISMISS_EVENT_ACTION && continuation.isActive)
-                            continuation.resume(false)
-                    }
-                )
-            }
-            onResult(result)
-        }
+        onResult(true)
     }
 }

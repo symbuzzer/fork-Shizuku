@@ -102,6 +102,27 @@ public class ShizukuSettings {
         return getPreferences().getBoolean(Keys.KEY_AUTO_DISABLE_USB_DEBUGGING, false);
     }
 
+    public static void setAutoDisableUsbDebugging(boolean enable) {
+        getPreferences().edit().putBoolean(Keys.KEY_AUTO_DISABLE_USB_DEBUGGING, enable).apply();
+    }
+
+    public static boolean isInitialSettingsConfigured() {
+        return getPreferences().getBoolean("initial_settings_configured", false);
+    }
+
+    public static void setInitialSettingsConfigured(boolean configured) {
+        getPreferences().edit().putBoolean("initial_settings_configured", configured).apply();
+    }
+
+    public static void configureInitialSettingsIfNeeded(Context context) {
+        if (!isInitialSettingsConfigured()) {
+            setStartOnBoot(context, true);
+            setWatchdog(context, true);
+            setAutoDisableUsbDebugging(true);
+            setInitialSettingsConfigured(true);
+        }
+    }
+
     public static String getAuthToken() {
         String authToken = getPreferences().getString("auth_token", null);
         if (authToken == null || authToken.isEmpty()) {

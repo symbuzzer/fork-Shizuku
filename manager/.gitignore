@@ -1,3 +1,5 @@
 /build
 /signing.properties
 /.cxx
+/release/output-metadata.json
+/release/Shizuku-fork.apk
