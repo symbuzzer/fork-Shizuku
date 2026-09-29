@@ -1,11 +1,6 @@
 <resources>
     <string name="app_name" translatable="false">Shizuku-fork</string>
     <string name="shizuku" translatable="false">Shizuku</string>
-    <string name="github_url" translatable="false">https://github.com/symbuzzer/fork-Shizuku</string>
-    <string name="about_version" translatable="false">v%1$s</string>
-    <string name="github" translatable="false">GitHub</string>
-
-    <!-- To translators: you can leave your here -->
 
     <!-- Home - Status -->
     <string name="home_status_service_is_running">%1$s is running</string>
@@ -153,9 +148,6 @@
 
     <!-- Snackbar -->
     <string name="snackbar_invalid_port">Port must be between 1 and 65535</string>
-    <string name="snackbar_battery_optimization_home">Battery optimization must be disabled for start on boot/watchdog to work properly</string>
-    <string name="snackbar_battery_optimization_settings">Please disable battery optimization to use this feature</string>
-    <string name="snackbar_action_fix">Fix</string>
 
     <!-- Toast -->
     <string name="toast_shizuku_already_starting">Shizuku is already starting in the background</string>
@@ -208,7 +200,6 @@
     <string name="permission_warning_template"><![CDATA[Allow <b>%1$s</b> to %2$s?]]></string>
     <string name="grant_dialog_button_allow_always">Allow all the time</string>
     <string name="grant_dialog_button_deny">"Deny"</string>
-    <string name="permission_denied_exit_message">Required permissions were not granted. The application will close.</string>
     <string name="permission_settings_dialog_title">Permission required</string>
     <string name="permission_settings_dialog_message">Required permissions are missing. Please grant the missing permissions in Settings to continue using Shizuku.</string>
     <string name="unused_app_restrictions_dialog_title">Disable unused app restrictions</string>
@@ -239,6 +230,9 @@
     <string name="error">Error</string>
     <string name="developed_by">Developed by Ali BEYAZ</string>
     <string name="settings_about">About</string>
+    <string name="about_project_github">Project GitHub</string>
+    <string name="about_developer_github">Developer GitHub</string>
+    <string name="about_patreon">Patreon</string>
     <string name="dialog_cannot_open_browser_title">Can\'t start browser</string>
     <string name="toast_copied_to_clipboard">Copied to clipboard</string>
     <string name="accessibility_service_description">Provides pairing support for devices (e.g., TVs running Android 14+) where notifications or split screen cannot be used.\n\nEnables Shizuku to extract the pairing code from the wireless debugging pairing screen. It will disable itself once the pairing code is found.</string>

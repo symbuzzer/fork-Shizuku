@@ -265,8 +265,16 @@ abstract class HomeActivity : AppBarActivity() {
         val binding = DialogAboutBinding.inflate(layoutInflater)
         binding.appVersion.text = "v${moe.shizuku.manager.BuildConfig.VERSION_NAME}"
 
-        binding.appName.setOnClickListener {
+        binding.btnProjectGithub.setOnClickListener {
             CustomTabsHelper.launchUrlOrCopy(this, "https://github.com/symbuzzer/fork-Shizuku")
+        }
+
+        binding.btnDeveloperGithub.setOnClickListener {
+            CustomTabsHelper.launchUrlOrCopy(this, "https://github.com/symbuzzer")
+        }
+
+        binding.btnPatreon.setOnClickListener {
+            CustomTabsHelper.launchUrlOrCopy(this, "https://avalibeyaz.com/patreon")
         }
 
         MaterialAlertDialogBuilder(this)

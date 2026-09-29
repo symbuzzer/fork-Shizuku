@@ -122,9 +122,6 @@
   <string name="settings_legacy_pairing">Pareamento legado</string>
   <string name="settings_legacy_pairing_summary">Insira o código de pareamento em uma caixa de diálogo em vez de uma notificação</string>
   <string name="snackbar_invalid_port">A porta deve estar entre 1 e 65535.</string>
-  <string name="snackbar_battery_optimization_home">A otimização de bateria deve estar desativada para que a execução na inicialização/vigilância funcione corretamente.</string>
-  <string name="snackbar_battery_optimization_settings">Desative a otimização de bateria para usar este recurso.</string>
-  <string name="snackbar_action_fix">Corrigir</string>
   <string name="toast_shizuku_already_starting">O Shizuku já está iniciando em segundo plano</string>
   <string name="toast_accessibility_tv_only">Esse serviço é suportado apenas em TVs</string>
   <string name="toast_pairing_timeout">O serviço de pareamento do Shizuku expirou</string>
@@ -182,6 +179,9 @@
   <string name="error">Erro</string>
   <string name="developed_by">Desenvolvido por Ali BEYAZ</string>
   <string name="settings_about">Sobre</string>
+  <string name="about_project_github">GitHub do Projeto</string>
+  <string name="about_developer_github">GitHub do Desenvolvedor</string>
+  <string name="about_patreon">Patreon</string>
   <string name="dialog_cannot_open_browser_title">Não consigo iniciar o navegador</string>
   <string name="toast_copied_to_clipboard">Copiado para a área de transferência</string>
   <string name="accessibility_service_description">Fornece suporte para pareamento com dispositivos (por exemplo, TVs com Android 14 ou superior) onde as notificações ou a tela dividida não podem ser usadas.\n\nPermite que o Shizuku extraia o código de pareamento da tela de depuração sem fio. Ele será desativado assim que o código de pareamento for encontrado.</string>

@@ -2,8 +2,6 @@
     <string name="app_name" translatable="false">Shizuku-fork</string>
     <string name="shizuku" translatable="false">Shizuku</string>
 
-    <!-- Çevirmenlere: notlarınızı buraya bırakabilirsiniz -->
-
     <!-- Ana Sayfa - Durum -->
     <string name="home_status_service_is_running">%1$s çalışıyor</string>
     <string name="home_status_service_not_running">%1$s çalışmıyor</string>
@@ -149,9 +147,6 @@
 
     <!-- Snackbar -->
     <string name="snackbar_invalid_port">Bağlantı noktası 1 ile 65535 arasında olmalıdır</string>
-    <string name="snackbar_battery_optimization_home">Açılışta başlat/bekçi köpeğinin (Watchdog) düzgün çalışması için pil optimizasyonu devre dışı bırakılmalıdır.</string>
-    <string name="snackbar_battery_optimization_settings">Bu özelliği kullanmak için lütfen pil optimizasyonunu devre dışı bırakın.</string>
-    <string name="snackbar_action_fix">Düzelt</string>
 
     <!-- Toast -->
     <string name="toast_shizuku_already_starting">Shizuku arka planda zaten başlatılıyor</string>
@@ -204,7 +199,6 @@
     <string name="permission_warning_template"><![CDATA[<b>%1$s</b> uygulamasının %2$s işlemini gerçekleştirmesine izin verilsin mi?]]></string>
     <string name="grant_dialog_button_allow_always">Her zaman izin ver</string>
     <string name="grant_dialog_button_deny">"Reddet"</string>
-    <string name="permission_denied_exit_message">Gerekli izinler verilmediği için uygulama kapatılacak.</string>
     <string name="permission_settings_dialog_title">İzin gerekli</string>
     <string name="permission_settings_dialog_message">Gerekli izinler verilmedi. Shizuku\'yu kullanmaya devam etmek için lütfen verilmeyen izinleri Ayarlar sayfasından etkinleştirin.</string>
     <string name="unused_app_restrictions_dialog_title">Kullanılmayan uygulamayı yönet seçeneğini kapatın</string>
@@ -235,6 +229,9 @@
     <string name="error">Hata</string>
     <string name="developed_by">Ali BEYAZ tarafından geliştirilmiştir</string>
     <string name="settings_about">Hakkında</string>
+    <string name="about_project_github">Proje GitHub</string>
+    <string name="about_developer_github">Geliştirici GitHub</string>
+    <string name="about_patreon">Patreon</string>
     <string name="dialog_cannot_open_browser_title">Tarayıcı başlatılamıyor</string>
     <string name="toast_copied_to_clipboard">Panoya kopyalandı</string>
     <string name="accessibility_service_description">Bildirimlerin veya bölünmüş ekranın kullanılamadığı cihazlar için (ör. Android 14+ çalıştıran TV\'ler) eşleştirme desteği sağlar.\n\nShizuku\'nun kablosuz hata ayıklama eşleştirme ekranından eşleştirme kodunu çıkarmasını sağlar. Eşleştirme kodu bulunduğunda kendini devre dışı bırakır.</string>

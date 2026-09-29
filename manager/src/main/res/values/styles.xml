@@ -117,12 +117,6 @@
         <item name="android:layout_marginTop">2dp</item>
     </style>
 
-    <style name="Theme.App.DialogHost" parent="Theme.Material3Expressive.DayNight.NoActionBar">
-        <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowNoTitle">true</item>
-    </style>
-
     <style name="Preference.Rikka.Material3.Empty" parent="@style/Preference.Rikka.Material3">
         <item name="layout">@layout/preference_empty</item>
     </style>
