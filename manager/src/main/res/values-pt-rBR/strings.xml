@@ -41,6 +41,7 @@
   <string name="dialog_adb_pairing_invalid_positive">Parear novamente</string>
   <string name="enable">Habilitar</string>
   <string name="development_settings">Opções do desenvolvedor</string>
+  <string name="please_enable_developer_options_first">Por favor, ative as \"Opções do desenvolvedor\" primeiro.</string>
   <string name="notification_settings">Opções de notificações</string>
   <string name="adb_pairing_tutorial_content_notification">Uma notificação do Shizuku ajudará você a concluir o pareamento.</string>
   <string name="adb_pairing_tutorial_content_enter_pairing_code">No menu \"Depuração por Wi-Fi\", toque em \"Parear dispositivo com um código de pareamento\". Insira o código exibido aqui na notificação para concluir o pareamento.</string>

@@ -48,6 +48,7 @@
     <string name="dialog_adb_pairing_invalid_positive">Tekrar eşleştir</string>
     <string name="enable">Etkinleştir</string>
     <string name="development_settings">Geliştirici seçenekleri</string>
+    <string name="please_enable_developer_options_first">Lütfen önce \"Geliştirici seçenekleri\"ni etkinleştirin.</string>
     <string name="notification_settings">Bildirim seçenekleri</string>
     <string name="adb_pairing_tutorial_content_notification">Shizuku\'dan gelen bir bildirim eşleştirmeyi tamamlamanıza yardımcı olacak.</string>
     <string name="adb_pairing_tutorial_content_enter_pairing_code">Kablosuz hata ayıklama menüsündeki \"Eşleştirme koduyla cihaz eşleştir\"e dokunun. Eşleştirmeyi tamamlamak için bildirime buradaki kodu girin.</string>

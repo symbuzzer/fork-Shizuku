@@ -31,6 +31,7 @@ import moe.shizuku.manager.utils.EnvironmentUtils
 import moe.shizuku.manager.utils.ShizukuStateMachine
 import rikka.core.content.asActivity
 import rikka.html.text.HtmlCompat
+import moe.shizuku.manager.utils.SettingsPage
 import rikka.recyclerview.BaseViewHolder
 import rikka.recyclerview.BaseViewHolder.Creator
 
@@ -47,6 +48,11 @@ class StartWirelessAdbViewHolder(binding: HomeStartWirelessAdbBinding, root: Vie
         }
 
         fun start (context: Context, scope: CoroutineScope) {
+            if (!SettingsPage.Developer.isDeveloperOptionsEnabled(context)) {
+                SettingsPage.Developer.showDeveloperOptionsDisabledDialog(context)
+                return
+            }
+
             if (ShizukuStateMachine.get() == ShizukuStateMachine.State.STARTING) {
                 Toast.makeText(context, context.getString(R.string.toast_shizuku_already_starting), Toast.LENGTH_SHORT).show()
                 return

@@ -49,6 +49,7 @@
     <string name="dialog_adb_pairing_invalid_positive">Pair again</string>
     <string name="enable">Enable</string>
     <string name="development_settings">Developer options</string>
+    <string name="please_enable_developer_options_first">Please enable \"Developer options\" first.</string>
     <string name="notification_settings">Notification options</string>
     <string name="adb_pairing_tutorial_content_notification">A notification from Shizuku will help you complete the pairing.</string>
     <string name="adb_pairing_tutorial_content_enter_pairing_code">In the \"Wireless debugging\" menu, tap \"Pair device with pairing code.\" Enter the code shown here into the notification to complete pairing.</string>

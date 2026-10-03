@@ -1,6 +1,5 @@
 package moe.shizuku.manager.utils
 
-import android.content.ActivityNotFoundException
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
@@ -8,6 +7,9 @@ import android.os.Build
 import android.provider.Settings
 import android.service.quicksettings.TileService
 import android.util.Log
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import moe.shizuku.manager.MainActivity
+import moe.shizuku.manager.R
 import moe.shizuku.manager.adb.AdbPairingAccessibilityService
 import moe.shizuku.manager.service.WatchdogService
 
@@ -45,16 +47,54 @@ sealed class SettingsPage(
             }
 
             override fun launch(context: Context) {
+                if (!isDeveloperOptionsEnabled(context)) {
+                    showDeveloperOptionsDisabledDialog(context)
+                    return
+                }
                 runCatching {
                     context.startActivity(buildIntent(context))
                 }.recoverCatching {
                     HighlightWirelessDebugging.launch(context)
                 }.onFailure { e ->
                     Log.e("SettingsUtils", "Failed to start Settings activity", e)
+                    showDeveloperOptionsDisabledDialog(context)
                 }
             }
         }
-        
+
+        override fun launch(context: Context) {
+            if (!isDeveloperOptionsEnabled(context)) {
+                showDeveloperOptionsDisabledDialog(context)
+                return
+            }
+            runCatching {
+                context.startActivity(buildIntent(context))
+            }.onFailure { e ->
+                Log.e("SettingsUtils", "Failed to start Settings activity", e)
+                showDeveloperOptionsDisabledDialog(context)
+            }
+        }
+
+        companion object {
+            fun isDeveloperOptionsEnabled(context: Context): Boolean {
+                return runCatching {
+                    Settings.Global.getInt(context.contentResolver, Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0) != 0
+                }.getOrDefault(true)
+            }
+
+            fun showDeveloperOptionsDisabledDialog(context: Context) {
+                MaterialAlertDialogBuilder(context)
+                    .setMessage(R.string.please_enable_developer_options_first)
+                    .setPositiveButton(android.R.string.ok) { _, _ ->
+                        val intent = Intent(context, MainActivity::class.java).apply {
+                            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+                        }
+                        context.startActivity(intent)
+                    }
+                    .setCancelable(false)
+                    .show()
+            }
+        }
     }
 
     sealed class Notifications(
